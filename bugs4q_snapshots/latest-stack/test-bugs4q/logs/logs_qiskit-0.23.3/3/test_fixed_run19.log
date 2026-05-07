@@ -1,0 +1,14 @@
+--- STDOUT ---
+There are 12 circuits to run
+
+--- STDERR ---
+/src/bugs4q/3/fixed_3.py:35: DeprecationWarning: Setting analysis=False in BaseExperiment.run is deprecated as of qiskit-experiments 0.2.0 and will be removed in the 0.3.0 release. Use analysis=None instead.
+  experiment = tomo.run(analysis=False, backend=backend).block_for_results()
+/src/bugs4q/3/fixed_3.py:38: DeprecationWarning: Setting analysis=True in BaseExperiment.run is deprecated as of qiskit-experiments 0.2.0 and will be removed in the 0.3.0 release. Use analysis='default' instead.
+  experiment = tomo.run(analysis=True, backend=backend).block_for_results()
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.994s
+
+OK
+

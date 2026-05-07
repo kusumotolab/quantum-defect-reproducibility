@@ -1,0 +1,21 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_19 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/19/test_19.py", line 13, in test_19
+    module.run()
+  File "/src/bugs4q/19/buggy_19.py", line 17, in run
+    qi.Operator.from_label('CX')
+  File "/usr/local/lib/python3.9/site-packages/qiskit/quantum_info/operators/operator.py", line 192, in from_label
+    raise QiskitError("Label contains invalid characters.")
+qiskit.exceptions.QiskitError: 'Label contains invalid characters.'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.229s
+
+FAILED (errors=1)
+

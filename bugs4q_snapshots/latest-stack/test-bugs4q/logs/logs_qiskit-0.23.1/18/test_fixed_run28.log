@@ -1,0 +1,20 @@
+--- STDOUT ---
+{'11': 54, '00': 46}
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit_aer/__init__.py:72: ImportWarning: __package__ != __spec__.parent
+  from . import noise
+/usr/local/lib/python3.9/site-packages/qiskit_aer/__init__.py:73: ImportWarning: __package__ != __spec__.parent
+  from . import utils
+/usr/local/lib/python3.9/site-packages/qiskit_aer/__init__.py:74: ImportWarning: __package__ != __spec__.parent
+  from .version import __version__
+/src/bugs4q/18/fixed_18.py:5: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  backend = Aer.get_backend('statevector_simulator')
+/usr/local/lib/python3.9/site-packages/qiskit_aer/backends/statevector_simulator.py:178: PendingDeprecationWarning: The `StatevectorSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend. To obtain legacy functionality initialize with `AerSimulator(method="statevector")` and append run circuits with the `save_state` instruction.
+  warn('The `StatevectorSimulator` backend will be deprecated in the'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.267s
+
+OK
+

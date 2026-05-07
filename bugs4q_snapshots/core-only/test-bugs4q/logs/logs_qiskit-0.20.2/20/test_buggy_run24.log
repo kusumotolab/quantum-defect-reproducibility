@@ -1,0 +1,47 @@
+--- STDOUT ---
+<qiskit.circuit.instructionset.InstructionSet object at 0x7f4aec3bdcc0>
+<qiskit.circuit.instructionset.InstructionSet object at 0x7f4aec3bd240>
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/numpy/core/getlimits.py:549: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/usr/local/lib/python3.9/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/usr/local/lib/python3.9/site-packages/numpy/core/getlimits.py:549: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/usr/local/lib/python3.9/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+/src/bugs4q/20/buggy_20.py:14: DeprecationWarning: The QuantumCircuit.__add__() method is being deprecated.Use the compose() method which is more flexible w.r.t circuit register compatibility.
+  test_Z = qc + measure_Z
+/usr/local/lib/python3.9/site-packages/qiskit/circuit/quantumcircuit.py:1038: DeprecationWarning: The QuantumCircuit.combine() method is being deprecated. Use the compose() method which is more flexible w.r.t circuit register compatibility.
+  return self.combine(rhs)
+/src/bugs4q/20/buggy_20.py:15: DeprecationWarning: The QuantumCircuit.__add__() method is being deprecated.Use the compose() method which is more flexible w.r.t circuit register compatibility.
+  test_X = qc + measure_X
+E
+======================================================================
+ERROR: test_20 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/20/test_20.py", line 13, in test_20
+    module.run()
+  File "/src/bugs4q/20/buggy_20.py", line 16, in run
+    job_1 = qk.execute([test_Z,test_X],backend='my_backend',shots=1000)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/execute_function.py", line 297, in execute
+    experiments = transpile(
+  File "/usr/local/lib/python3.9/site-packages/qiskit/compiler/transpiler.py", line 276, in transpile
+    transpile_args = _parse_transpile_args(
+  File "/usr/local/lib/python3.9/site-packages/qiskit/compiler/transpiler.py", line 523, in _parse_transpile_args
+    faulty_qubits_map = _parse_faulty_qubits_map(backend, num_circuits)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/compiler/transpiler.py", line 1025, in _parse_faulty_qubits_map
+    return [_create_faulty_qubits_map(backend)] * num_circuits
+  File "/usr/local/lib/python3.9/site-packages/qiskit/compiler/transpiler.py", line 618, in _create_faulty_qubits_map
+    if backend.properties():
+AttributeError: 'str' object has no attribute 'properties'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.248s
+
+FAILED (errors=1)
+

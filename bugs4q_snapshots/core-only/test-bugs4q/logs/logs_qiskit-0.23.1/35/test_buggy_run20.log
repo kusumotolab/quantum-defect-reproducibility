@@ -1,0 +1,91 @@
+--- STDOUT ---
+       ░ ┌─┐      
+q0_0: ─░─┤M├──────
+       ░ └╥┘┌─┐   
+q0_1: ─░──╫─┤M├───
+       ░  ║ └╥┘┌─┐
+q0_2: ─░──╫──╫─┤M├
+       ░  ║  ║ └╥┘
+q0_3: ─░──╫──╫──╫─
+       ░  ║  ║  ║ 
+q0_4: ─░──╫──╫──╫─
+       ░  ║  ║  ║ 
+q0_5: ─░──╫──╫──╫─
+       ░  ║  ║  ║ 
+q0_6: ─░──╫──╫──╫─
+       ░  ║  ║  ║ 
+c0: 3/════╩══╩══╩═
+          0  1  2 
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_35 (__main__.Test)
+----------------------------------------------------------------------
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/qiskit/dagcircuit/dagcircuit.py", line 982, in depth
+    depth = rx.dag_longest_path_length(self._multi_graph, weight_fn) - 1
+rustworkx.DAGHasCycle: The graph contains a cycle
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/concurrent/futures/process.py", line 246, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/usr/local/lib/python3.9/concurrent/futures/process.py", line 205, in _process_chunk
+    return [fn(*args) for args in chunk]
+  File "/usr/local/lib/python3.9/concurrent/futures/process.py", line 205, in <listcomp>
+    return [fn(*args) for args in chunk]
+  File "/usr/local/lib/python3.9/site-packages/qiskit/tools/parallel.py", line 105, in _task_wrapper
+    return task(value, *task_args, **task_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/compiler/transpiler.py", line 510, in _transpile_circuit
+    result = pass_manager.run(
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/passmanager.py", line 528, in run
+    return super().run(circuits, output_name, callback)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/passmanager.py", line 228, in run
+    return self._run_single_circuit(circuits, output_name, callback)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/passmanager.py", line 283, in _run_single_circuit
+    result = running_passmanager.run(circuit, output_name=output_name, callback=callback)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/runningpassmanager.py", line 125, in run
+    dag = self._do_pass(pass_, dag, passset.options)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/runningpassmanager.py", line 173, in _do_pass
+    dag = self._run_this_pass(pass_, dag)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/runningpassmanager.py", line 227, in _run_this_pass
+    pass_.run(FencedDAGCircuit(dag))
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/passes/analysis/depth.py", line 33, in run
+    self.property_set["depth"] = dag.depth(recurse=self.recurse)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/dagcircuit/dagcircuit.py", line 984, in depth
+    raise DAGCircuitError("not a DAG") from ex
+qiskit.dagcircuit.exceptions.DAGCircuitError: 'not a DAG'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/src/bugs4q/35/test_35.py", line 13, in test_35
+    module.run()
+  File "/src/bugs4q/35/buggy_35.py", line 23, in run
+    qk.compiler.transpile(meas_calibs, initial_layout=layout)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/compiler/transpiler.py", line 372, in transpile
+    circuits = parallel.parallel_map(
+  File "/usr/local/lib/python3.9/site-packages/qiskit/tools/parallel.py", line 187, in parallel_map
+    raise error
+  File "/usr/local/lib/python3.9/site-packages/qiskit/tools/parallel.py", line 177, in parallel_map
+    results = list(future)
+  File "/usr/local/lib/python3.9/concurrent/futures/process.py", line 562, in _chain_from_iterable_of_lists
+    for element in iterable:
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 609, in result_iterator
+    yield fs.pop().result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+qiskit.dagcircuit.exceptions.DAGCircuitError: 'not a DAG'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.111s
+
+FAILED (errors=1)
+

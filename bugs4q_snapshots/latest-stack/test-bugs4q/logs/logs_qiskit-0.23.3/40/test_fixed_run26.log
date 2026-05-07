@@ -1,0 +1,27 @@
+--- STDOUT ---
+
+--- STDERR ---
+/src/bugs4q/40/fixed_40.py:17: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  usim = Aer.get_backend('unitary_simulator')
+/usr/local/lib/python3.9/site-packages/qiskit_aer/backends/unitary_simulator.py:180: PendingDeprecationWarning: The `UnitarySimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend. To obtain legacy functionality initialize with `AerSimulator(method="unitary")` and append run circuits with the `save_state` instruction.
+  warn('The `UnitarySimulator` backend will be deprecated in the'
+/src/bugs4q/40/fixed_40.py:21: DeprecationWarning: Using a qobj for run() is deprecated as of qiskit-aer 0.9.0 and will be removed no sooner than 3 months from that release date. Transpiled circuits should now be passed directly using `backend.run(circuits, **run_options).
+  unitary = usim.run(qobj).result().get_unitary()
+E
+======================================================================
+ERROR: test_40 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/40/test_40.py", line 13, in test_40
+    module.run()
+  File "/src/bugs4q/40/fixed_40.py", line 21, in run
+    unitary = usim.run(qobj).result().get_unitary()
+  File "/usr/local/lib/python3.9/site-packages/qiskit_aer/backends/aerbackend.py", line 196, in run
+    return self._run_qobj(circuits, validate, parameter_binds, **run_options)
+TypeError: _run_qobj() got multiple values for argument 'parameter_binds'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.365s
+
+FAILED (errors=1)
+

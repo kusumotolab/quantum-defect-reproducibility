@@ -1,0 +1,19 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_1 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/1/test_1.py", line 13, in test_1
+    module.run()
+  File "/src/bugs4q/1/buggy_1.py", line 7, in run
+    qc.ccx(0, 1, 2, label='Label', ctrl_state=1)
+TypeError: QuantumCircuit.ccx() got an unexpected keyword argument 'label'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (errors=1)
+

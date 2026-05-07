@@ -1,0 +1,23 @@
+--- STDOUT ---
+
+Total count: {'011': 1000}
+
+--- STDERR ---
+/src/bugs4q/31/buggy_31.py:10: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  simulator = Aer.get_backend('qasm_simulator')
+/usr/local/lib/python3.9/site-packages/qiskit_aer/backends/qasm_simulator.py:363: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+E
+======================================================================
+ERROR: test_31 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/31/test_31.py", line 14, in test_31
+    self.assertEqual(counts['110'],1000)
+KeyError: '110'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.151s
+
+FAILED (errors=1)
+

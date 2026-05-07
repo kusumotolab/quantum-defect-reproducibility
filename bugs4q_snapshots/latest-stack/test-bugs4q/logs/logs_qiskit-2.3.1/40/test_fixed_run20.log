@@ -1,0 +1,19 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_40 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/40/test_40.py", line 13, in test_40
+    module.run()
+  File "/src/bugs4q/40/fixed_40.py", line 17, in run
+    usim = Aer.get_backend('unitary_simulator')
+NameError: name 'Aer' is not defined
+
+----------------------------------------------------------------------
+Ran 1 test in 0.209s
+
+FAILED (errors=1)
+

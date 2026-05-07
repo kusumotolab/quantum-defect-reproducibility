@@ -1,0 +1,19 @@
+from qiskit import *
+
+
+def run():
+    qr = QuantumRegister(2, name='qreg')
+    cr = ClassicalRegister(2, name='creg')
+    qc = QuantumCircuit(qr,cr)
+    qc.h(qr)
+    qc.measure(qc.qubits, qc.clbits)
+
+    bkd = Aer.get_backend('qasm_simulator')
+    res = execute(qc, backend = bkd).result()
+    print(res.get_counts())
+
+    return res.get_counts()
+
+
+if __name__ == '__main__':
+    run()

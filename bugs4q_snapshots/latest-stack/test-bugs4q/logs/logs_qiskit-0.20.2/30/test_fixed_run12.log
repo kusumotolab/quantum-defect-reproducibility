@@ -1,0 +1,26 @@
+--- STDOUT ---
+{'1001': 23, '1011': 57, '1110': 71, '1000': 30, '0100': 38, '0110': 57, '1100': 14, '0101': 95, '0001': 54, '1101': 122, '0010': 83, '0111': 79, '0000': 80, '0011': 56, '1010': 15, '1111': 150}
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+F
+======================================================================
+FAIL: test_30 (__main__.Test)
+__main__.Test.test_30
+----------------------------------------------------------------------
+testtools.testresult.real._StringException: Traceback (most recent call last):
+  File "/src/bugs4q/30/test_30.py", line 25, in test_30
+    self.assertGreaterEqual(
+  File "/usr/local/lib/python3.9/unittest/case.py", line 1241, in assertGreaterEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/usr/local/lib/python3.9/unittest/case.py", line 676, in fail
+    raise self.failureException(msg)
+AssertionError: 0.3486328125 not greater than or equal to 0.9387972644737533
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.190s
+
+FAILED (failures=1)
+

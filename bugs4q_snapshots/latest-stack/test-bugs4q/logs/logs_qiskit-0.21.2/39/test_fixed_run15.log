@@ -1,0 +1,27 @@
+--- STDOUT ---
+
+--- STDERR ---
+/src/bugs4q/39/fixed_39.py:19: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  job = execute(qc, backend = Aer.get_backend('qasm_simulator'), shots=1024)
+/usr/local/lib/python3.9/site-packages/qiskit_aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+F
+======================================================================
+FAIL: test_39 (__main__.Test)
+__main__.Test.test_39
+----------------------------------------------------------------------
+testtools.testresult.real._StringException: Traceback (most recent call last):
+  File "/src/bugs4q/39/test_39.py", line 26, in test_39
+    self.assertGreater(pvalue, alpha)
+  File "/usr/local/lib/python3.9/unittest/case.py", line 1235, in assertGreater
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/usr/local/lib/python3.9/unittest/case.py", line 676, in fail
+    raise self.failureException(msg)
+AssertionError: 0.02318737718518299 not greater than 0.05
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.162s
+
+FAILED (failures=1)
+

@@ -1,0 +1,19 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_4 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/4/test_4.py", line 13, in test_4
+    result = module.run()
+  File "/src/bugs4q/4/fixed_4.py", line 10, in run
+    adder = circuit.library.arithmetic.adders.cdkm_ripple_carry_adder.CDKMRippleCarryAdder(8)
+NameError: name 'circuit' is not defined
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+

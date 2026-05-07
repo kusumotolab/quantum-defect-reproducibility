@@ -1,0 +1,25 @@
+--- STDOUT ---
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+F
+======================================================================
+FAIL: test_39 (__main__.Test)
+__main__.Test.test_39
+----------------------------------------------------------------------
+testtools.testresult.real._StringException: Traceback (most recent call last):
+  File "/src/bugs4q/39/test_39.py", line 25, in test_39
+    self.assertIsNotNone(pvalue)
+  File "/usr/local/lib/python3.9/site-packages/testtools/testcase.py", line 443, in assertIsNotNone
+    self.assertThat(observed, matcher, message)
+  File "/usr/local/lib/python3.9/site-packages/testtools/testcase.py", line 509, in assertThat
+    raise mismatch_error
+testtools.matchers._impl.MismatchError: None matches Is(None)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.302s
+
+FAILED (failures=1)
+

@@ -1,0 +1,22 @@
+--- STDOUT ---
+        ┌──────────────────────┐┌─────┐┌─────┐┌─────┐ ░ ┌─┐   
+  q0_0: ┤0                     ├┤0    ├┤0    ├┤0    ├─░─┤M├───
+        │  Initialize(0,0,1,0) ││  ZZ ││  YY ││  XX │ ░ └╥┘┌─┐
+  q0_1: ┤1                     ├┤1    ├┤1    ├┤1    ├─░──╫─┤M├
+        └──────────────────────┘└─────┘└─────┘└─────┘ ░  ║ └╥┘
+meas: 2/═════════════════════════════════════════════════╩══╩═
+                                                         0  1 
+
+--- STDERR ---
+/src/bugs4q/41/fixed_41.py:66: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  backend = Aer.get_backend('statevector_simulator')
+/usr/local/lib/python3.9/site-packages/qiskit_aer/backends/statevector_simulator.py:178: PendingDeprecationWarning: The `StatevectorSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend. To obtain legacy functionality initialize with `AerSimulator(method="statevector")` and append run circuits with the `save_state` instruction.
+  warn('The `StatevectorSimulator` backend will be deprecated in the'
+/usr/local/lib/python3.9/site-packages/qiskit/utils/deprecation.py:27: DeprecationWarning: Using a qobj for run() is deprecated as of qiskit-aer 0.9.0 and will be removed no sooner than 3 months from that release date. Transpiled circuits should now be passed directly using `backend.run(circuits, **run_options).
+  return func(*args, **kwargs)
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.098s
+
+OK
+

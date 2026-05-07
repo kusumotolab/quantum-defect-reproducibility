@@ -1,0 +1,12 @@
+--- STDOUT ---
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/src/bugs4q/20/test_20.py", line 8, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/src/bugs4q/20/fixed_20.py", line 2, in <module>
+    from qiskit import Aer
+ImportError: cannot import name 'Aer' from 'qiskit' (/usr/local/lib/python3.9/site-packages/qiskit/__init__.py)
+

@@ -1,0 +1,25 @@
+FROM python:3.9.25
+
+ARG QISKIT_VERSION=0.20.0
+
+RUN apt-get update \
+    && apt-get install -y vim build-essential tree procps parallel \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -g 1000 appuser \
+    && useradd -m -u 1000 -g 1000 -s /bin/bash appuser
+
+WORKDIR /src
+
+COPY requirements/ /src/requirements/
+COPY bash_setting /home/appuser/.bashrc
+
+RUN pip install --upgrade pip
+RUN pip install -r /src/requirements/base-requirements.txt
+RUN pip install -r /src/requirements/qiskit0/${QISKIT_VERSION}.txt
+
+ENV HOME=/home/appuser
+
+RUN chown -R 1000:1000 /home/appuser /src
+
+USER appuser

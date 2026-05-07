@@ -1,0 +1,18 @@
+--- STDOUT ---
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/src/bugs4q/3/test_3.py", line 8, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/src/bugs4q/3/buggy_3.py", line 2, in <module>
+    import qiskit_experiments
+  File "/usr/local/lib/python3.9/site-packages/qiskit_experiments/__init__.py", line 60, in <module>
+    from . import framework
+  File "/usr/local/lib/python3.9/site-packages/qiskit_experiments/framework/__init__.py", line 131, in <module>
+    from qiskit_experiments.framework.backend_data import BackendData
+  File "/usr/local/lib/python3.9/site-packages/qiskit_experiments/framework/backend_data.py", line 21, in <module>
+    from qiskit.providers.fake_provider.fake_backend import FakeBackendV2
+ImportError: cannot import name 'FakeBackendV2' from 'qiskit.providers.fake_provider.fake_backend' (/usr/local/lib/python3.9/site-packages/qiskit/providers/fake_provider/fake_backend.py)
+

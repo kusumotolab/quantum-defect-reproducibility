@@ -1,0 +1,34 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_13 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/qiskit/circuit/quantumcircuit.py", line 2024, in control
+    gate = self.to_gate()
+  File "/usr/local/lib/python3.10/site-packages/qiskit/circuit/quantumcircuit.py", line 3821, in to_gate
+    return circuit_to_gate(self, parameter_map, label=label)
+  File "/usr/local/lib/python3.10/site-packages/qiskit/converters/circuit_to_gate.py", line 66, in circuit_to_gate
+    raise QiskitError(
+qiskit.exceptions.QiskitError: 'One or more instructions cannot be converted to a gate. "inner" is not a gate instruction'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/src/bugs4q-plus/13/test_13.py", line 13, in test_13
+    module.run()
+  File "/src/bugs4q-plus/13/buggy_13.py", line 12, in run
+    qc.append(outer_level.control(), [0,1,2])
+  File "/usr/local/lib/python3.10/site-packages/qiskit/utils/deprecation.py", line 184, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/qiskit/circuit/quantumcircuit.py", line 2026, in control
+    raise CircuitError(
+qiskit.circuit.exceptions.CircuitError: 'The circuit contains non-unitary operations and cannot be controlled. Note that no qiskit.circuit.Instruction objects may be in the circuit for this operation.'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (errors=1)
+

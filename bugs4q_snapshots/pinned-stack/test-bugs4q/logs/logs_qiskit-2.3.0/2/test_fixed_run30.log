@@ -1,0 +1,24 @@
+--- STDOUT ---
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/src/bugs4q/2/test_2.py", line 8, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/src/bugs4q/2/fixed_2.py", line 1, in <module>
+    from qiskit_machine_learning.datasets import ad_hoc_data
+  File "/usr/local/lib/python3.10/site-packages/qiskit_machine_learning/datasets/__init__.py", line 32, in <module>
+    from .ad_hoc import ad_hoc_data
+  File "/usr/local/lib/python3.10/site-packages/qiskit_machine_learning/datasets/ad_hoc.py", line 24, in <module>
+    from qiskit_algorithms.utils import algorithm_globals
+  File "/usr/local/lib/python3.10/site-packages/qiskit_algorithms/__init__.py", line 254, in <module>
+    from .variational_algorithm import VariationalAlgorithm, VariationalResult
+  File "/usr/local/lib/python3.10/site-packages/qiskit_algorithms/variational_algorithm.py", line 36, in <module>
+    from .optimizers import OptimizerResult
+  File "/usr/local/lib/python3.10/site-packages/qiskit_algorithms/optimizers/__init__.py", line 139, in <module>
+    from .qnspsa import QNSPSA
+  File "/usr/local/lib/python3.10/site-packages/qiskit_algorithms/optimizers/qnspsa.py", line 23, in <module>
+    from qiskit.primitives import BaseSampler
+ImportError: cannot import name 'BaseSampler' from 'qiskit.primitives' (/usr/local/lib/python3.10/site-packages/qiskit/primitives/__init__.py)
+

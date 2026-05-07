@@ -1,0 +1,47 @@
+--- STDOUT ---
+                         
+q_0: ─────────────■──────
+     ┌───┐┌─────┐ │ ┌───┐
+q_1: ┤ H ├┤ Sdg ├─■─┤ H ├
+     └───┘└─────┘   └───┘
+SummedOp([
+  ComposedOp([
+    OperatorMeasurement(1.0 * ZI),
+    CircuitStateFn(
+                             
+    q_0: ─────────────■──────
+         ┌───┐┌─────┐ │ ┌───┐
+    q_1: ┤ H ├┤ Sdg ├─■─┤ H ├
+         └───┘└─────┘   └───┘
+    )
+  ]),
+  ComposedOp([
+    OperatorMeasurement(1j * ZI),
+    CircuitStateFn(
+                                         
+    q_0: ─────────────■──────────────────
+         ┌───┐┌─────┐ │ ┌───┐┌─────┐┌───┐
+    q_1: ┤ H ├┤ Sdg ├─■─┤ H ├┤ Sdg ├┤ H ├
+         └───┘└─────┘   └───┘└─────┘└───┘
+    )
+  ])
+])
+Eval  (-2.22e-16+0.9999999999999991j)
+Qasm  (0.002979999999999982+1j)
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+/usr/local/lib/python3.9/site-packages/qiskit/providers/ibmq/api/session.py:19: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+/usr/local/lib/python3.9/site-packages/pkg_resources/__init__.py:3147: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/operator_state_fn.py:251: DeprecationWarning: `product` is deprecated as of NumPy 1.25.0, and will be removed in NumPy 2.0. Please use `prod` instead.
+  return front.adjoint().eval(cast(OperatorBase, self.primitive.eval(front))) * self.coeff
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.480s
+
+OK
+

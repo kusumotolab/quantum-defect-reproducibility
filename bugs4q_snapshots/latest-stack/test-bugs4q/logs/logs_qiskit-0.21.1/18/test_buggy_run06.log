@@ -1,0 +1,37 @@
+--- STDOUT ---
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+  from qiskit.quantum_info.operators.pauli import Pauli
+/src/bugs4q/18/buggy_18.py:5: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  backend = Aer.get_backend('statevector_simulator')
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/statevector_simulator.py:178: PendingDeprecationWarning: The `StatevectorSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend. To obtain legacy functionality initialize with `AerSimulator(method="statevector")` and append run circuits with the `save_state` instruction.
+  warn('The `StatevectorSimulator` backend will be deprecated in the'
+E
+======================================================================
+ERROR: test_18 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/18/test_18.py", line 13, in test_18
+    module.run()
+  File "/src/bugs4q/18/buggy_18.py", line 11, in run
+    result = execute(qc, backend, 100).result()
+  File "/usr/local/lib/python3.9/site-packages/qiskit/execute_function.py", line 299, in execute
+    experiments = transpile(
+  File "/usr/local/lib/python3.9/site-packages/qiskit/compiler/transpiler.py", line 339, in transpile
+    transpile_config, pass_manager = _combine_args(shared_args, unique_args)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/compiler/transpiler.py", line 415, in _combine_args
+    pass_manager = level_1_pass_manager(pass_manager_config)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/preset_passmanagers/level1.py", line 193, in level_1_pass_manager
+    _opt = [Optimize1qGatesDecomposition(basis_gates), CXCancellation()]
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/basepasses.py", line 29, in __call__
+    pass_instance = type.__call__(cls, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/qiskit/transpiler/passes/optimization/optimize_1q_decomposition.py", line 46, in __init__
+    basis_set = set(basis)
+TypeError: 'int' object is not iterable
+
+----------------------------------------------------------------------
+Ran 1 test in 0.265s
+
+FAILED (errors=1)
+

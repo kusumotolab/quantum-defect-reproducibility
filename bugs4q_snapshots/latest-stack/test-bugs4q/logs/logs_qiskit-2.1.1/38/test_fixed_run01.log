@@ -1,0 +1,19 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_38 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/38/test_38.py", line 13, in test_38
+    module.run()
+  File "/src/bugs4q/38/fixed_38.py", line 10, in run
+    qc.cnot(0, 1)
+AttributeError: 'QuantumCircuit' object has no attribute 'cnot'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+
+FAILED (errors=1)
+

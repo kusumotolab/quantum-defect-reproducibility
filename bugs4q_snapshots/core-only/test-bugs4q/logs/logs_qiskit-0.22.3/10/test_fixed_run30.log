@@ -1,0 +1,30 @@
+--- STDOUT ---
+   ┌──────────┐
+q: ┤ U1(0.24) ├
+   └──────────┘
+
+--- STDERR ---
+/src/bugs4q/10/fixed_10.py:6: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(0.24,0)
+F
+======================================================================
+FAIL: test_10 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/10/test_10.py", line 14, in test_10
+    self.assertEqual(str(qc),'     ┌──────────┐\nq_0: ┤ U1(0.24) ├\n     └──────────┘')
+AssertionError: '   ┌──────────┐\nq: ┤ U1(0.24) ├\n   └──────────┘' != '     ┌──────────┐\nq_0: ┤ U1(0.24) ├\n     └──────────┘'
+-    ┌──────────┐
++      ┌──────────┐
+? ++
+- q: ┤ U1(0.24) ├
++ q_0: ┤ U1(0.24) ├
+?  ++
+-    └──────────┘+      └──────────┘? ++
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.160s
+
+FAILED (failures=1)
+

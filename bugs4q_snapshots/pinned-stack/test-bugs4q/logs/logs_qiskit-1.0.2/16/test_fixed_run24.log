@@ -1,0 +1,19 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_16 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/16/test_16.py", line 13, in test_16
+    statevector = module.run()
+  File "/src/bugs4q/16/fixed_16.py", line 17, in run
+    sim_backend = BasicAer.get_backend('statevector_simulator')
+NameError: name 'BasicAer' is not defined
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (errors=1)
+

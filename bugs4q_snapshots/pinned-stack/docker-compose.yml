@@ -1,0 +1,231 @@
+services:
+  qiskit0200:
+    container_name: qiskit-0.20.0
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit0
+      args:
+        QISKIT_VERSION: 0.20.0
+    volumes:
+      - .:/src
+
+  qiskit0202:
+    container_name: qiskit-0.20.2
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit0
+      args:
+        QISKIT_VERSION: 0.20.2
+    volumes:
+      - .:/src
+
+  qiskit0211:
+    container_name: qiskit-0.21.1
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit0
+      args:
+        QISKIT_VERSION: 0.21.1
+    volumes:
+      - .:/src
+
+  qiskit0212:
+    container_name: qiskit-0.21.2
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit0
+      args:
+        QISKIT_VERSION: 0.21.2
+    volumes:
+      - .:/src
+
+  qiskit0223:
+    container_name: qiskit-0.22.3
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit0
+      args:
+        QISKIT_VERSION: 0.22.3
+    volumes:
+      - .:/src
+
+  qiskit0231:
+    container_name: qiskit-0.23.1
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit0
+      args:
+        QISKIT_VERSION: 0.23.1
+    volumes:
+      - .:/src
+
+  qiskit0233:
+    container_name: qiskit-0.23.3
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit0
+      args:
+        QISKIT_VERSION: 0.23.3
+    volumes:
+      - .:/src
+
+  qiskit100:
+    container_name: qiskit-1.0.0
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit1
+      args:
+        QISKIT_VERSION: 1.0.0
+    volumes:
+      - .:/src
+
+  qiskit102:
+    container_name: qiskit-1.0.2
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit1
+      args:
+        QISKIT_VERSION: 1.0.2
+    volumes:
+      - .:/src
+
+  qiskit110:
+    container_name: qiskit-1.1.0
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit1
+      args:
+        QISKIT_VERSION: 1.1.0
+    volumes:
+      - .:/src
+
+  qiskit120:
+    container_name: qiskit-1.2.0
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit1
+      args:
+        QISKIT_VERSION: 1.2.0
+    volumes:
+      - .:/src
+
+  qiskit124:
+    container_name: qiskit-1.2.4
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit1
+      args:
+        QISKIT_VERSION: 1.2.4
+    volumes:
+      - .:/src
+
+  qiskit131:
+    container_name: qiskit-1.3.1
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit1
+      args:
+        QISKIT_VERSION: 1.3.1
+    volumes:
+      - .:/src
+
+  qiskit132:
+    container_name: qiskit-1.3.2
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit1
+      args:
+        QISKIT_VERSION: 1.3.2
+    volumes:
+      - .:/src
+
+  qiskit200:
+    container_name: qiskit-2.0.0
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit2
+      args:
+        QISKIT_VERSION: 2.0.0
+    volumes:
+      - .:/src
+
+  qiskit202:
+    container_name: qiskit-2.0.2
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit2
+      args:
+        QISKIT_VERSION: 2.0.2
+    volumes:
+      - .:/src
+
+  qiskit211:
+    container_name: qiskit-2.1.1
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit2
+      args:
+        QISKIT_VERSION: 2.1.1
+    volumes:
+      - .:/src
+
+  qiskit221:
+    container_name: qiskit-2.2.1
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit2
+      args:
+        QISKIT_VERSION: 2.2.1
+    volumes:
+      - .:/src
+
+  qiskit223:
+    container_name: qiskit-2.2.3
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit2
+      args:
+        QISKIT_VERSION: 2.2.3
+    volumes:
+      - .:/src
+
+  qiskit230:
+    container_name: qiskit-2.3.0
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit2
+      args:
+        QISKIT_VERSION: 2.3.0
+    volumes:
+      - .:/src
+
+  qiskit231:
+    container_name: qiskit-2.3.1
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit2
+      args:
+        QISKIT_VERSION: 2.3.1
+    volumes:
+      - .:/src

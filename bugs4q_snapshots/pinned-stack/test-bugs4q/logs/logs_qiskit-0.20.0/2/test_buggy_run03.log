@@ -1,0 +1,21 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_2 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/2/test_2.py", line 13, in test_2
+    module.run()
+  File "/src/bugs4q/2/buggy_2.py", line 18, in run
+    datapoints, class_to_label = split_dataset_to_data_and_labels(test_input) # 追加した
+  File "/usr/local/lib/python3.9/site-packages/qiskit/aqua/utils/dataset_helper.py", line 85, in split_dataset_to_data_and_labels
+    sorted_classes_name = sorted(list(dataset.keys()))
+AttributeError: 'numpy.ndarray' object has no attribute 'keys'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.618s
+
+FAILED (errors=1)
+

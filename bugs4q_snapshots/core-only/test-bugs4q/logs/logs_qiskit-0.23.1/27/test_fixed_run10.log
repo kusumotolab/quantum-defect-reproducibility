@@ -1,0 +1,21 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_27 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/27/test_27.py", line 13, in test_27
+    counts = module.run()
+  File "/src/bugs4q/27/fixed_27.py", line 42, in run
+    iqft = QFT(n, inverse=True)
+  File "/src/bugs4q/27/fixed_27.py", line 19, in QFT
+    circuit.cu1(-pi / pow(2, j - i), j, i)
+AttributeError: 'QuantumCircuit' object has no attribute 'cu1'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+

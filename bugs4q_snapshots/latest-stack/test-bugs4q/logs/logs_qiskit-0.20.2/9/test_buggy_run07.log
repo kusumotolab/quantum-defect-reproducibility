@@ -1,0 +1,20 @@
+--- STDOUT ---
+
+--- STDERR ---
+F
+======================================================================
+FAIL: test_9 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/9/test_9.py", line 14, in test_9
+    self.assertEqual(str(instructions),'((0, ShiftPhase(phase, DriveChannel(0))),)')
+AssertionError: '()' != '((0, ShiftPhase(phase, DriveChannel(0))),)'
+- ()
++ ((0, ShiftPhase(phase, DriveChannel(0))),)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.146s
+
+FAILED (failures=1)
+

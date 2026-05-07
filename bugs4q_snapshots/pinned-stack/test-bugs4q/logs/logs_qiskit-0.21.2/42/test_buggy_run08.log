@@ -1,0 +1,42 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_42 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/qiskit/__init__.py", line 112, in __getattr__
+    from qiskit.providers import aer
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/__init__.py", line 65, in <module>
+    from .aerprovider import AerProvider
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/aerprovider.py", line 19, in <module>
+    from .backends.aer_simulator import AerSimulator
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/__init__.py", line 17, in <module>
+    from .aer_simulator import AerSimulator
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/aer_simulator.py", line 23, in <module>
+    from .aerbackend import AerBackend, AerError
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/aerbackend.py", line 34, in <module>
+    from ..noise.noise_model import NoiseModel, QuantumErrorLocation
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/__init__.py", line 192, in <module>
+    from .noise_model import NoiseModel
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/noise_model.py", line 24, in <module>
+    from qiskit.providers import BaseBackend, BackendV1, BackendV2
+ImportError: cannot import name 'BaseBackend' from 'qiskit.providers' (/usr/local/lib/python3.9/site-packages/qiskit/providers/__init__.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/src/bugs4q/42/test_42.py", line 13, in test_42
+    module.run()
+  File "/src/bugs4q/42/buggy_42.py", line 7, in run
+    backend = Aer.get_backend('qasm_simulator')
+  File "/usr/local/lib/python3.9/site-packages/qiskit/__init__.py", line 123, in __getattr__
+    raise MissingOptionalLibraryError(
+qiskit.exceptions.MissingOptionalLibraryError: "The 'qiskit-aer' library is required to use 'Aer provider'. You can install it with 'pip install qiskit-aer'."
+
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+
+FAILED (errors=1)
+

@@ -1,0 +1,25 @@
+--- STDOUT ---
+<qiskit.circuit.instructionset.InstructionSet object at 0x7f04850a76a0>
+<qiskit.circuit.instructionset.InstructionSet object at 0x7f04850a7dc0>
+
+--- STDERR ---
+/src/bugs4q/20/buggy_20.py:6: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  my_backend = Aer.get_backend("qasm_simulator")
+/usr/local/lib/python3.9/site-packages/qiskit_aer/backends/qasm_simulator.py:363: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+E
+======================================================================
+ERROR: test_20 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/20/test_20.py", line 13, in test_20
+    module.run()
+  File "/src/bugs4q/20/buggy_20.py", line 14, in run
+    test_Z = qc + measure_Z
+TypeError: unsupported operand type(s) for +: 'QuantumCircuit' and 'QuantumCircuit'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.134s
+
+FAILED (errors=1)
+

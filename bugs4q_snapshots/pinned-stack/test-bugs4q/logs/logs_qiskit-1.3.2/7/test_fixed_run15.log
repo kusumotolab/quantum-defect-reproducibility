@@ -1,0 +1,56 @@
+--- STDOUT ---
+      ┌──────┐
+qr_0: ┤1     ├
+      │      │
+qr_1: ┤0 ghz ├
+      │      │
+qr_2: ┤2     ├
+      └──┬───┘
+qr_3: ───■────
+              
+              
+qr_0: ────────
+      ┌──────┐
+qr_1: ┤0     ├
+      │      │
+qr_2: ┤1 ghz ├
+      │      │
+qr_3: ┤2     ├
+      └──────┘
+      ┌──────┐
+qr_0: ┤1     ├
+      │      │
+qr_1: ┤0 ghz ├
+      │      │
+qr_2: ┤2     ├
+      └──────┘
+qr_3: ────────
+              
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/transpiler/passmanager.py:70: DeprecationWarning: The property ``qiskit.dagcircuit.dagcircuit.DAGCircuit.duration`` is deprecated as of qiskit 1.3.0. It will be removed in Qiskit 2.0.0.
+  out_program = dag_to_circuit(passmanager_ir, copy_operations=False)
+/usr/local/lib/python3.9/site-packages/qiskit/transpiler/passmanager.py:70: DeprecationWarning: The property ``qiskit.dagcircuit.dagcircuit.DAGCircuit.unit`` is deprecated as of qiskit 1.3.0. It will be removed in Qiskit 2.0.0.
+  out_program = dag_to_circuit(passmanager_ir, copy_operations=False)
+/usr/local/lib/python3.9/site-packages/qiskit/visualization/circuit/text.py:1117: DeprecationWarning: The property ``qiskit.circuit.instruction.Instruction.condition`` is deprecated as of qiskit 1.3.0. It will be removed in 2.0.0.
+  if getattr(op, "condition", None) is not None:
+/usr/local/lib/python3.9/site-packages/qiskit/visualization/circuit/text.py:1090: DeprecationWarning: The property ``qiskit.circuit.instruction.Instruction.condition`` is deprecated as of qiskit 1.3.0. It will be removed in 2.0.0.
+  if getattr(op, "condition", None) is not None:
+/src/bugs4q/7/fixed_7.py:34: DeprecationWarning: The property ``qiskit.dagcircuit.dagcircuit.DAGCircuit.duration`` is deprecated as of qiskit 1.3.0. It will be removed in Qiskit 2.0.0.
+  print(str(dag_to_circuit(unctl_dag)))
+/src/bugs4q/7/fixed_7.py:34: DeprecationWarning: The property ``qiskit.dagcircuit.dagcircuit.DAGCircuit.unit`` is deprecated as of qiskit 1.3.0. It will be removed in Qiskit 2.0.0.
+  print(str(dag_to_circuit(unctl_dag)))
+/src/bugs4q/7/fixed_7.py:37: DeprecationWarning: The property ``qiskit.dagcircuit.dagcircuit.DAGCircuit.duration`` is deprecated as of qiskit 1.3.0. It will be removed in Qiskit 2.0.0.
+  print(dag_to_circuit(dag))
+/src/bugs4q/7/fixed_7.py:37: DeprecationWarning: The property ``qiskit.dagcircuit.dagcircuit.DAGCircuit.unit`` is deprecated as of qiskit 1.3.0. It will be removed in Qiskit 2.0.0.
+  print(dag_to_circuit(dag))
+/src/bugs4q/7/fixed_7.py:39: DeprecationWarning: The property ``qiskit.dagcircuit.dagcircuit.DAGCircuit.duration`` is deprecated as of qiskit 1.3.0. It will be removed in Qiskit 2.0.0.
+  return circuit, dag_to_circuit(unctl_dag), dag_to_circuit(dag)
+/src/bugs4q/7/fixed_7.py:39: DeprecationWarning: The property ``qiskit.dagcircuit.dagcircuit.DAGCircuit.unit`` is deprecated as of qiskit 1.3.0. It will be removed in Qiskit 2.0.0.
+  return circuit, dag_to_circuit(unctl_dag), dag_to_circuit(dag)
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.014s
+
+OK
+

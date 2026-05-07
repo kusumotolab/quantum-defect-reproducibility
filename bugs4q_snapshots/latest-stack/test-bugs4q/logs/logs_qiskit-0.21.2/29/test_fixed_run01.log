@@ -1,0 +1,14 @@
+--- STDOUT ---
+{'011': 816, '111': 90, '010': 10, '000': 24, '110': 10, '101': 27, '001': 14, '100': 9}
+
+--- STDERR ---
+/src/bugs4q/29/fixed_29.py:48: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qpe.cu1(2*math.pi*theta*2**(nancilla-i-1), q[i], s[0])
+/src/bugs4q/29/fixed_29.py:15: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  circ.cu1(-2*np.pi/2**(i - m + 1), q[i], q[m])
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.066s
+
+OK
+

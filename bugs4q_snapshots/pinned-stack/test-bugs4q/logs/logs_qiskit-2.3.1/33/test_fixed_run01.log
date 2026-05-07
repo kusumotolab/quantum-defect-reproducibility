@@ -1,0 +1,19 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_33 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/33/test_33.py", line 13, in test_33
+    module.run()
+  File "/src/bugs4q/33/fixed_33.py", line 14, in run
+    qc.x(q[0]).c_if(c[0], 0)
+AttributeError: 'InstructionSet' object has no attribute 'c_if'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (errors=1)
+

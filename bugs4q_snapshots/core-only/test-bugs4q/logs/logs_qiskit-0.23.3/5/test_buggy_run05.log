@@ -1,0 +1,26 @@
+--- STDOUT ---
+OPENQASM 2.0;
+include "qelib1.inc";
+
+
+--- STDERR ---
+F
+======================================================================
+FAIL: test_5 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/5/test_5.py", line 14, in test_5
+    self.assertEqual(str(qasm), 'OPENQASM 2.0;\ninclude "qelib1.inc";\nqreg q[1];\ncreg c[1];\nmeasure q[0] -> c[0];\n')
+AssertionError: 'OPEN[19 chars]"qelib1.inc";\n' != 'OPEN[19 chars]"qelib1.inc";\nqreg q[1];\ncreg c[1];\nmeasure q[0] -> c[0];\n'
+  OPENQASM 2.0;
+  include "qelib1.inc";
++ qreg q[1];
++ creg c[1];
++ measure q[0] -> c[0];
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.021s
+
+FAILED (failures=1)
+

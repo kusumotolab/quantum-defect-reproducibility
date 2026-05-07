@@ -1,0 +1,16 @@
+--- STDOUT ---
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/src/bugs4q/2/test_2.py", line 8, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/src/bugs4q/2/buggy_2.py", line 2, in <module>
+    from qiskit.aqua.utils import split_dataset_to_data_and_labels
+  File "/usr/local/lib/python3.9/site-packages/qiskit/aqua/__init__.py", line 76, in <module>
+    from .quantum_instance import QuantumInstance
+  File "/usr/local/lib/python3.9/site-packages/qiskit/aqua/quantum_instance.py", line 21, in <module>
+    from qiskit.providers import Backend, BaseBackend
+ImportError: cannot import name 'BaseBackend' from 'qiskit.providers' (/usr/local/lib/python3.9/site-packages/qiskit/providers/__init__.py)
+
