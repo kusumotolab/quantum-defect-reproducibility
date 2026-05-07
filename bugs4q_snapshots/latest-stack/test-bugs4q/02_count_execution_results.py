@@ -2,14 +2,17 @@ import csv
 from pathlib import Path
 from collections import Counter
 
-# IDごとのカテゴリ定義
+# Category definition for each artifact ID.
 CATEGORY_MAP = {}
-for id in [5, 7, 8, 9, 10, 11, 12, 14, 16, 17, 25, 26, 27, 29, 30, 31, 39]:
-    CATEGORY_MAP[id] = "Output Wrong"
-for id in [1, 2, 3, 6, 13, 15, 18, 19, 20, 24, 28, 33, 35, 36, 37, 38, 40, 42]:
-    CATEGORY_MAP[id] = "Throw Exception"
-for id in [4, 41]:
-    CATEGORY_MAP[id] = "Simulation Failure"
+
+for artifact_id in [5, 7, 8, 9, 10, 11, 12, 14, 16, 17, 25, 26, 27, 29, 30, 31, 39]:
+    CATEGORY_MAP[artifact_id] = "Output Wrong"
+
+for artifact_id in [1, 2, 3, 6, 13, 15, 18, 19, 20, 24, 28, 33, 35, 36, 37, 38, 40, 42]:
+    CATEGORY_MAP[artifact_id] = "Throw Exception"
+
+for artifact_id in [4, 41]:
+    CATEGORY_MAP[artifact_id] = "Simulation Failure"
 
 
 def classify(test_buggy: str, test_fixed: str) -> str:
@@ -18,29 +21,35 @@ def classify(test_buggy: str, test_fixed: str) -> str:
 
     if test_buggy == "Fail" and test_fixed == "Pass":
         return "Complete Success"
+
     if test_buggy == "Fail" and test_fixed == "Fail":
         return "Partial Success"
+
     return "Failure"
 
 
 def count_results(input_csv: Path, output_csv: Path) -> None:
     counter = Counter()
-    id_sets = {}  # (category, result) -> set of ids
+    id_sets = {}  # (category, result) -> set of artifact IDs
 
     with input_csv.open("r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
 
-        required = {"id", "test_buggy", "test_fixed"}
-        if not required.issubset(reader.fieldnames or []):
+        required_columns = {"id", "test_buggy", "test_fixed"}
+        if not required_columns.issubset(reader.fieldnames or []):
             raise ValueError(
-                f"CSVに必要な列がありません。必要: {required}, 実際: {reader.fieldnames}"
+                f"Missing required CSV columns. "
+                f"Required: {sorted(required_columns)}, "
+                f"found: {reader.fieldnames}"
             )
 
         for row in reader:
-            proj_id = int(row["id"])
-            category = CATEGORY_MAP.get(proj_id)
+            artifact_id = int(row["id"])
+            category = CATEGORY_MAP.get(artifact_id)
+
+            # Skip artifacts whose category is not defined in this study.
             if category is None:
-                continue  # カテゴリ未定義のIDはスキップ
+                continue
 
             result = classify(row["test_buggy"], row["test_fixed"])
             counter[(category, result)] += 1
@@ -48,7 +57,7 @@ def count_results(input_csv: Path, output_csv: Path) -> None:
             key = (category, result)
             if key not in id_sets:
                 id_sets[key] = set()
-            id_sets[key].add(proj_id)
+            id_sets[key].add(artifact_id)
 
     categories = ["Output Wrong", "Throw Exception", "Simulation Failure"]
     results = ["Complete Success", "Partial Success", "Failure"]
@@ -61,23 +70,22 @@ def count_results(input_csv: Path, output_csv: Path) -> None:
             for result in results:
                 count = counter[(category, result)]
                 ids = sorted(id_sets.get((category, result), set()))
-                ids_str = ",".join(str(i) for i in ids)
+                ids_str = ",".join(str(artifact_id) for artifact_id in ids)
                 writer.writerow([category, result, count, ids_str])
 
 
 def main() -> None:
     script_dir = Path(__file__).resolve().parent
 
-    input_files = sorted(script_dir.glob("for_resolve/execution_results_qiskit-*.csv"))
+    input_files = sorted(script_dir.glob("execution_results_qiskit-*.csv"))
     if not input_files:
-        print("execution_results_qiskit-*.csv が見つかりませんでした。")
+        print("No execution_results_qiskit-*.csv files were found.")
         return
 
     for input_csv in input_files:
-        suffix = input_csv.name.removeprefix("for_resolve/execution_results_")
-        output_csv = script_dir / f"for_resolve/count_{suffix}"
+        output_csv = script_dir / f"count_{input_csv.name}"
         count_results(input_csv, output_csv)
-        print(f"集計結果を {output_csv} に保存しました。")
+        print(f"Saved aggregated results to {output_csv}.")
 
 
 if __name__ == "__main__":

@@ -303,6 +303,17 @@ To stop containers after the experiment:
 make d
 ```
 
+### Script-to-Output Mapping
+
+The main Bugs4Q experiment uses scripts under `test-bugs4q/`.
+
+| Script | Purpose | Main outputs |
+|---|---|---|
+| `01_execute_all_bugs4q.py` | Executes the buggy and fixed versions of each Bugs4Q artifact for the current Qiskit environment. | `execution_results_qiskit-<version>.csv`; `logs/logs_qiskit-<version>/<artifact-id>/test_buggy_runXX.log`; `logs/logs_qiskit-<version>/<artifact-id>/test_fixed_runXX.log` |
+| `02_count_execution_results.py` | Aggregates per-run execution outcomes by bug category and result class. | `count_execution_results_qiskit-<version>.csv` |
+
+The exact `<version>` suffix is determined from the Qiskit version installed inside the Docker container.
+
 ### Expected Outputs
 
 For each Qiskit version in each configuration snapshot, the expected result files are:
@@ -359,6 +370,24 @@ test-bugs4q/logs/logs_qiskit-<version>/
 ```
 
 Each version-specific log directory contains logs grouped by artifact ID. These logs are the primary evidence used to inspect failure symptoms, exception types, and runtime messages.
+The log directory has the following nested structure.
+
+```text
+test-bugs4q/
+└── logs/
+    └── logs_qiskit-<version>/
+        └── <artifact-id>/
+            ├── test_buggy_run01.log
+            ├── test_buggy_run02.log
+            ├── ...
+            ├── test_buggy_run30.log
+            ├── test_fixed_run01.log
+            ├── test_fixed_run02.log
+            ├── ...
+            └── test_fixed_run30.log
+```
+
+For each artifact ID, the directory contains 60 logs in total: 30 logs for the buggy version and 30 logs for the fixed version.
 
 ### Setup Failures
 
@@ -487,6 +516,15 @@ After the experiment, stop and remove the container from another terminal if nec
 make d
 ```
 
+### Script-to-Output Mapping
+
+The Bugs4Q+ rerun experiment uses the following scripts.
+
+| Script | Purpose | Main outputs |
+|---|---|---|
+| `run.py` | Executes each buggy/fixed pair in `bugs4q-plus/` 30 times and stores per-run outcomes. | `execution_results.csv`; `logs/<artifact-id>/test_buggy_runXX.log`; `logs/<artifact-id>/test_fixed_runXX.log` |
+| `count.py` | Aggregates the per-run outcomes by bug category and result class. | `count_results.csv` |
+
 ### Expected Outputs
 
 The Bugs4Q+ snapshot produces:
@@ -526,6 +564,23 @@ The result classes are defined as follows.
 | `Complete Success` | `test_buggy = Fail` and `test_fixed = Pass`. |
 | `Partial Success` | `test_buggy = Fail` and `test_fixed = Fail`. |
 | `Failure` | Any other combination. |
+
+The Bugs4Q+ log directory has the following nested structure.
+
+```text
+logs/
+└── <artifact-id>/
+    ├── test_buggy_run01.log
+    ├── test_buggy_run02.log
+    ├── ...
+    ├── test_buggy_run30.log
+    ├── test_fixed_run01.log
+    ├── test_fixed_run02.log
+    ├── ...
+    └── test_fixed_run30.log
+```
+
+For each artifact ID, the directory contains 60 logs in total: 30 logs for the buggy version and 30 logs for the fixed version.
 
 ### Notes on Non-Determinism
 
