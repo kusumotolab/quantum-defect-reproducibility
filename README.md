@@ -9,10 +9,9 @@
 This repository contains the replication package for our study on the reproducibility of the Bugs4Q quantum software defect dataset across Qiskit versions.
 The package contains two groups of experiment snapshots.
 
-1. `bugs4q_snapshots/`: snapshots for the main Bugs4Q reproducibility experiments under three dependency configurations:
+1. `bugs4q_snapshots/`: snapshots for the main Bugs4Q reproducibility experiments under two dependency configurations:
    - `core-only`
    - `pinned-stack`
-   - `latest-stack`
 
 2. `bugs4q-plus_snapshot/`: a snapshot for the additional rerun experiment using the edited dataset, referred to as Bugs4Q+ in the paper.
 
@@ -38,8 +37,7 @@ The package is organized as snapshots rather than as a single unified execution 
 ├── README.md
 ├── bugs4q_snapshots/        # Main Bugs4Q reproducibility experiments
 │   ├── core-only/
-│   ├── pinned-stack/
-│   └── latest-stack/
+│   └── pinned-stack/
 └── bugs4q-plus_snapshot/    # Bugs4Q+ rerun experiment
 ```
 
@@ -47,7 +45,7 @@ The package is organized as snapshots rather than as a single unified execution 
 
 This package uses snapshot-based organization rather than a single unified execution directory.
 Each snapshot preserves the exact directory layout used during the corresponding experiment. The main reason is that the Docker build files, Makefile targets, requirements files, and execution scripts depend on relative paths. Moving files into a cleaner shared structure could make the package harder to rerun and could introduce inconsistencies between the released package and the actual experiment workspace.
-The three snapshots under `bugs4q_snapshots/` correspond to the main Bugs4Q reproducibility experiments. The snapshot under `bugs4q-plus_snapshot/` corresponds to the additional experiment after applying code edits to the subject programs.
+The two snapshots under `bugs4q_snapshots/` correspond to the main Bugs4Q reproducibility experiments. The snapshot under `bugs4q-plus_snapshot/` corresponds to the additional experiment after applying code edits to the subject programs.
 
 ## Quick Start for Reviewers
 
@@ -65,12 +63,12 @@ bugs4q_snapshots/<configuration>/test-bugs4q/count_execution_results_qiskit-<ver
 bugs4q_snapshots/<configuration>/test-bugs4q/logs/logs_qiskit-<version>/
 ```
 
-For example, the result files for Qiskit 2.3.1 under `latest-stack` are:
+For example, the result files for Qiskit 2.3.1 under `pinned-stack` are:
 
 ```text
-bugs4q_snapshots/latest-stack/test-bugs4q/execution_results_qiskit-2.3.1.csv
-bugs4q_snapshots/latest-stack/test-bugs4q/count_execution_results_qiskit-2.3.1.csv
-bugs4q_snapshots/latest-stack/test-bugs4q/logs/logs_qiskit-2.3.1/
+bugs4q_snapshots/pinned-stack/test-bugs4q/execution_results_qiskit-2.3.1.csv
+bugs4q_snapshots/pinned-stack/test-bugs4q/count_execution_results_qiskit-2.3.1.csv
+bugs4q_snapshots/pinned-stack/test-bugs4q/logs/logs_qiskit-2.3.1/
 ```
 
 The Bugs4Q+ rerun results are located at:
@@ -113,7 +111,7 @@ The experiments were conducted on WSL2 with Ubuntu 24.04.4 LTS.
 
 ## Part I: Bugs4Q Reproducibility Experiments
 
-This part corresponds to the main reproducibility experiments conducted on the Bugs4Q-derived study snapshot under three dependency configurations.
+This part corresponds to the main reproducibility experiments conducted on the Bugs4Q-derived study snapshot under two dependency configurations.
 
 ### Directory Layout
 
@@ -129,17 +127,7 @@ bugs4q_snapshots/
 │   ├── Dockerfile.qiskit1
 │   ├── Dockerfile.qiskit2
 │   └── Makefile
-├── pinned-stack/
-│   ├── bugs4q/
-│   ├── requirements/
-│   ├── test-bugs4q/
-│   ├── bash_setting
-│   ├── docker-compose.yml
-│   ├── Dockerfile.qiskit0
-│   ├── Dockerfile.qiskit1
-│   ├── Dockerfile.qiskit2
-│   └── Makefile
-└── latest-stack/
+└── pinned-stack/
     ├── bugs4q/
     ├── requirements/
     ├── test-bugs4q/
@@ -153,7 +141,7 @@ bugs4q_snapshots/
 
 ### Experimental Configurations
 
-The main Bugs4Q reproducibility experiments are conducted under three configurations.
+The main Bugs4Q reproducibility experiments are conducted under two configurations.
 
 #### Core-only
 
@@ -164,11 +152,6 @@ This configuration is intended to observe what happens when the core Qiskit libr
 
 `pinned-stack` uses a pinned set of Qiskit-related packages. This configuration is designed to reduce unnecessary dependency variation while keeping the target Qiskit core-library version fixed for each checkpoint.
 This configuration is used as the basis for detailed root-cause analysis in the paper.
-
-#### Latest-stack
-
-`latest-stack` is the dependency-adjusted configuration derived from `pinned-stack`. It uses adjusted surrounding Qiskit package versions to mitigate library-library incompatibilities where possible.
-This configuration is used to evaluate how much reproducibility can be recovered by dependency-level adjustments alone.
 
 ### Qiskit Version Tags
 
@@ -211,7 +194,7 @@ The 0.x series tags keep the leading zero, such as `qiskit0231` for Qiskit 0.23.
 
 ### Makefile Targets
 
-The three main snapshots under `bugs4q_snapshots/` use the same Makefile interface.
+The two main snapshots under `bugs4q_snapshots/` use the same Makefile interface.
 Move to one configuration snapshot:
 
 ```bash
@@ -223,7 +206,6 @@ where `<configuration>` is one of:
 ```text
 core-only
 pinned-stack
-latest-stack
 ```
 
 The available Makefile targets are:
@@ -253,7 +235,7 @@ make uc v=qiskit231
 
 ### Reproduction Steps
 
-Move to one of the three configuration snapshots.
+Move to one of the two configuration snapshots.
 
 ```bash
 cd bugs4q_snapshots/core-only
@@ -263,12 +245,6 @@ or
 
 ```bash
 cd bugs4q_snapshots/pinned-stack
-```
-
-or
-
-```bash
-cd bugs4q_snapshots/latest-stack
 ```
 
 Build the target Docker environment. For example, to build the Qiskit 2.3.1 environment:
@@ -294,13 +270,13 @@ This script executes the buggy and fixed versions of each Bugs4Q artifact and st
 
 Then aggregate the per-run results:
 
-```txt
+```bash
 python 02_count_execution_results.py
 ```
 
 This script reads execution_results_qiskit-<version>.csv and generates:
 
-```bash
+```text
 count_execution_results_qiskit-<version>.csv
 ```
 
@@ -419,7 +395,7 @@ The setup-failure logs are stored as follows.
 | `core-only` | `qiskit230` | 2.3.0 | Setup failure | `bugs4q_snapshots/core-only/test-bugs4q/logs/logs_qiskit-2.3.0/setup.log` |
 | `core-only` | `qiskit231` | 2.3.1 | Setup failure | `bugs4q_snapshots/core-only/test-bugs4q/logs/logs_qiskit-2.3.1/setup.log` |
 
-No setup failures were observed for `pinned-stack` or `latest-stack` in the released snapshots.
+No setup failures were observed for `pinned-stack` in the released snapshots.
 
 ### Notes on Non-Determinism
 
