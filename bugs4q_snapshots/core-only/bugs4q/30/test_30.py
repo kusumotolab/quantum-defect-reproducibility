@@ -1,7 +1,6 @@
 import unittest
 import importlib.util
 import sys
-from qiskit.test import *
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 from common.utils import lower_confidence_bound
@@ -12,7 +11,7 @@ module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 
-class Test(QiskitTestCase,unittest.TestCase):
+class Test(unittest.TestCase):
     def test_30(self):
         counts = module.run()
         logical_counts = {bitstring[::-1]: count for bitstring, count in counts.items()}

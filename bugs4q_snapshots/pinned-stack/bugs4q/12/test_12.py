@@ -1,7 +1,6 @@
 import unittest
 import importlib.util
 import sys
-from qiskit.test import QiskitTestCase
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 from common.utils import chi_square_pvalue
@@ -12,7 +11,7 @@ module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 
-class Test(QiskitTestCase,unittest.TestCase):
+class Test(unittest.TestCase):
     def test_12(self):
         counts = module.run()
         expected = {'00': 256, '01': 256, '10': 256, '11': 256}
