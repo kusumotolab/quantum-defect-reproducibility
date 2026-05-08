@@ -1,0 +1,211 @@
+--- STDOUT ---
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='b87f8be8-01db-4c46-bb45-2e3ca331a29d', job_id='50bdd309-e922-4e20-a7f8-1d316c31af14', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 4, '0x8': 86, '0x4': 7795, '0xc': 307}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=5.551115123125783e-17, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=4193387893, metadata={'parallel_state_update': 24, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': True, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 1, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.005204373)], date=2026-05-08T13:20:46.529060, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.005451324, 'time_taken_execute': 0.005250228, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000194153, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.005703926086425781)
+86
+307
+0.28013029315960913
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='26b829ea-a551-4fec-b539-dc9b26e00413', job_id='8da3cbde-3af1-48cc-94c3-9ab1897f326d', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 4, '0xc': 321, '0x4': 7788, '0x8': 79}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=1.1102230246251565e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=3675302364, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.032172561)], date=2026-05-08T13:20:46.764293, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.032420124, 'time_taken_execute': 0.032213087, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000201285, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.03268837928771973)
+165
+628
+0.2627388535031847
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='b228aca7-7e6a-4dac-8876-186dfa57eddd', job_id='d718c737-2b16-4ab9-863e-1fa578abe328', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 2, '0x8': 80, '0x4': 7824, '0xc': 286}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=1.6653345369377348e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=1550122539, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.026108089)], date=2026-05-08T13:20:46.819740, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.026421334, 'time_taken_execute': 0.026152822, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000261298, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.026642322540283203)
+245
+914
+0.26805251641137856
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='b1220800-5515-4bb2-82b8-9df849ad7ec1', job_id='8a54f88e-279d-47ed-9d78-58646cead745', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 3, '0x8': 63, '0x4': 7812, '0xc': 314}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=2.220446049250313e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=744904010, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.035431869)], date=2026-05-08T13:20:46.886960, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.035798344, 'time_taken_execute': 0.035468868, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000323574, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.035927772521972656)
+308
+1228
+0.250814332247557
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='a0a47494-b2e0-49b3-9645-e967915e1bae', job_id='94400c0a-e244-4f9c-983a-388dc2e1fd00', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 3, '0x8': 73, '0x4': 7830, '0xc': 286}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=2.7755575615628914e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=3214298205, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.042645836)], date=2026-05-08T13:20:46.965595, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.042986983, 'time_taken_execute': 0.042682294, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000298778, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.043100595474243164)
+381
+1514
+0.25165125495376484
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='5506e17c-3440-4839-8ce8-2a579242f63c', job_id='0332ebe4-e32c-47de-babd-29e553543d39', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 3, '0x8': 82, '0x4': 7801, '0xc': 306}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=3.3306690738754696e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=800232316, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.0520584)], date=2026-05-08T13:20:47.060715, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.052490677, 'time_taken_execute': 0.052094307, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000390018, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.05261731147766113)
+463
+1820
+0.2543956043956044
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='c655fdae-dce5-4b08-ba95-d8f643c5febf', job_id='405309df-95f2-472d-aeca-cd948dae904e', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 3, '0x8': 81, '0x4': 7824, '0xc': 284}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=3.885780586188048e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=2059411333, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.061564504)], date=2026-05-08T13:20:47.168546, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.062046345, 'time_taken_execute': 0.06159946, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000440192, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.06222057342529297)
+544
+2104
+0.2585551330798479
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='0bf159b7-16ad-4eb2-a42c-dda6853a4c78', job_id='a929fb15-af67-499a-8077-86e4a126b8c6', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 1, '0x8': 78, '0x4': 7820, '0xc': 293}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=4.440892098500626e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=2849274869, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.072094427)], date=2026-05-08T13:20:47.289178, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.072661996, 'time_taken_execute': 0.072131175, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000523798, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.07283234596252441)
+622
+2397
+0.2594910304547351
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='47008c7c-76ff-4aee-be53-98850c1704a4', job_id='e6d77664-1c44-453f-b1f9-3f0fc89ee49d', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 4, '0x8': 56, '0x4': 7824, '0xc': 308}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=4.996003610813204e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=3199057388, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.080617237)], date=2026-05-08T13:20:47.427038, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.081216195, 'time_taken_execute': 0.080657612, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.00055133, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.08138918876647949)
+678
+2705
+0.25064695009242144
+Result(backend_name='qasm_simulator', backend_version='0.10.4', qobj_id='0bc1e320-1b2c-4b08-819a-b4a452023cae', job_id='cc95503a-3d66-49bb-8c4a-0286314e3df1', success=True, results=[ExperimentResult(shots=8192, success=True, meas_level=2, data=ExperimentResultData(counts={'0x0': 6, '0x8': 69, '0x4': 7789, '0xc': 328}), header=QobjExperimentHeader(clbit_labels=[['cr', 0], ['cr', 1], ['cr', 2], ['cr', 3]], creg_sizes=[['cr', 4]], global_phase=5.551115123125783e-16, memory_slots=4, metadata={}, n_qubits=4, name='solve_linear_sys', qreg_sizes=[['qr', 4]], qubit_labels=[['qr', 0], ['qr', 1], ['qr', 2], ['qr', 3]]), status=DONE, seed_simulator=3944188284, metadata={'parallel_state_update': 1, 'noise': 'ideal', 'batched_shots_optimization': False, 'measure_sampling': False, 'device': 'CPU', 'num_qubits': 4, 'parallel_shots': 24, 'remapped_qubits': False, 'method': 'statevector', 'active_input_qubits': [0, 1, 2, 3], 'num_clbits': 4, 'input_qubit_map': [[3, 3], [2, 2], [0, 0], [1, 1]], 'fusion': {'applied': False, 'max_fused_qubits': 5, 'enabled': True, 'threshold': 14}}, time_taken=0.088774719)], date=2026-05-08T13:20:47.574461, status=COMPLETED, status=QobjHeader(backend_name='qasm_simulator', backend_version='0.10.4'), metadata={'time_taken': 0.089403554, 'time_taken_execute': 0.088813061, 'parallel_experiments': 1, 'omp_enabled': True, 'max_gpu_memory_mb': 0, 'num_mpi_processes': 1, 'time_taken_load_qobj': 0.000583439, 'max_memory_mb': 15571, 'mpi_rank': 0}, time_taken=0.08957767486572266)
+747
+3033
+0.24629080118694363
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+/src/bugs4q/42/fixed_42.py:27: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi, qr[0])
+/src/bugs4q/42/fixed_42.py:28: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:33: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(-pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:38: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/16, 0, 0, qr[0], qr[3])
+/src/bugs4q/42/fixed_42.py:39: DeprecationWarning: The QuantumCircuit.cu3 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cu method instead, where cu3(ϴ,φ,λ) = cu(ϴ,φ,λ,0).
+  qc.cu3(pi/8, 0, 0, qr[1], qr[3])
+/src/bugs4q/42/fixed_42.py:44: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
+  qc.cu1(pi/2, qr[0], qr[1])
+/src/bugs4q/42/fixed_42.py:48: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi/2, qr[1])
+/src/bugs4q/42/fixed_42.py:49: DeprecationWarning: The QuantumCircuit.u1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.p method instead, which acts identically.
+  qc.u1(-pi, qr[0])
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.341s
+
+OK
+

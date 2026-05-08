@@ -1,26 +1,33 @@
 --- STDOUT ---
+{'11': 252, '00': 240, '10': 252, '01': 280}
+        ┌───┐      ░ ┌─┐   
+   q_0: ┤ H ├──■───░─┤M├───
+        ├───┤┌─┴─┐ ░ └╥┘┌─┐
+   q_1: ┤ H ├┤ X ├─░──╫─┤M├
+        └───┘└───┘ ░  ║ └╥┘
+meas: 2/══════════════╩══╩═
+                      0  1 
 
 --- STDERR ---
-Traceback (most recent call last):
-  File "/src/bugs4q/26/test_26.py", line 13, in <module>
-    spec.loader.exec_module(module)
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/src/bugs4q/26/buggy_26.py", line 2, in <module>
-    from qiskit.providers.aer import QasmSimulator
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/__init__.py", line 65, in <module>
-    from .aerprovider import AerProvider
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/aerprovider.py", line 19, in <module>
-    from .backends.aer_simulator import AerSimulator
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/__init__.py", line 17, in <module>
-    from .aer_simulator import AerSimulator
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/aer_simulator.py", line 23, in <module>
-    from .aerbackend import AerBackend, AerError
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/aerbackend.py", line 34, in <module>
-    from ..noise.noise_model import NoiseModel, QuantumErrorLocation
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/__init__.py", line 192, in <module>
-    from .noise_model import NoiseModel
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/noise_model.py", line 24, in <module>
-    from qiskit.providers import BaseBackend, BackendV1, BackendV2
-ImportError: cannot import name 'BaseBackend' from 'qiskit.providers' (/usr/local/lib/python3.9/site-packages/qiskit/providers/__init__.py)
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+F
+======================================================================
+FAIL: test_26 (__main__.Test)
+__main__.Test.test_26
+----------------------------------------------------------------------
+testtools.testresult.real._StringException: Traceback (most recent call last):
+  File "/src/bugs4q/26/test_26.py", line 21, in test_26
+    self.assertIsNotNone(pvalue)
+  File "/usr/local/lib/python3.9/site-packages/testtools/testcase.py", line 443, in assertIsNotNone
+    self.assertThat(observed, matcher, message)
+  File "/usr/local/lib/python3.9/site-packages/testtools/testcase.py", line 509, in assertThat
+    raise mismatch_error
+testtools.matchers._impl.MismatchError: None matches Is(None)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.024s
+
+FAILED (failures=1)
 

@@ -1,0 +1,275 @@
+--- STDOUT ---
+                         
+q_0: ─────────────■──────
+     ┌───┐┌─────┐ │ ┌───┐
+q_1: ┤ H ├┤ Sdg ├─■─┤ H ├
+     └───┘└─────┘   └───┘
+SummedOp([
+  ComposedOp([
+    OperatorMeasurement(1.0 * ZI),
+    CircuitStateFn(
+                             
+    q_0: ─────────────■──────
+         ┌───┐┌─────┐ │ ┌───┐
+    q_1: ┤ H ├┤ Sdg ├─■─┤ H ├
+         └───┘└─────┘   └───┘
+    )
+  ]),
+  ComposedOp([
+    OperatorMeasurement(1j * ZI),
+    CircuitStateFn(
+                                         
+    q_0: ─────────────■──────────────────
+         ┌───┐┌─────┐ │ ┌───┐┌─────┐┌───┐
+    q_1: ┤ H ├┤ Sdg ├─■─┤ H ├┤ Sdg ├┤ H ├
+         └───┘└─────┘   └───┘└─────┘└───┘
+    )
+  ])
+])
+Eval  (-2.22e-16+0.9999999999999991j)
+Qasm  (0.001199999999999979+1j)
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:112: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliOp(self.primitive.tensor(other.primitive), coeff=self.coeff * other.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:54: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.primitive_op.PrimitiveOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:110: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/operator_base.py:53: DeprecationWarning: The class ``qiskit.opflow.mixins.star_algebra.StarAlgebraMixin`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:161: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(self.primitive, coeff=self.coeff * scalar)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:81: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliSumOp(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:61: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.primitive_op.PrimitiveOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff)
+/src/bugs4q/14/fixed_14.py:18: DeprecationWarning: The class ``qiskit.opflow.state_fns.operator_state_fn.OperatorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  exp_val = ~StateFn(obs) @ StateFn(state)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/operator_state_fn.py:58: DeprecationWarning: The class ``qiskit.opflow.state_fns.state_fn.StateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff, is_measurement=is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:142: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:150: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliSumOp(self.primitive.adjoint(), coeff=self.coeff.conjugate())
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/operator_state_fn.py:93: DeprecationWarning: The class ``qiskit.opflow.state_fns.operator_state_fn.OperatorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return OperatorStateFn(
+/src/bugs4q/14/fixed_14.py:18: DeprecationWarning: The class ``qiskit.opflow.state_fns.circuit_state_fn.CircuitStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  exp_val = ~StateFn(obs) @ StateFn(state)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/circuit_state_fn.py:83: DeprecationWarning: The class ``qiskit.opflow.state_fns.state_fn.StateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff, is_measurement=is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:263: DeprecationWarning: The class ``qiskit.opflow.state_fns.dict_state_fn.DictStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  if self == StateFn({"0": 1}, is_measurement=True):
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/dict_state_fn.py:89: DeprecationWarning: The class ``qiskit.opflow.state_fns.state_fn.StateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff, is_measurement=is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:333: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ComposedOp([new_self, other])
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/composed_op.py:53: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(oplist, combo_fn=partial(reduce, np.dot), coeff=coeff, abelian=abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:80: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/src/bugs4q/14/fixed_14.py:19: DeprecationWarning: The class ``qiskit.opflow.expectations.pauli_expectation.PauliExpectation`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  exp_val = PauliExpectation().convert(exp_val).reduce()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/expectations/pauli_expectation.py:56: DeprecationWarning: The class ``qiskit.opflow.expectations.expectation_base.ExpectationBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/expectations/expectation_base.py:46: DeprecationWarning: The class ``qiskit.opflow.converters.converter_base.ConverterBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/expectations/pauli_expectation.py:57: DeprecationWarning: The class ``qiskit.opflow.converters.abelian_grouper.AbelianGrouper`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  self._grouper = AbelianGrouper() if group_paulis else None
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/abelian_grouper.py:55: DeprecationWarning: The class ``qiskit.opflow.converters.converter_base.ConverterBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:394: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliSumOp(self.primitive[offset], self.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/abelian_grouper.py:126: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  [PauliSumOp(primitive[group], grouping_type="TPB") for group in groups.values()],
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/abelian_grouper.py:125: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return SummedOp(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/summed_op.py:50: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(oplist, combo_fn=lambda x: np.sum(x, axis=0), coeff=coeff, abelian=abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/expectations/pauli_expectation.py:91: DeprecationWarning: The class ``qiskit.opflow.state_fns.operator_state_fn.OperatorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  operator = StateFn(grouped, is_measurement=True, coeff=operator.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/expectations/pauli_expectation.py:95: DeprecationWarning: The class ``qiskit.opflow.converters.pauli_basis_change.PauliBasisChange`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  cob = PauliBasisChange(replacement_fn=PauliBasisChange.measurement_replacement_fn)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:91: DeprecationWarning: The class ``qiskit.opflow.converters.converter_base.ConverterBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:169: DeprecationWarning: The class ``qiskit.opflow.state_fns.operator_state_fn.OperatorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  StateFn(op, is_measurement=operator.is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:172: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  listop_of_statefns = SummedOp(oplist=sf_list, coeff=operator.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:520: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  origin = PauliOp(origin)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:318: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliOp(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:398: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliOp(pauli_1, coeff=pauli_op1.coeff), PauliOp(pauli_2, coeff=pauli_op2.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:92: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliOp(self.primitive.adjoint(), coeff=self.coeff.conjugate())
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:166: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PrimitiveOp(product, coeff=new_self.coeff * other.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:172: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  temp = PrimitiveOp(self.primitive, coeff=self.coeff)  # type: OperatorBase
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:157: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  dest_pauli_sum_op = PauliSumOp(primitive, coeff=operator.coeff, grouping_type="TPB")
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:252: DeprecationWarning: The class ``qiskit.opflow.state_fns.operator_state_fn.OperatorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ComposedOp([StateFn(dest_pauli_op, is_measurement=True), cob_instr_op])
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/pauli_basis_change.py:252: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ComposedOp([StateFn(dest_pauli_op, is_measurement=True), cob_instr_op])
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:292: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.circuit_op.CircuitOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return CircuitOp(self.to_circuit(), coeff=self.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/circuit_op.py:66: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.primitive_op.PrimitiveOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/circuit_op.py:117: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.circuit_op.CircuitOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return CircuitOp(new_qc, coeff=self.coeff * other.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/circuit_op.py:93: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.circuit_op.CircuitOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return CircuitOp(self.primitive.inverse(), coeff=self.coeff.conjugate())
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:250: DeprecationWarning: The class ``qiskit.opflow.state_fns.dict_state_fn.DictStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  temp = StateFn(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/dict_state_fn.py:180: DeprecationWarning: The class ``qiskit.opflow.state_fns.dict_state_fn.DictStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return StateFn(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/circuit_op.py:149: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.circuit_op.CircuitOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return CircuitOp(new_qc, coeff=new_self.coeff * other.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:240: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:264: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(self.oplist, coeff=scalar * self.coeff, abelian=self.abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:420: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliSumOp(primitive.simplify(atol=atol, rtol=rtol))
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:209: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return SummedOp([self, other])
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:264: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(self.oplist, coeff=scalar * self.coeff, abelian=self.abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/summed_op.py:121: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return SummedOp([op * coeff for op, coeff in zip(oplist, coeffs)])
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:240: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/circuit_op.py:145: DeprecationWarning: The class ``qiskit.opflow.state_fns.circuit_state_fn.CircuitStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return CircuitStateFn(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/composed_op.py:134: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ComposedOp(new_oplist, coeff=new_self.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/composed_op.py:185: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return l_arg.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:221: DeprecationWarning: The class ``qiskit.opflow.state_fns.operator_state_fn.OperatorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:434: DeprecationWarning: The class ``qiskit.opflow.state_fns.vector_state_fn.VectorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return VectorStateFn(self.to_matrix(massive=massive), is_measurement=self.is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/vector_state_fn.py:62: DeprecationWarning: The class ``qiskit.opflow.state_fns.state_fn.StateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff, is_measurement=is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/vector_state_fn.py:88: DeprecationWarning: The class ``qiskit.opflow.state_fns.vector_state_fn.VectorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return VectorStateFn(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:274: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.matrix_op.MatrixOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return MatrixOp(prim_mat, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/matrix_op.py:75: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.primitive_op.PrimitiveOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/matrix_op.py:222: DeprecationWarning: The class ``qiskit.opflow.state_fns.vector_state_fn.VectorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  new_front = VectorStateFn(self.to_matrix() @ front.to_matrix())
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+  from qiskit.quantum_info.operators.pauli import Pauli
+/src/bugs4q/14/fixed_14.py:24: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  qasm_val = CircuitSampler(QuantumInstance(Aer.get_backend('qasm_simulator'), shots=100000)).convert(exp_val).eval()
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+/src/bugs4q/14/fixed_14.py:24: DeprecationWarning: The class ``qiskit.utils.quantum_instance.QuantumInstance`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  qasm_val = CircuitSampler(QuantumInstance(Aer.get_backend('qasm_simulator'), shots=100000)).convert(exp_val).eval()
+/usr/local/lib/python3.9/site-packages/qiskit/utils/quantum_instance.py:890: DeprecationWarning: The function ``qiskit.utils.backend_utils.is_local_backend()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  return is_local_backend(self._backend)
+/usr/local/lib/python3.9/site-packages/qiskit/utils/quantum_instance.py:880: DeprecationWarning: The function ``qiskit.utils.backend_utils.is_statevector_backend()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  return is_statevector_backend(self._backend)
+/usr/local/lib/python3.9/site-packages/qiskit/utils/backend_utils.py:184: DeprecationWarning: The function ``qiskit.utils.backend_utils.has_aer()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  if has_aer():
+/usr/local/lib/python3.9/site-packages/qiskit/utils/quantum_instance.py:348: DeprecationWarning: The function ``qiskit.utils.backend_utils.is_ibmq_provider()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  if is_ibmq_provider(self._backend):
+/usr/local/lib/python3.9/site-packages/qiskit/utils/backend_utils.py:147: DeprecationWarning: The function ``qiskit.utils.backend_utils.has_ibmq()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  if has_ibmq():
+/usr/local/lib/python3.9/site-packages/qiskit/providers/ibmq/api/session.py:19: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+/usr/local/lib/python3.9/site-packages/pkg_resources/__init__.py:3147: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/src/bugs4q/14/fixed_14.py:24: DeprecationWarning: The class ``qiskit.opflow.converters.circuit_sampler.CircuitSampler`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  qasm_val = CircuitSampler(QuantumInstance(Aer.get_backend('qasm_simulator'), shots=100000)).convert(exp_val).eval()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/circuit_sampler.py:84: DeprecationWarning: The class ``qiskit.opflow.converters.converter_base.ConverterBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/utils/quantum_instance.py:880: DeprecationWarning: The function ``qiskit.utils.backend_utils.is_statevector_backend()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  return is_statevector_backend(self._backend)
+/usr/local/lib/python3.9/site-packages/qiskit/utils/backend_utils.py:184: DeprecationWarning: The function ``qiskit.utils.backend_utils.has_aer()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  if has_aer():
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:567: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/composed_op.py:53: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(oplist, combo_fn=partial(reduce, np.dot), coeff=coeff, abelian=abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:80: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/operator_base.py:53: DeprecationWarning: The class ``qiskit.opflow.mixins.star_algebra.StarAlgebraMixin`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:263: DeprecationWarning: The class ``qiskit.opflow.state_fns.dict_state_fn.DictStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  if self == StateFn({"0": 1}, is_measurement=True):
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/dict_state_fn.py:89: DeprecationWarning: The class ``qiskit.opflow.state_fns.state_fn.StateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff, is_measurement=is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:142: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:333: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ComposedOp([new_self, other])
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:264: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(self.oplist, coeff=scalar * self.coeff, abelian=self.abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:567: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/summed_op.py:50: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(oplist, combo_fn=lambda x: np.sum(x, axis=0), coeff=coeff, abelian=abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:420: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliSumOp(primitive.simplify(atol=atol, rtol=rtol))
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:61: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.primitive_op.PrimitiveOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:110: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:209: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return SummedOp([self, other])
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:264: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(self.oplist, coeff=scalar * self.coeff, abelian=self.abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/summed_op.py:121: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return SummedOp([op * coeff for op, coeff in zip(oplist, coeffs)])
+/usr/local/lib/python3.9/site-packages/qiskit/utils/quantum_instance.py:709: DeprecationWarning: The function ``qiskit.utils.run_circuits.run_circuits()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  result = run_circuits(
+/usr/local/lib/python3.9/site-packages/qiskit/utils/run_circuits.py:152: DeprecationWarning: The function ``qiskit.utils.backend_utils.is_simulator_backend()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  with_autorecover = not is_simulator_backend(backend)
+/usr/local/lib/python3.9/site-packages/qiskit/utils/run_circuits.py:160: DeprecationWarning: The function ``qiskit.utils.backend_utils.is_local_backend()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  if is_local_backend(backend):
+/usr/local/lib/python3.9/site-packages/qiskit/utils/run_circuits.py:392: DeprecationWarning: The function ``qiskit.utils.backend_utils.is_aer_provider()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  if is_aer_provider(backend) or is_basicaer_provider(backend):
+/usr/local/lib/python3.9/site-packages/qiskit/utils/backend_utils.py:106: DeprecationWarning: The function ``qiskit.utils.backend_utils.has_aer()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  if has_aer():
+/usr/local/lib/python3.9/site-packages/qiskit/utils/run_circuits.py:405: DeprecationWarning: The function ``qiskit.utils.backend_utils.is_basicaer_provider()`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/qi_migration.
+  if is_basicaer_provider(backend):
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/converters/circuit_sampler.py:376: DeprecationWarning: The class ``qiskit.opflow.state_fns.dict_state_fn.DictStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  result_sfn = DictStateFn(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:240: DeprecationWarning: The class ``qiskit.opflow.list_ops.composed_op.ComposedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:240: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:221: DeprecationWarning: The class ``qiskit.opflow.state_fns.operator_state_fn.OperatorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/operator_state_fn.py:58: DeprecationWarning: The class ``qiskit.opflow.state_fns.state_fn.StateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff, is_measurement=is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/dict_state_fn.py:141: DeprecationWarning: The class ``qiskit.opflow.state_fns.dict_state_fn.DictStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return DictStateFn(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/operator_state_fn.py:256: DeprecationWarning: `product` is deprecated as of NumPy 1.25.0, and will be removed in NumPy 2.0. Please use `prod` instead.
+  return front.adjoint().eval(cast(OperatorBase, self.primitive.eval(front))) * self.coeff
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:344: DeprecationWarning: The class ``qiskit.opflow.state_fns.dict_state_fn.DictStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return DictStateFn(new_dict, coeff=self.coeff * front.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:434: DeprecationWarning: The class ``qiskit.opflow.state_fns.vector_state_fn.VectorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return VectorStateFn(self.to_matrix(massive=massive), is_measurement=self.is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/vector_state_fn.py:62: DeprecationWarning: The class ``qiskit.opflow.state_fns.state_fn.StateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff, is_measurement=is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/vector_state_fn.py:88: DeprecationWarning: The class ``qiskit.opflow.state_fns.vector_state_fn.VectorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return VectorStateFn(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:274: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.matrix_op.MatrixOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return MatrixOp(prim_mat, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/matrix_op.py:75: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.primitive_op.PrimitiveOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/matrix_op.py:222: DeprecationWarning: The class ``qiskit.opflow.state_fns.vector_state_fn.VectorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  new_front = VectorStateFn(self.to_matrix() @ front.to_matrix())
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.573s
+
+OK
+

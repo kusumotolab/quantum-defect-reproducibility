@@ -1,0 +1,82 @@
+--- STDOUT ---
+param_shift is ok
+fin_diff is ok
+lin_comb is ok
+
+--- STDERR ---
+/src/bugs4q/15/buggy_15.py:10: DeprecationWarning: The class ``qiskit.opflow.gradients.gradient.Gradient`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  grad = Gradient(method).convert(CircuitStateFn(ansatz))
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/gradient.py:45: DeprecationWarning: The class ``qiskit.opflow.gradients.gradient_base.GradientBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(grad_method=grad_method, **kwargs)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/gradient_base.py:43: DeprecationWarning: The class ``qiskit.opflow.gradients.derivative_base.DerivativeBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/derivative_base.py:55: DeprecationWarning: The class ``qiskit.opflow.converters.converter_base.ConverterBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/gradient_base.py:49: DeprecationWarning: The class ``qiskit.opflow.gradients.circuit_gradients.param_shift.ParamShift`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  self._grad_method = ParamShift(analytic=True)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/param_shift.py:65: DeprecationWarning: The class ``qiskit.opflow.gradients.circuit_gradients.circuit_gradient.CircuitGradient`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/circuit_gradient.py:44: DeprecationWarning: The class ``qiskit.opflow.converters.converter_base.ConverterBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/src/bugs4q/15/buggy_15.py:10: DeprecationWarning: The class ``qiskit.opflow.state_fns.circuit_state_fn.CircuitStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  grad = Gradient(method).convert(CircuitStateFn(ansatz))
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/circuit_state_fn.py:83: DeprecationWarning: The class ``qiskit.opflow.state_fns.state_fn.StateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff, is_measurement=is_measurement)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/state_fn.py:142: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/operator_base.py:53: DeprecationWarning: The class ``qiskit.opflow.mixins.star_algebra.StarAlgebraMixin`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/gradient.py:85: DeprecationWarning: The class ``qiskit.opflow.expectations.pauli_expectation.PauliExpectation`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  expec_op = PauliExpectation(group_paulis=False).convert(operator).reduce()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/expectations/pauli_expectation.py:56: DeprecationWarning: The class ``qiskit.opflow.expectations.expectation_base.ExpectationBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/expectations/expectation_base.py:46: DeprecationWarning: The class ``qiskit.opflow.converters.converter_base.ConverterBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/param_shift.py:374: DeprecationWarning: The class ``qiskit.opflow.state_fns.circuit_state_fn.CircuitStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return CircuitStateFn(circuit, coeff=operator.coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/param_shift.py:253: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  shifted_op = ListOp(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:80: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/param_shift.py:272: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  if not SummedOp(shifted_ops).reduce():
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/summed_op.py:50: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(oplist, combo_fn=lambda x: np.sum(x, axis=0), coeff=coeff, abelian=abelian)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:531: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ListOp(reduced_ops, **self._state())
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/list_ops/list_op.py:263: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ListOp(self.oplist, **self._state(coeff=scalar * self.coeff))
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/param_shift.py:275: DeprecationWarning: The class ``qiskit.opflow.list_ops.summed_op.SummedOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return SummedOp(shifted_ops).reduce()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/gradient.py:81: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ListOp(param_grads)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/gradient_base.py:55: DeprecationWarning: The class ``qiskit.opflow.gradients.circuit_gradients.param_shift.ParamShift`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  self._grad_method = ParamShift(analytic=False, epsilon=epsilon)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/gradient_base.py:60: DeprecationWarning: The class ``qiskit.opflow.gradients.circuit_gradients.lin_comb.LinComb`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  self._grad_method = LinComb()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/lin_comb.py:118: DeprecationWarning: The class ``qiskit.opflow.gradients.circuit_gradients.circuit_gradient.CircuitGradient`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:161: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return self.__class__(self.primitive, coeff=self.coeff * scalar)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:54: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.primitive_op.PrimitiveOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/primitive_op.py:110: DeprecationWarning: The class ``qiskit.opflow.operator_base.OperatorBase`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__()
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:81: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliSumOp(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:61: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.primitive_op.PrimitiveOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  super().__init__(primitive, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/lin_comb.py:759: DeprecationWarning: The class ``qiskit.opflow.state_fns.circuit_state_fn.CircuitStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  state = CircuitStateFn(grad_circuit, coeff=coeff)
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:420: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return PauliSumOp(primitive.simplify(atol=atol, rtol=rtol))
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_sum_op.py:156: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_sum_op.PauliSumOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  other_reduced = PauliSumOp(
+/usr/local/lib/python3.9/site-packages/qiskit/opflow/gradients/circuit_gradients/lin_comb.py:681: DeprecationWarning: The class ``qiskit.opflow.list_ops.list_op.ListOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
+  return ListOp(
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.026s
+
+OK
+

@@ -1,5 +1,5 @@
 --- STDOUT ---
-{'011': 808, '111': 90, '101': 34, '100': 12, '001': 12, '000': 23, '110': 16, '010': 5}
+{'111': 87, '011': 833, '101': 32, '001': 13, '010': 5, '000': 21, '100': 4, '110': 5}
 
 --- STDERR ---
 /src/bugs4q/29/fixed_29.py:48: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
@@ -8,7 +8,7 @@
   circ.cu1(-2*np.pi/2**(i - m + 1), q[i], q[m])
 .
 ----------------------------------------------------------------------
-Ran 1 test in 0.100s
+Ran 1 test in 0.136s
 
 OK
 

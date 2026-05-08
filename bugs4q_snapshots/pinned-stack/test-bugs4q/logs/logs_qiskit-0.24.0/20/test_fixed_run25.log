@@ -1,0 +1,27 @@
+--- STDOUT ---
+<qiskit.circuit.instructionset.InstructionSet object at 0x7f1def671af0>
+<qiskit.circuit.instructionset.InstructionSet object at 0x7f1def671c10>
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+  from qiskit.quantum_info.operators.pauli import Pauli
+/src/bugs4q/20/fixed_20.py:6: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  my_backend = Aer.get_backend("qasm_simulator")
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+E
+======================================================================
+ERROR: test_20 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/20/test_20.py", line 13, in test_20
+    module.run()
+  File "/src/bugs4q/20/fixed_20.py", line 14, in run
+    test_Z = qc + measure_Z
+TypeError: unsupported operand type(s) for +: 'QuantumCircuit' and 'QuantumCircuit'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.262s
+
+FAILED (errors=1)
+

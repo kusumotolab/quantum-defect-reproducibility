@@ -7,6 +7,10 @@ ERROR: test_12 (__main__.Test)
 __main__.Test.test_12
 ----------------------------------------------------------------------
 testtools.testresult.real._StringException: Traceback (most recent call last):
+  File "/src/bugs4q/12/test_12.py", line 17, in test_12
+    counts = module.run()
+  File "/src/bugs4q/12/fixed_12.py", line 11, in run
+    bkd = Aer.get_backend('qasm_simulator')
   File "/usr/local/lib/python3.9/site-packages/qiskit/__init__.py", line 112, in __getattr__
     from qiskit.providers import aer
   File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/__init__.py", line 65, in <module>
@@ -21,24 +25,23 @@ testtools.testresult.real._StringException: Traceback (most recent call last):
     from ..noise.noise_model import NoiseModel, QuantumErrorLocation
   File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/__init__.py", line 192, in <module>
     from .noise_model import NoiseModel
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/noise_model.py", line 24, in <module>
-    from qiskit.providers import BaseBackend, BackendV1, BackendV2
-ImportError: cannot import name 'BaseBackend' from 'qiskit.providers' (/usr/local/lib/python3.9/site-packages/qiskit/providers/__init__.py)
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/src/bugs4q/12/test_12.py", line 17, in test_12
-    counts = module.run()
-  File "/src/bugs4q/12/fixed_12.py", line 11, in run
-    bkd = Aer.get_backend('qasm_simulator')
-  File "/usr/local/lib/python3.9/site-packages/qiskit/__init__.py", line 123, in __getattr__
-    raise MissingOptionalLibraryError(
-qiskit.exceptions.MissingOptionalLibraryError: "The 'qiskit-aer' library is required to use 'Aer provider'. You can install it with 'pip install qiskit-aer'."
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/noise_model.py", line 27, in <module>
+    from .device.models import _excited_population, _truncate_t2_value
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/device/__init__.py", line 17, in <module>
+    from .models import basic_device_readout_errors
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/device/models.py", line 29, in <module>
+    from ..errors.readout_error import ReadoutError
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/__init__.py", line 19, in <module>
+    from .standard_errors import kraus_error
+  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py", line 26, in <module>
+    from qiskit.quantum_info.operators.pauli import Pauli
+  File "/usr/local/lib/python3.9/site-packages/qiskit/quantum_info/operators/pauli.py", line 27, in __getattr__
+    warnings.warn(
+DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
 
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.037s
+Ran 1 test in 0.041s
 
 FAILED (errors=1)
 

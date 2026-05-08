@@ -1,0 +1,23 @@
+--- STDOUT ---
+<qiskit.circuit.instructionset.InstructionSet object at 0x7f721aa62640>
+<qiskit.circuit.instructionset.InstructionSet object at 0x7f721aa62c70>
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+  from qiskit.quantum_info.operators.pauli import Pauli
+/src/bugs4q/20/fixed_20.py:6: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  my_backend = Aer.get_backend("qasm_simulator")
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+/src/bugs4q/20/fixed_20.py:14: DeprecationWarning: The QuantumCircuit.__add__() method is being deprecated.Use the compose() method which is more flexible w.r.t circuit register compatibility.
+  test_Z = qc + measure_Z
+/usr/local/lib/python3.9/site-packages/qiskit/circuit/quantumcircuit.py:1116: DeprecationWarning: The QuantumCircuit.combine() method is being deprecated. Use the compose() method which is more flexible w.r.t circuit register compatibility.
+  return self.combine(rhs)
+/src/bugs4q/20/fixed_20.py:15: DeprecationWarning: The QuantumCircuit.__add__() method is being deprecated.Use the compose() method which is more flexible w.r.t circuit register compatibility.
+  test_X = qc + measure_X
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.298s
+
+OK
+

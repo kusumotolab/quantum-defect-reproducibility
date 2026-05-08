@@ -1,0 +1,25 @@
+--- STDOUT ---
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+  from qiskit.quantum_info.operators.pauli import Pauli
+/src/bugs4q/42/fixed_42.py:7: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  backend = Aer.get_backend('qasm_simulator')
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+E
+======================================================================
+ERROR: test_42 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q/42/test_42.py", line 13, in test_42
+    module.run()
+  File "/src/bugs4q/42/fixed_42.py", line 27, in run
+    qc.u1(pi, qr[0])
+AttributeError: 'QuantumCircuit' object has no attribute 'u1'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.215s
+
+FAILED (errors=1)
+

@@ -1,0 +1,16 @@
+--- STDOUT ---
+{'00': 50, '11': 50}
+
+--- STDERR ---
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+  from qiskit.quantum_info.operators.pauli import Pauli
+/src/bugs4q/18/fixed_18.py:5: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  backend = Aer.get_backend('statevector_simulator')
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/statevector_simulator.py:178: PendingDeprecationWarning: The `StatevectorSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend. To obtain legacy functionality initialize with `AerSimulator(method="statevector")` and append run circuits with the `save_state` instruction.
+  warn('The `StatevectorSimulator` backend will be deprecated in the'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.338s
+
+OK
+
