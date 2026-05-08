@@ -1,8 +1,19 @@
 --- STDOUT ---
 
 --- STDERR ---
+E
+======================================================================
+ERROR: test_12 (__main__.Test)
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q/12/test_12.py", line 4, in <module>
-    from qiskit.test import QiskitTestCase
-ModuleNotFoundError: No module named 'qiskit.test'
+  File "/src/bugs4q/12/test_12.py", line 16, in test_12
+    counts = module.run()
+  File "/src/bugs4q/12/fixed_12.py", line 11, in run
+    bkd = Aer.get_backend('qasm_simulator')
+NameError: name 'Aer' is not defined
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
 

@@ -1,8 +1,19 @@
 --- STDOUT ---
 
 --- STDERR ---
+E
+======================================================================
+ERROR: test_39 (__main__.Test)
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q/39/test_39.py", line 4, in <module>
-    from qiskit.test import *
-ModuleNotFoundError: No module named 'qiskit.test'
+  File "/src/bugs4q/39/test_39.py", line 16, in test_39
+    counts = module.run()
+  File "/src/bugs4q/39/buggy_39.py", line 17, in run
+    job = execute(qc, backend = Aer.get_backend('qasm_simulator'), shots=1024)
+NameError: name 'execute' is not defined
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (errors=1)
 

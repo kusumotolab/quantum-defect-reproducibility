@@ -2,7 +2,11 @@
 
 --- STDERR ---
 Traceback (most recent call last):
-  File "/src/bugs4q/30/test_30.py", line 4, in <module>
-    from qiskit.test import *
-ModuleNotFoundError: No module named 'qiskit.test'
+  File "/src/bugs4q/30/test_30.py", line 11, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/src/bugs4q/30/buggy_30.py", line 1, in <module>
+    from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit, Aer, execute
+ImportError: cannot import name 'Aer' from 'qiskit' (/usr/local/lib/python3.10/site-packages/qiskit/__init__.py)
 

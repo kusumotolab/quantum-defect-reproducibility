@@ -2,7 +2,11 @@
 
 --- STDERR ---
 Traceback (most recent call last):
-  File "/src/bugs4q/26/test_26.py", line 4, in <module>
-    from qiskit.test import QiskitTestCase
-ModuleNotFoundError: No module named 'qiskit.test'
+  File "/src/bugs4q/26/test_26.py", line 12, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/src/bugs4q/26/buggy_26.py", line 2, in <module>
+    from qiskit.providers.aer import QasmSimulator
+ModuleNotFoundError: No module named 'qiskit.providers.aer'
 

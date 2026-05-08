@@ -16,7 +16,7 @@ ComposedOp([
   )
 ])
 Eval  (-2.22e-16+0.9999999999999992j)
-Qasm  (0.006680000000000019+0j)
+Qasm  (0.001279999999999948+0j)
 
 --- STDERR ---
 /usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:112: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
@@ -165,12 +165,12 @@ F
 FAIL: test_14 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q/14/test_14.py", line 20, in test_14
-    self.assertAlmostEqual(qval.real, exval.real, delta=delta_real)
-AssertionError: 0.006680000000000019 != -2.22e-16 within 0.006197950323045616 delta (0.006680000000000241 difference)
+  File "/src/bugs4q/14/test_14.py", line 21, in test_14
+    self.assertAlmostEqual(qval.imag, exval.imag, delta=delta_imag)
+AssertionError: 0.0 != 0.9999999999999992 within 2.4435274590717463e-10 delta (0.9999999999999992 difference)
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.341s
+Ran 1 test in 0.402s
 
 FAILED (failures=1)
 

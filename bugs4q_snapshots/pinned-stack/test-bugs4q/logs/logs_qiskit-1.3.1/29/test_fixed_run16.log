@@ -1,8 +1,19 @@
 --- STDOUT ---
 
 --- STDERR ---
+E
+======================================================================
+ERROR: test_27 (__main__.Test)
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q/29/test_29.py", line 4, in <module>
-    from qiskit.test import QiskitTestCase
-ModuleNotFoundError: No module named 'qiskit.test'
+  File "/src/bugs4q/29/test_29.py", line 13, in test_27
+    answer = module.run()
+  File "/src/bugs4q/29/fixed_29.py", line 48, in run
+    qpe.cu1(2*math.pi*theta*2**(nancilla-i-1), q[i], s[0])
+AttributeError: 'QuantumCircuit' object has no attribute 'cu1'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (errors=1)
 

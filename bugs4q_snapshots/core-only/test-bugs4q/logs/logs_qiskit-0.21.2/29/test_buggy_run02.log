@@ -1,5 +1,5 @@
 --- STDOUT ---
-{'110': 126, '100': 121, '111': 160, '010': 460, '011': 106, '000': 24, '001': 3}
+{'110': 143, '010': 460, '111': 158, '100': 138, '000': 16, '011': 84, '001': 1}
 
 --- STDERR ---
 /src/bugs4q/29/buggy_29.py:43: DeprecationWarning: The QuantumCircuit.cu1 method is deprecated as of 0.16.0. It will be removed no earlier than 3 months after the release date. You should use the QuantumCircuit.cp method instead, which acts identically.
@@ -9,17 +9,10 @@
 F
 ======================================================================
 FAIL: test_27 (__main__.Test)
-__main__.Test.test_27
 ----------------------------------------------------------------------
-testtools.testresult.real._StringException: Traceback (most recent call last):
-  File "/src/bugs4q/29/test_29.py", line 16, in test_27
+Traceback (most recent call last):
+  File "/src/bugs4q/29/test_29.py", line 15, in test_27
     self.assertEqual(max_key, '011')
-  File "/usr/local/lib/python3.9/unittest/case.py", line 837, in assertEqual
-    assertion_func(first, second, msg=msg)
-  File "/usr/local/lib/python3.9/unittest/case.py", line 1217, in assertMultiLineEqual
-    self.fail(self._formatMessage(msg, standardMsg))
-  File "/usr/local/lib/python3.9/unittest/case.py", line 676, in fail
-    raise self.failureException(msg)
 AssertionError: '010' != '011'
 - 010
 ?   ^
@@ -28,7 +21,7 @@ AssertionError: '010' != '011'
 
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.129s
+Ran 1 test in 0.085s
 
 FAILED (failures=1)
 

@@ -378,7 +378,7 @@ There are 9 circuits to run
   experiment = tomo.run(analysis=False, backend=backend).block_for_results()
 /src/bugs4q/3/buggy_3.py:36: DeprecationWarning: Setting analysis=True in BaseExperiment.run is deprecated as of qiskit-experiments 0.2.0 and will be removed in the 0.3.0 release. Use analysis='default' instead.
   experiment = tomo.run(analysis=True, backend=backend).block_for_results()
-Analysis callback failed [Experiment ID: 3e9e1a6d-90a2-4528-8529-d1066a1e94c7][Analysis Callback ID: c26d987dd8d9407b8d5a012fc4d2d620]:
+Analysis callback failed [Experiment ID: 8b90d257-8fd9-4a82-9262-400fc66d51a7][Analysis Callback ID: c6c55ab362a44060a99ea1f13746691a]:
 Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/qiskit_experiments/library/tomography/basis/local_basis.py", line 359, in _outcome_indices
     value = (outcome % num_outcomes,)
@@ -409,7 +409,7 @@ ValueError: Invalid qubits for basis
 
 .
 ----------------------------------------------------------------------
-Ran 1 test in 2.385s
+Ran 1 test in 2.412s
 
 OK
 

@@ -27,7 +27,7 @@ SummedOp([
   ])
 ])
 Eval  (-2.22e-16+0.9999999999999991j)
-Qasm  (-0.006360000000000032+1j)
+Qasm  (-0.001400000000000123+1j)
 
 --- STDERR ---
 /usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/pauli_op.py:112: DeprecationWarning: The class ``qiskit.opflow.primitive_ops.pauli_op.PauliOp`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
@@ -267,17 +267,9 @@ Implementing implicit namespace packages (as specified in PEP 420) is preferred 
   super().__init__(primitive, coeff=coeff)
 /usr/local/lib/python3.9/site-packages/qiskit/opflow/primitive_ops/matrix_op.py:222: DeprecationWarning: The class ``qiskit.opflow.state_fns.vector_state_fn.VectorStateFn`` is deprecated as of qiskit-terra 0.24.0. It will be removed no earlier than 3 months after the release date. For code migration guidelines, visit https://qisk.it/opflow_migration.
   new_front = VectorStateFn(self.to_matrix() @ front.to_matrix())
-F
-======================================================================
-FAIL: test_14 (__main__.Test)
+.
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/src/bugs4q/14/test_14.py", line 20, in test_14
-    self.assertAlmostEqual(qval.real, exval.real, delta=delta_real)
-AssertionError: -0.006360000000000032 != -2.22e-16 within 0.006197950323045616 delta (0.00635999999999981 difference)
+Ran 1 test in 0.609s
 
-----------------------------------------------------------------------
-Ran 1 test in 0.673s
-
-FAILED (failures=1)
+OK
 

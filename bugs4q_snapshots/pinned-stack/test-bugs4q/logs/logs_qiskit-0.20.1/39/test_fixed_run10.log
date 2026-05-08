@@ -3,9 +3,17 @@
 --- STDERR ---
 /usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
   warn('The `QasmSimulator` backend will be deprecated in the'
-.
+F
+======================================================================
+FAIL: test_39 (__main__.Test)
 ----------------------------------------------------------------------
-Ran 1 test in 0.483s
+Traceback (most recent call last):
+  File "/src/bugs4q/39/test_39.py", line 25, in test_39
+    self.assertGreater(pvalue, alpha)
+AssertionError: 0.021963550032738036 not greater than 0.05
 
-OK
+----------------------------------------------------------------------
+Ran 1 test in 0.536s
+
+FAILED (failures=1)
 

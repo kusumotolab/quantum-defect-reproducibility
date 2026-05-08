@@ -1,12 +1,20 @@
 --- STDOUT ---
-{'11': 251, '01': 248, '10': 261, '00': 264}
+{'11': 253, '01': 253, '10': 224, '00': 294}
 
 --- STDERR ---
 /usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
   warn('The `QasmSimulator` backend will be deprecated in the'
-.
+F
+======================================================================
+FAIL: test_12 (__main__.Test)
 ----------------------------------------------------------------------
-Ran 1 test in 0.195s
+Traceback (most recent call last):
+  File "/src/bugs4q/12/test_12.py", line 20, in test_12
+    self.assertGreater(pvalue, alpha)
+AssertionError: 0.021190051704628635 not greater than 0.05
 
-OK
+----------------------------------------------------------------------
+Ran 1 test in 0.229s
+
+FAILED (failures=1)
 

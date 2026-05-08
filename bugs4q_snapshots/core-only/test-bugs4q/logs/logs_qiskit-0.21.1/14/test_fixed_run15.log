@@ -27,7 +27,7 @@ SummedOp([
   ])
 ])
 Eval  (-2.22e-16+0.9999999999999991j)
-Qasm  (-0.006879999999999942+1j)
+Qasm  (0.004139999999999977+1j)
 
 --- STDERR ---
 /usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
@@ -43,17 +43,9 @@ Implementing implicit namespace packages (as specified in PEP 420) is preferred 
   declare_namespace(pkg)
 /usr/local/lib/python3.9/site-packages/qiskit/opflow/state_fns/operator_state_fn.py:251: DeprecationWarning: `product` is deprecated as of NumPy 1.25.0, and will be removed in NumPy 2.0. Please use `prod` instead.
   return front.adjoint().eval(cast(OperatorBase, self.primitive.eval(front))) * self.coeff
-F
-======================================================================
-FAIL: test_14 (__main__.Test)
+.
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/src/bugs4q/14/test_14.py", line 20, in test_14
-    self.assertAlmostEqual(qval.real, exval.real, delta=delta_real)
-AssertionError: -0.006879999999999942 != -2.22e-16 within 0.006197950323045616 delta (0.00687999999999972 difference)
+Ran 1 test in 0.624s
 
-----------------------------------------------------------------------
-Ran 1 test in 0.522s
-
-FAILED (failures=1)
+OK
 

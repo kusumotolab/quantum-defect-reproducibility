@@ -1,47 +1,15 @@
 --- STDOUT ---
 
 --- STDERR ---
-E
-======================================================================
-ERROR: test_39 (__main__.Test)
-__main__.Test.test_39
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+  from qiskit.quantum_info.operators.pauli import Pauli
+/src/bugs4q/39/fixed_39.py:19: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  job = execute(qc, backend = Aer.get_backend('qasm_simulator'), shots=1024)
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+.
 ----------------------------------------------------------------------
-testtools.testresult.real._StringException: Traceback (most recent call last):
-  File "/src/bugs4q/39/test_39.py", line 17, in test_39
-    counts = module.run()
-  File "/src/bugs4q/39/fixed_39.py", line 19, in run
-    job = execute(qc, backend = Aer.get_backend('qasm_simulator'), shots=1024)
-  File "/usr/local/lib/python3.9/site-packages/qiskit/__init__.py", line 115, in __getattr__
-    from qiskit.providers import aer
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/__init__.py", line 65, in <module>
-    from .aerprovider import AerProvider
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/aerprovider.py", line 19, in <module>
-    from .backends.aer_simulator import AerSimulator
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/__init__.py", line 17, in <module>
-    from .aer_simulator import AerSimulator
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/aer_simulator.py", line 23, in <module>
-    from .aerbackend import AerBackend, AerError
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/aerbackend.py", line 34, in <module>
-    from ..noise.noise_model import NoiseModel, QuantumErrorLocation
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/__init__.py", line 192, in <module>
-    from .noise_model import NoiseModel
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/noise_model.py", line 27, in <module>
-    from .device.models import _excited_population, _truncate_t2_value
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/device/__init__.py", line 17, in <module>
-    from .models import basic_device_readout_errors
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/device/models.py", line 29, in <module>
-    from ..errors.readout_error import ReadoutError
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/__init__.py", line 19, in <module>
-    from .standard_errors import kraus_error
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py", line 26, in <module>
-    from qiskit.quantum_info.operators.pauli import Pauli
-  File "/usr/local/lib/python3.9/site-packages/qiskit/quantum_info/operators/pauli.py", line 27, in __getattr__
-    warnings.warn(
-DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+Ran 1 test in 0.322s
 
-
-----------------------------------------------------------------------
-Ran 1 test in 0.011s
-
-FAILED (errors=1)
+OK
 

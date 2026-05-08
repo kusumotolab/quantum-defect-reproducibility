@@ -16,7 +16,7 @@ ComposedOp([
   )
 ])
 Eval  (-2.22e-16+0.9999999999999992j)
-Qasm  (-0.001140000000000141+0j)
+Qasm  (-0.006340000000000123+0j)
 
 --- STDERR ---
 /usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
@@ -37,12 +37,12 @@ F
 FAIL: test_14 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q/14/test_14.py", line 21, in test_14
-    self.assertAlmostEqual(qval.imag, exval.imag, delta=delta_imag)
-AssertionError: 0.0 != 0.9999999999999992 within 2.4435274590717463e-10 delta (0.9999999999999992 difference)
+  File "/src/bugs4q/14/test_14.py", line 20, in test_14
+    self.assertAlmostEqual(qval.real, exval.real, delta=delta_real)
+AssertionError: -0.006340000000000123 != -2.22e-16 within 0.006197950323045616 delta (0.006339999999999901 difference)
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.395s
+Ran 1 test in 0.371s
 
 FAILED (failures=1)
 

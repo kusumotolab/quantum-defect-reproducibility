@@ -1,5 +1,5 @@
 --- STDOUT ---
-{'11': 242, '01': 256, '10': 271, '00': 255}
+{'01': 238, '00': 274, '10': 265, '11': 247}
         ┌───┐      ░ ┌─┐   
    q_0: ┤ H ├──■───░─┤M├───
         ├───┤┌─┴─┐ ░ └╥┘┌─┐
@@ -14,20 +14,14 @@ meas: 2/══════════════╩══╩═
 F
 ======================================================================
 FAIL: test_26 (__main__.Test)
-__main__.Test.test_26
 ----------------------------------------------------------------------
-testtools.testresult.real._StringException: Traceback (most recent call last):
-  File "/src/bugs4q/26/test_26.py", line 21, in test_26
+Traceback (most recent call last):
+  File "/src/bugs4q/26/test_26.py", line 20, in test_26
     self.assertIsNotNone(pvalue)
-  File "/usr/local/lib/python3.9/site-packages/testtools/testcase.py", line 443, in assertIsNotNone
-    self.assertThat(observed, matcher, message)
-  File "/usr/local/lib/python3.9/site-packages/testtools/testcase.py", line 509, in assertThat
-    raise mismatch_error
-testtools.matchers._impl.MismatchError: None matches Is(None)
-
+AssertionError: unexpectedly None
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.024s
+Ran 1 test in 0.021s
 
 FAILED (failures=1)
 

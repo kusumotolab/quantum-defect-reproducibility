@@ -1,47 +1,24 @@
 --- STDOUT ---
+{'1000': 21, '1011': 53, '0011': 51, '0000': 80, '0111': 64, '0001': 36, '1100': 10, '0101': 112, '0100': 44, '0110': 69, '1101': 128, '0010': 81, '1010': 17, '1111': 169, '1110': 68, '1001': 21}
 
 --- STDERR ---
-E
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py:26: DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
+  from qiskit.quantum_info.operators.pauli import Pauli
+/src/bugs4q/30/fixed_30.py:61: PendingDeprecationWarning: The qiskit.Aer entry point will be deprecated in a future release and subsequently removed. Instead you should use this directly from the root of the qiskit-aer package.
+  backend_sim = Aer.get_backend('qasm_simulator')
+/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn('The `QasmSimulator` backend will be deprecated in the'
+F
 ======================================================================
-ERROR: test_30 (__main__.Test)
-__main__.Test.test_30
+FAIL: test_30 (__main__.Test)
 ----------------------------------------------------------------------
-testtools.testresult.real._StringException: Traceback (most recent call last):
-  File "/src/bugs4q/30/test_30.py", line 17, in test_30
-    counts = module.run()
-  File "/src/bugs4q/30/fixed_30.py", line 61, in run
-    backend_sim = Aer.get_backend('qasm_simulator')
-  File "/usr/local/lib/python3.9/site-packages/qiskit/__init__.py", line 132, in __getattr__
-    from qiskit.providers import aer
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/__init__.py", line 65, in <module>
-    from .aerprovider import AerProvider
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/aerprovider.py", line 19, in <module>
-    from .backends.aer_simulator import AerSimulator
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/__init__.py", line 17, in <module>
-    from .aer_simulator import AerSimulator
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/aer_simulator.py", line 23, in <module>
-    from .aerbackend import AerBackend, AerError
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/aerbackend.py", line 34, in <module>
-    from ..noise.noise_model import NoiseModel, QuantumErrorLocation
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/__init__.py", line 192, in <module>
-    from .noise_model import NoiseModel
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/noise_model.py", line 27, in <module>
-    from .device.models import _excited_population, _truncate_t2_value
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/device/__init__.py", line 17, in <module>
-    from .models import basic_device_readout_errors
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/device/models.py", line 29, in <module>
-    from ..errors.readout_error import ReadoutError
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/__init__.py", line 19, in <module>
-    from .standard_errors import kraus_error
-  File "/usr/local/lib/python3.9/site-packages/qiskit/providers/aer/noise/errors/standard_errors.py", line 26, in <module>
-    from qiskit.quantum_info.operators.pauli import Pauli
-  File "/usr/local/lib/python3.9/site-packages/qiskit/quantum_info/operators/pauli.py", line 27, in __getattr__
-    warnings.warn(
-DeprecationWarning: Importing from 'qiskit.quantum_info.operators.pauli' is deprecated since Qiskit Terra 0.21 and the module will be removed in a future release.  Import directly from 'qiskit.quantum_info'.
-
+Traceback (most recent call last):
+  File "/src/bugs4q/30/test_30.py", line 24, in test_30
+    self.assertGreaterEqual(marked_total / total_shots, lower_confidence_bound(p_theory, total_shots))
+AssertionError: 0.345703125 not greater than or equal to 0.9387972644737533
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.009s
+Ran 1 test in 0.173s
 
-FAILED (errors=1)
+FAILED (failures=1)
 

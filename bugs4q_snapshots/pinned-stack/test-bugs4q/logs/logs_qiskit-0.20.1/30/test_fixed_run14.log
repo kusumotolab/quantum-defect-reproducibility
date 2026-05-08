@@ -1,5 +1,5 @@
 --- STDOUT ---
-{'1001': 15, '1000': 29, '1101': 114, '1110': 79, '0010': 90, '0001': 45, '1100': 3, '0101': 119, '1010': 21, '1111': 164, '0110': 49, '0100': 44, '1011': 57, '0111': 64, '0011': 45, '0000': 86}
+{'1001': 19, '0001': 44, '1011': 58, '0100': 42, '0110': 50, '0010': 88, '1100': 6, '0101': 100, '1101': 133, '1000': 27, '0011': 57, '0000': 80, '0111': 71, '1010': 18, '1111': 156, '1110': 75}
 
 --- STDERR ---
 /usr/local/lib/python3.9/site-packages/qiskit/providers/aer/backends/qasm_simulator.py:360: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
@@ -7,20 +7,14 @@
 F
 ======================================================================
 FAIL: test_30 (__main__.Test)
-__main__.Test.test_30
 ----------------------------------------------------------------------
-testtools.testresult.real._StringException: Traceback (most recent call last):
-  File "/src/bugs4q/30/test_30.py", line 25, in test_30
+Traceback (most recent call last):
+  File "/src/bugs4q/30/test_30.py", line 24, in test_30
     self.assertGreaterEqual(marked_total / total_shots, lower_confidence_bound(p_theory, total_shots))
-  File "/usr/local/lib/python3.9/unittest/case.py", line 1241, in assertGreaterEqual
-    self.fail(self._formatMessage(msg, standardMsg))
-  File "/usr/local/lib/python3.9/unittest/case.py", line 676, in fail
-    raise self.failureException(msg)
-AssertionError: 0.3427734375 not greater than or equal to 0.9387972644737533
-
+AssertionError: 0.3515625 not greater than or equal to 0.9387972644737533
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.237s
+Ran 1 test in 0.252s
 
 FAILED (failures=1)
 
