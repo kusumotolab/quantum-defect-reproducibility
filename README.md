@@ -14,7 +14,7 @@ The package contains two groups of experiment snapshots.
    - `pinned-stack`
    - `latest-stack`
 
-2. `bugs4q-plus_snapshot/`: a snapshot for the additional rerun experiment using the edited subject dataset, referred to as Bugs4Q+ in the paper.
+2. `bugs4q-plus_snapshot/`: a snapshot for the additional rerun experiment using the edited dataset, referred to as Bugs4Q+ in the paper.
 
 Each snapshot preserves the original workspace layout used in the experiments. The directory layout is intentionally kept unchanged because the Docker files, Makefile targets, requirements files, and Python scripts rely on relative paths.
 
@@ -22,7 +22,7 @@ Each snapshot preserves the original workspace layout used in the experiments. T
 
 This replication package provides the following artifacts:
 
-- the curated Bugs4Q subject programs used in the main reproducibility experiments;
+- the curated Bugs4Q artifacts used in the main reproducibility experiments;
 - Docker files and requirements files for constructing the experimental environments;
 - execution scripts used to run buggy and fixed programs;
 - raw execution logs for each Qiskit version;
@@ -187,13 +187,13 @@ The 0.x series tags keep the leading zero, such as `qiskit0231` for Qiskit 0.23.
 
 | Version tag | Qiskit series | Target Qiskit version |
 |---|---:|---:|
-| `qiskit0200` | 0.x | 0.20.0 |
-| `qiskit0202` | 0.x | 0.20.2 |
+| `qiskit0201` | 0.x | 0.20.1 |
 | `qiskit0211` | 0.x | 0.21.1 |
 | `qiskit0212` | 0.x | 0.21.2 |
+| `qiskit0222` | 0.x | 0.22.2 |
 | `qiskit0223` | 0.x | 0.22.3 |
-| `qiskit0231` | 0.x | 0.23.1 |
-| `qiskit0233` | 0.x | 0.23.3 |
+| `qiskit0232` | 0.x | 0.23.2 |
+| `qiskit0240` | 0.x | 0.24.0 |
 | `qiskit100` | 1.x | 1.0.0 |
 | `qiskit102` | 1.x | 1.0.2 |
 | `qiskit110` | 1.x | 1.1.0 |
@@ -291,6 +291,19 @@ python 01_execute_all_bugs4q.py
 ```
 
 This script executes the buggy and fixed versions of each Bugs4Q artifact and stores the result CSV files and logs under `test-bugs4q/`.
+
+Then aggregate the per-run results:
+
+```txt
+python 02_count_execution_results.py
+```
+
+This script reads execution_results_qiskit-<version>.csv and generates:
+
+```bash
+count_execution_results_qiskit-<version>.csv
+```
+
 If the container is already running, reconnect to it with:
 
 ```bash
