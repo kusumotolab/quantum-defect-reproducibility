@@ -2,9 +2,12 @@ import os
 import subprocess
 import csv
 import argparse
-from importlib.metadata import version
+from importlib.metadata import version, PackageNotFoundError
 
-QISKIT_VERSION = version("qiskit")
+try:
+    QISKIT_VERSION = version("qiskit")
+except PackageNotFoundError:
+    QISKIT_VERSION = version("qiskit-terra")
 VERSION_TAG = f"qiskit-{QISKIT_VERSION}"
 
 parser = argparse.ArgumentParser()

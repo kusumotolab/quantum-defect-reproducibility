@@ -1,23 +1,12 @@
 services:
-  qiskit0200:
-    container_name: qiskit-0.20.0
+  qiskit0201:
+    container_name: qiskit-0.20.1
     tty: true
     build:
       context: ./
       dockerfile: Dockerfile.qiskit0
       args:
-        QISKIT_VERSION: 0.20.0
-    volumes:
-      - .:/src
-
-  qiskit0202:
-    container_name: qiskit-0.20.2
-    tty: true
-    build:
-      context: ./
-      dockerfile: Dockerfile.qiskit0
-      args:
-        QISKIT_VERSION: 0.20.2
+        QISKIT_VERSION: 0.20.1
     volumes:
       - .:/src
 
@@ -43,6 +32,17 @@ services:
     volumes:
       - .:/src
 
+  qiskit0222:
+    container_name: qiskit-0.22.2
+    tty: true
+    build:
+      context: ./
+      dockerfile: Dockerfile.qiskit0
+      args:
+        QISKIT_VERSION: 0.22.2
+    volumes:
+      - .:/src
+
   qiskit0223:
     container_name: qiskit-0.22.3
     tty: true
@@ -54,25 +54,25 @@ services:
     volumes:
       - .:/src
 
-  qiskit0231:
-    container_name: qiskit-0.23.1
+  qiskit0232:
+    container_name: qiskit-0.23.2
     tty: true
     build:
       context: ./
       dockerfile: Dockerfile.qiskit0
       args:
-        QISKIT_VERSION: 0.23.1
+        QISKIT_VERSION: 0.23.2
     volumes:
       - .:/src
 
-  qiskit0233:
-    container_name: qiskit-0.23.3
+  qiskit0240:
+    container_name: qiskit-0.24.0
     tty: true
     build:
       context: ./
       dockerfile: Dockerfile.qiskit0
       args:
-        QISKIT_VERSION: 0.23.3
+        QISKIT_VERSION: 0.24.0
     volumes:
       - .:/src
 
