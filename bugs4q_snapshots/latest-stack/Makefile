@@ -7,7 +7,7 @@ guard-v:
 		exit 1; \
 	fi
 
-QISKIT0_SERVICES := qiskit0200 qiskit0202 qiskit0211 qiskit0212 qiskit0223 qiskit0231 qiskit0233
+QISKIT0_SERVICES := qiskit0201 qiskit0211 qiskit0212 qiskit0222 qiskit0223 qiskit0232 qiskit0240
 QISKIT1_SERVICES := qiskit100 qiskit102 qiskit110 qiskit120 qiskit124 qiskit131 qiskit132
 QISKIT2_SERVICES := qiskit200 qiskit202 qiskit211 qiskit221 qiskit223 qiskit230 qiskit231
 
