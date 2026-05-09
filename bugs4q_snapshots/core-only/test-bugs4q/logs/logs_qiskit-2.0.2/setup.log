@@ -1,0 +1,2244 @@
+docker compose build --no-cache qiskit202
+ Image core-only-qiskit202 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 727B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile.qiskit2
+#2 transferring dockerfile: 636B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.10.20
+#3 DONE 0.6s
+
+#4 [ 1/10] FROM docker.io/library/python:3.10.20@sha256:11a7f29da0d339f0bbf647555e082015da58509f493f196ddc3512858f0311f3
+#4 resolve docker.io/library/python:3.10.20@sha256:11a7f29da0d339f0bbf647555e082015da58509f493f196ddc3512858f0311f3 0.0s done
+#4 CACHED
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 7.99kB done
+#6 DONE 0.0s
+
+#7 [ 2/10] RUN apt-get update     && apt-get install -y vim build-essential tree procps parallel     && rm -rf /var/lib/apt/lists/*
+#7 0.281 Hit:1 http://deb.debian.org/debian trixie InRelease
+#7 0.281 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#7 0.284 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#7 0.293 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9671 kB]
+#7 0.425 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [5412 B]
+#7 0.425 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [156 kB]
+#7 0.788 Fetched 9923 kB in 1s (18.8 MB/s)
+#7 0.788 Reading package lists...
+#7 1.046 Reading package lists...
+#7 1.288 Building dependency tree...
+#7 1.370 Reading state information...
+#7 1.455 procps is already the newest version (2:4.0.4-9).
+#7 1.455 The following additional packages will be installed:
+#7 1.455   dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common
+#7 1.455   dmsetup libapparmor1 libcryptsetup12 libdbus-1-3 libdevmapper1.02.1 libgpm2
+#7 1.455   libjson-c5 libkmod2 libsensors-config libsensors5 libsodium23
+#7 1.455   libsystemd-shared linux-sysctl-defaults sysstat systemd systemd-cryptsetup
+#7 1.455   systemd-timesyncd vim-common vim-runtime xxd
+#7 1.455 Suggested packages:
+#7 1.455   default-dbus-session-bus | dbus-session-bus gpm lm-sensors libarchive13t64
+#7 1.455   libbpf1 libdw1t64 libip4tc2 libpwquality1 libqrencode4 libtss2-rc0t64 csh
+#7 1.455   fish ksh tcsh zsh isag systemd-container systemd-homed systemd-userdbd
+#7 1.455   systemd-boot systemd-resolved systemd-repart libtss2-tcti-device0 polkitd
+#7 1.455   ctags vim-doc vim-scripts
+#7 1.551 The following NEW packages will be installed:
+#7 1.551   build-essential dbus dbus-bin dbus-daemon dbus-session-bus-common
+#7 1.551   dbus-system-bus-common dmsetup libapparmor1 libcryptsetup12 libdbus-1-3
+#7 1.552   libdevmapper1.02.1 libgpm2 libjson-c5 libkmod2 libsensors-config libsensors5
+#7 1.552   libsodium23 libsystemd-shared linux-sysctl-defaults parallel sysstat systemd
+#7 1.552   systemd-cryptsetup systemd-timesyncd tree vim vim-common vim-runtime xxd
+#7 1.570 0 upgraded, 29 newly installed, 0 to remove and 0 not upgraded.
+#7 1.570 Need to get 19.1 MB of archives.
+#7 1.570 After this operation, 72.5 MB of additional disk space will be used.
+#7 1.570 Get:1 http://deb.debian.org/debian trixie/main amd64 libsystemd-shared amd64 257.9-1~deb13u1 [2151 kB]
+#7 1.601 Get:2 http://deb.debian.org/debian trixie/main amd64 libapparmor1 amd64 4.1.0-1 [43.7 kB]
+#7 1.606 Get:3 http://deb.debian.org/debian trixie/main amd64 systemd amd64 257.9-1~deb13u1 [3096 kB]
+#7 1.649 Get:4 http://deb.debian.org/debian trixie/main amd64 libdbus-1-3 amd64 1.16.2-2 [178 kB]
+#7 1.652 Get:5 http://deb.debian.org/debian trixie/main amd64 dbus-bin amd64 1.16.2-2 [80.0 kB]
+#7 1.657 Get:6 http://deb.debian.org/debian trixie/main amd64 dbus-session-bus-common all 1.16.2-2 [52.3 kB]
+#7 1.661 Get:7 http://deb.debian.org/debian trixie/main amd64 dbus-daemon amd64 1.16.2-2 [159 kB]
+#7 1.667 Get:8 http://deb.debian.org/debian trixie/main amd64 dbus-system-bus-common all 1.16.2-2 [53.5 kB]
+#7 1.671 Get:9 http://deb.debian.org/debian trixie/main amd64 dbus amd64 1.16.2-2 [71.6 kB]
+#7 1.672 Get:10 http://deb.debian.org/debian trixie/main amd64 linux-sysctl-defaults all 4.12.1 [5724 B]
+#7 1.676 Get:11 http://deb.debian.org/debian trixie/main amd64 vim-common all 2:9.1.1230-2 [421 kB]
+#7 1.687 Get:12 http://deb.debian.org/debian trixie/main amd64 systemd-timesyncd amd64 257.9-1~deb13u1 [93.0 kB]
+#7 1.690 Get:13 http://deb.debian.org/debian trixie/main amd64 build-essential amd64 12.12 [4624 B]
+#7 1.692 Get:14 http://deb.debian.org/debian trixie/main amd64 libdevmapper1.02.1 amd64 2:1.02.205-2 [135 kB]
+#7 1.699 Get:15 http://deb.debian.org/debian trixie/main amd64 dmsetup amd64 2:1.02.205-2 [82.3 kB]
+#7 1.706 Get:16 http://deb.debian.org/debian trixie/main amd64 libjson-c5 amd64 0.18+ds-1 [46.0 kB]
+#7 1.710 Get:17 http://deb.debian.org/debian trixie/main amd64 libcryptsetup12 amd64 2:2.7.5-2 [254 kB]
+#7 1.714 Get:18 http://deb.debian.org/debian trixie/main amd64 libgpm2 amd64 1.20.7-11+b2 [14.4 kB]
+#7 1.714 Get:19 http://deb.debian.org/debian trixie/main amd64 libkmod2 amd64 34.2-2 [63.2 kB]
+#7 1.716 Get:20 http://deb.debian.org/debian trixie/main amd64 libsensors-config all 1:3.6.2-2 [16.2 kB]
+#7 1.719 Get:21 http://deb.debian.org/debian trixie/main amd64 libsensors5 amd64 1:3.6.2-2 [37.5 kB]
+#7 1.726 Get:22 http://deb.debian.org/debian trixie/main amd64 libsodium23 amd64 1.0.18-1+deb13u1 [165 kB]
+#7 1.732 Get:23 http://deb.debian.org/debian trixie/main amd64 sysstat amd64 12.7.5-2 [623 kB]
+#7 1.746 Get:24 http://deb.debian.org/debian trixie/main amd64 parallel all 20240222+ds-2 [2163 kB]
+#7 1.782 Get:25 http://deb.debian.org/debian trixie/main amd64 systemd-cryptsetup amd64 257.9-1~deb13u1 [173 kB]
+#7 1.810 Get:26 http://deb.debian.org/debian trixie/main amd64 tree amd64 2.2.1-1 [59.4 kB]
+#7 1.816 Get:27 http://deb.debian.org/debian trixie/main amd64 vim-runtime all 2:9.1.1230-2 [7127 kB]
+#7 1.926 Get:28 http://deb.debian.org/debian trixie/main amd64 vim amd64 2:9.1.1230-2 [1670 kB]
+#7 1.954 Get:29 http://deb.debian.org/debian trixie/main amd64 xxd amd64 2:9.1.1230-2 [98.8 kB]
+#7 2.028 debconf: unable to initialize frontend: Dialog
+#7 2.028 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 2.028 debconf: falling back to frontend: Readline
+#7 2.030 debconf: unable to initialize frontend: Readline
+#7 2.030 debconf: (This frontend requires a controlling tty.)
+#7 2.030 debconf: falling back to frontend: Teletype
+#7 2.032 debconf: unable to initialize frontend: Teletype
+#7 2.032 debconf: (This frontend requires a controlling tty.)
+#7 2.032 debconf: falling back to frontend: Noninteractive
+#7 2.271 Preconfiguring packages ...
+#7 2.301 Fetched 19.1 MB in 0s (48.1 MB/s)
+#7 2.313 Selecting previously unselected package libsystemd-shared:amd64.
+#7 2.313 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 26762 files and directories currently installed.)
+#7 2.319 Preparing to unpack .../libsystemd-shared_257.9-1~deb13u1_amd64.deb ...
+#7 2.322 Unpacking libsystemd-shared:amd64 (257.9-1~deb13u1) ...
+#7 2.395 Selecting previously unselected package libapparmor1:amd64.
+#7 2.396 Preparing to unpack .../libapparmor1_4.1.0-1_amd64.deb ...
+#7 2.402 Unpacking libapparmor1:amd64 (4.1.0-1) ...
+#7 2.427 Setting up libsystemd-shared:amd64 (257.9-1~deb13u1) ...
+#7 2.463 Selecting previously unselected package systemd.
+#7 2.463 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 26775 files and directories currently installed.)
+#7 2.468 Preparing to unpack .../00-systemd_257.9-1~deb13u1_amd64.deb ...
+#7 2.475 Unpacking systemd (257.9-1~deb13u1) ...
+#7 2.616 Selecting previously unselected package libdbus-1-3:amd64.
+#7 2.618 Preparing to unpack .../01-libdbus-1-3_1.16.2-2_amd64.deb ...
+#7 2.621 Unpacking libdbus-1-3:amd64 (1.16.2-2) ...
+#7 2.644 Selecting previously unselected package dbus-bin.
+#7 2.645 Preparing to unpack .../02-dbus-bin_1.16.2-2_amd64.deb ...
+#7 2.648 Unpacking dbus-bin (1.16.2-2) ...
+#7 2.668 Selecting previously unselected package dbus-session-bus-common.
+#7 2.670 Preparing to unpack .../03-dbus-session-bus-common_1.16.2-2_all.deb ...
+#7 2.673 Unpacking dbus-session-bus-common (1.16.2-2) ...
+#7 2.695 Selecting previously unselected package dbus-daemon.
+#7 2.696 Preparing to unpack .../04-dbus-daemon_1.16.2-2_amd64.deb ...
+#7 2.699 Unpacking dbus-daemon (1.16.2-2) ...
+#7 2.723 Selecting previously unselected package dbus-system-bus-common.
+#7 2.725 Preparing to unpack .../05-dbus-system-bus-common_1.16.2-2_all.deb ...
+#7 2.728 Unpacking dbus-system-bus-common (1.16.2-2) ...
+#7 2.758 Selecting previously unselected package dbus.
+#7 2.759 Preparing to unpack .../06-dbus_1.16.2-2_amd64.deb ...
+#7 2.763 Unpacking dbus (1.16.2-2) ...
+#7 2.786 Selecting previously unselected package linux-sysctl-defaults.
+#7 2.787 Preparing to unpack .../07-linux-sysctl-defaults_4.12.1_all.deb ...
+#7 2.790 Unpacking linux-sysctl-defaults (4.12.1) ...
+#7 2.815 Selecting previously unselected package vim-common.
+#7 2.816 Preparing to unpack .../08-vim-common_2%3a9.1.1230-2_all.deb ...
+#7 2.819 Unpacking vim-common (2:9.1.1230-2) ...
+#7 2.859 Selecting previously unselected package systemd-timesyncd.
+#7 2.860 Preparing to unpack .../09-systemd-timesyncd_257.9-1~deb13u1_amd64.deb ...
+#7 2.863 Unpacking systemd-timesyncd (257.9-1~deb13u1) ...
+#7 2.884 Selecting previously unselected package build-essential.
+#7 2.885 Preparing to unpack .../10-build-essential_12.12_amd64.deb ...
+#7 2.888 Unpacking build-essential (12.12) ...
+#7 2.912 Selecting previously unselected package libdevmapper1.02.1:amd64.
+#7 2.913 Preparing to unpack .../11-libdevmapper1.02.1_2%3a1.02.205-2_amd64.deb ...
+#7 2.917 Unpacking libdevmapper1.02.1:amd64 (2:1.02.205-2) ...
+#7 2.941 Selecting previously unselected package dmsetup.
+#7 2.942 Preparing to unpack .../12-dmsetup_2%3a1.02.205-2_amd64.deb ...
+#7 2.945 Unpacking dmsetup (2:1.02.205-2) ...
+#7 2.971 Selecting previously unselected package libjson-c5:amd64.
+#7 2.973 Preparing to unpack .../13-libjson-c5_0.18+ds-1_amd64.deb ...
+#7 2.976 Unpacking libjson-c5:amd64 (0.18+ds-1) ...
+#7 3.001 Selecting previously unselected package libcryptsetup12:amd64.
+#7 3.003 Preparing to unpack .../14-libcryptsetup12_2%3a2.7.5-2_amd64.deb ...
+#7 3.006 Unpacking libcryptsetup12:amd64 (2:2.7.5-2) ...
+#7 3.035 Selecting previously unselected package libgpm2:amd64.
+#7 3.037 Preparing to unpack .../15-libgpm2_1.20.7-11+b2_amd64.deb ...
+#7 3.040 Unpacking libgpm2:amd64 (1.20.7-11+b2) ...
+#7 3.066 Selecting previously unselected package libkmod2:amd64.
+#7 3.067 Preparing to unpack .../16-libkmod2_34.2-2_amd64.deb ...
+#7 3.070 Unpacking libkmod2:amd64 (34.2-2) ...
+#7 3.094 Selecting previously unselected package libsensors-config.
+#7 3.096 Preparing to unpack .../17-libsensors-config_1%3a3.6.2-2_all.deb ...
+#7 3.099 Unpacking libsensors-config (1:3.6.2-2) ...
+#7 3.124 Selecting previously unselected package libsensors5:amd64.
+#7 3.125 Preparing to unpack .../18-libsensors5_1%3a3.6.2-2_amd64.deb ...
+#7 3.129 Unpacking libsensors5:amd64 (1:3.6.2-2) ...
+#7 3.156 Selecting previously unselected package libsodium23:amd64.
+#7 3.157 Preparing to unpack .../19-libsodium23_1.0.18-1+deb13u1_amd64.deb ...
+#7 3.160 Unpacking libsodium23:amd64 (1.0.18-1+deb13u1) ...
+#7 3.195 Selecting previously unselected package sysstat.
+#7 3.197 Preparing to unpack .../20-sysstat_12.7.5-2_amd64.deb ...
+#7 3.203 Unpacking sysstat (12.7.5-2) ...
+#7 3.247 Selecting previously unselected package parallel.
+#7 3.249 Preparing to unpack .../21-parallel_20240222+ds-2_all.deb ...
+#7 3.255 Adding 'diversion of /usr/bin/parallel to /usr/bin/parallel.moreutils by parallel'
+#7 3.261 Adding 'diversion of /usr/share/man/man1/parallel.1.gz to /usr/share/man/man1/parallel.moreutils.1.gz by parallel'
+#7 3.263 Unpacking parallel (20240222+ds-2) ...
+#7 3.304 Selecting previously unselected package systemd-cryptsetup.
+#7 3.306 Preparing to unpack .../22-systemd-cryptsetup_257.9-1~deb13u1_amd64.deb ...
+#7 3.309 Unpacking systemd-cryptsetup (257.9-1~deb13u1) ...
+#7 3.333 Selecting previously unselected package tree.
+#7 3.334 Preparing to unpack .../23-tree_2.2.1-1_amd64.deb ...
+#7 3.337 Unpacking tree (2.2.1-1) ...
+#7 3.366 Selecting previously unselected package vim-runtime.
+#7 3.367 Preparing to unpack .../24-vim-runtime_2%3a9.1.1230-2_all.deb ...
+#7 3.374 Adding 'diversion of /usr/share/vim/vim91/doc/help.txt to /usr/share/vim/vim91/doc/help.txt.vim-tiny by vim-runtime'
+#7 3.378 Adding 'diversion of /usr/share/vim/vim91/doc/tags to /usr/share/vim/vim91/doc/tags.vim-tiny by vim-runtime'
+#7 3.380 Unpacking vim-runtime (2:9.1.1230-2) ...
+#7 3.692 Selecting previously unselected package vim.
+#7 3.693 Preparing to unpack .../25-vim_2%3a9.1.1230-2_amd64.deb ...
+#7 3.696 Unpacking vim (2:9.1.1230-2) ...
+#7 3.753 Selecting previously unselected package xxd.
+#7 3.755 Preparing to unpack .../26-xxd_2%3a9.1.1230-2_amd64.deb ...
+#7 3.758 Unpacking xxd (2:9.1.1230-2) ...
+#7 3.784 Setting up libapparmor1:amd64 (4.1.0-1) ...
+#7 3.794 Setting up libsodium23:amd64 (1.0.18-1+deb13u1) ...
+#7 3.803 Setting up libgpm2:amd64 (1.20.7-11+b2) ...
+#7 3.812 Setting up libsensors-config (1:3.6.2-2) ...
+#7 3.827 Setting up systemd (257.9-1~deb13u1) ...
+#7 3.860 Created symlink '/etc/systemd/system/getty.target.wants/getty@tty1.service' → '/usr/lib/systemd/system/getty@.service'.
+#7 3.862 Created symlink '/etc/systemd/system/multi-user.target.wants/remote-fs.target' → '/usr/lib/systemd/system/remote-fs.target'.
+#7 3.864 Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-pstore.service' → '/usr/lib/systemd/system/systemd-pstore.service'.
+#7 3.866 Initializing machine ID from random generator.
+#7 3.875 Creating group 'systemd-journal' with GID 999.
+#7 3.875 Creating group 'systemd-network' with GID 998.
+#7 3.875 Creating user 'systemd-network' (systemd Network Management) with UID 998 and GID 998.
+#7 3.891 /usr/lib/tmpfiles.d/legacy.conf:14: Duplicate line for path "/run/lock", ignoring.
+#7 3.899 Setting up xxd (2:9.1.1230-2) ...
+#7 3.908 Setting up linux-sysctl-defaults (4.12.1) ...
+#7 3.917 Setting up vim-common (2:9.1.1230-2) ...
+#7 3.931 Setting up libdbus-1-3:amd64 (1.16.2-2) ...
+#7 3.940 Setting up tree (2.2.1-1) ...
+#7 3.949 Setting up systemd-timesyncd (257.9-1~deb13u1) ...
+#7 3.967 Creating group 'systemd-timesync' with GID 997.
+#7 3.967 Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 997 and GID 997.
+#7 4.084 Created symlink '/etc/systemd/system/dbus-org.freedesktop.timesync1.service' → '/usr/lib/systemd/system/systemd-timesyncd.service'.
+#7 4.084 Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service' → '/usr/lib/systemd/system/systemd-timesyncd.service'.
+#7 4.089 Setting up libsensors5:amd64 (1:3.6.2-2) ...
+#7 4.099 Setting up dbus-session-bus-common (1.16.2-2) ...
+#7 4.112 Setting up build-essential (12.12) ...
+#7 4.122 Setting up vim-runtime (2:9.1.1230-2) ...
+#7 4.141 Setting up dbus-system-bus-common (1.16.2-2) ...
+#7 4.151 Creating group 'messagebus' with GID 996.
+#7 4.151 Creating user 'messagebus' (System Message Bus) with UID 996 and GID 996.
+#7 4.179 Setting up libjson-c5:amd64 (0.18+ds-1) ...
+#7 4.189 Setting up sysstat (12.7.5-2) ...
+#7 4.238 debconf: unable to initialize frontend: Dialog
+#7 4.238 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 4.238 debconf: falling back to frontend: Readline
+#7 4.241 debconf: unable to initialize frontend: Readline
+#7 4.241 debconf: (This frontend requires a controlling tty.)
+#7 4.241 debconf: falling back to frontend: Teletype
+#7 4.243 debconf: unable to initialize frontend: Teletype
+#7 4.243 debconf: (This frontend requires a controlling tty.)
+#7 4.243 debconf: falling back to frontend: Noninteractive
+#7 4.265 Creating config file /etc/default/sysstat with new version
+#7 4.281 update-alternatives: using /usr/bin/sar.sysstat to provide /usr/bin/sar (sar) in auto mode
+#7 4.339 Created symlink '/etc/systemd/system/sysstat.service.wants/sysstat-collect.timer' → '/usr/lib/systemd/system/sysstat-collect.timer'.
+#7 4.388 Created symlink '/etc/systemd/system/sysstat.service.wants/sysstat-rotate.timer' → '/usr/lib/systemd/system/sysstat-rotate.timer'.
+#7 4.437 Created symlink '/etc/systemd/system/sysstat.service.wants/sysstat-summary.timer' → '/usr/lib/systemd/system/sysstat-summary.timer'.
+#7 4.488 Created symlink '/etc/systemd/system/multi-user.target.wants/sysstat.service' → '/usr/lib/systemd/system/sysstat.service'.
+#7 4.501 Setting up dbus-bin (1.16.2-2) ...
+#7 4.511 Setting up libkmod2:amd64 (34.2-2) ...
+#7 4.524 Setting up vim (2:9.1.1230-2) ...
+#7 4.534 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in auto mode
+#7 4.537 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+#7 4.540 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+#7 4.543 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+#7 4.546 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+#7 4.549 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+#7 4.552 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+#7 4.555 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+#7 4.560 Setting up dbus-daemon (1.16.2-2) ...
+#7 4.577 Setting up dbus (1.16.2-2) ...
+#7 4.600 invoke-rc.d: could not determine current runlevel
+#7 4.602 invoke-rc.d: policy-rc.d denied execution of start.
+#7 4.606 Setting up parallel (20240222+ds-2) ...
+#7 4.619 Setting up libdevmapper1.02.1:amd64 (2:1.02.205-2) ...
+#7 4.629 Setting up dmsetup (2:1.02.205-2) ...
+#7 4.639 Setting up libcryptsetup12:amd64 (2:2.7.5-2) ...
+#7 4.648 Setting up systemd-cryptsetup (257.9-1~deb13u1) ...
+#7 4.658 Processing triggers for shared-mime-info (2.4-5+b2) ...
+#7 6.315 Processing triggers for procps (2:4.0.4-9) ...
+#7 6.320 procps: Applying updated sysctl configuration
+#7 6.321 sysctl: permission denied on key "kernel.core_pattern"
+#7 6.321 sysctl: permission denied on key "kernel.core_uses_pid"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.default.rp_filter"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.eth0.rp_filter"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.lo.rp_filter"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.default.accept_source_route"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.eth0.accept_source_route"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.lo.accept_source_route"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.default.promote_secondaries"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.eth0.promote_secondaries"
+#7 6.321 sysctl: permission denied on key "net.ipv4.conf.lo.promote_secondaries"
+#7 6.321 sysctl: permission denied on key "net.ipv4.ping_group_range", ignoring
+#7 6.321 sysctl: permission denied on key "fs.protected_hardlinks"
+#7 6.321 sysctl: permission denied on key "fs.protected_symlinks"
+#7 6.321 sysctl: permission denied on key "fs.protected_regular"
+#7 6.321 sysctl: permission denied on key "fs.protected_fifos"
+#7 6.321 sysctl: permission denied on key "vm.max_map_count"
+#7 6.321 sysctl: permission denied on key "kernel.pid_max"
+#7 6.325 Processing triggers for hicolor-icon-theme (0.18-2) ...
+#7 6.333 Processing triggers for libc-bin (2.41-12+deb13u2) ...
+#7 DONE 6.5s
+
+#8 [ 3/10] RUN groupadd -g 1000 appuser     && useradd -m -u 1000 -g 1000 -s /bin/bash appuser
+#8 DONE 0.6s
+
+#9 [ 4/10] WORKDIR /src
+#9 DONE 0.0s
+
+#10 [ 5/10] COPY requirements/ /src/requirements/
+#10 DONE 0.0s
+
+#11 [ 6/10] COPY bash_setting /home/appuser/.bashrc
+#11 DONE 0.0s
+
+#12 [ 7/10] RUN pip install --upgrade pip
+#12 1.074 Requirement already satisfied: pip in /usr/local/lib/python3.10/site-packages (23.0.1)
+#12 1.123 Collecting pip
+#12 1.137   Downloading pip-26.1.1-py3-none-any.whl (1.8 MB)
+#12 1.168      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 62.1 MB/s eta 0:00:00
+#12 1.194 Installing collected packages: pip
+#12 1.194   Attempting uninstall: pip
+#12 1.195     Found existing installation: pip 23.0.1
+#12 1.242     Uninstalling pip-23.0.1:
+#12 1.312       Successfully uninstalled pip-23.0.1
+#12 1.676 Successfully installed pip-26.1.1
+#12 1.676 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#12 DONE 1.8s
+
+#13 [ 8/10] RUN pip install -r /src/requirements/base-requirements.txt
+#13 0.897 Collecting alabaster==0.7.16 (from -r /src/requirements/base-requirements.txt (line 1))
+#13 0.915   Downloading alabaster-0.7.16-py3-none-any.whl.metadata (2.9 kB)
+#13 0.930 Collecting astmonkey==0.3.6 (from -r /src/requirements/base-requirements.txt (line 2))
+#13 0.935   Downloading astmonkey-0.3.6.tar.gz (10 kB)
+#13 0.943   Installing build dependencies: started
+#13 1.284   Installing build dependencies: finished with status 'done'
+#13 1.284   Getting requirements to build wheel: started
+#13 1.434   Getting requirements to build wheel: finished with status 'done'
+#13 1.435   Preparing metadata (pyproject.toml): started
+#13 1.512   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 1.525 Collecting astor==0.8.1 (from -r /src/requirements/base-requirements.txt (line 3))
+#13 1.531   Downloading astor-0.8.1-py2.py3-none-any.whl.metadata (4.2 kB)
+#13 1.553 Collecting astroid==3.3.5 (from -r /src/requirements/base-requirements.txt (line 4))
+#13 1.557   Downloading astroid-3.3.5-py3-none-any.whl.metadata (4.5 kB)
+#13 1.570 Collecting attrs==24.2.0 (from -r /src/requirements/base-requirements.txt (line 5))
+#13 1.574   Downloading attrs-24.2.0-py3-none-any.whl.metadata (11 kB)
+#13 1.591 Collecting autopage==0.5.2 (from -r /src/requirements/base-requirements.txt (line 6))
+#13 1.600   Downloading autopage-0.5.2-py3-none-any.whl.metadata (7.9 kB)
+#13 1.616 Collecting babel==2.16.0 (from -r /src/requirements/base-requirements.txt (line 7))
+#13 1.620   Downloading babel-2.16.0-py3-none-any.whl.metadata (1.5 kB)
+#13 1.632 Collecting backcall==0.2.0 (from -r /src/requirements/base-requirements.txt (line 8))
+#13 1.636   Downloading backcall-0.2.0-py2.py3-none-any.whl.metadata (2.0 kB)
+#13 1.653 Collecting beautifulsoup4==4.12.3 (from -r /src/requirements/base-requirements.txt (line 9))
+#13 1.657   Downloading beautifulsoup4-4.12.3-py3-none-any.whl.metadata (3.8 kB)
+#13 1.689 Collecting black==25.1.0 (from -r /src/requirements/base-requirements.txt (line 10))
+#13 1.694   Downloading black-25.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (81 kB)
+#13 1.719 Collecting bleach==6.1.0 (from -r /src/requirements/base-requirements.txt (line 11))
+#13 1.724   Downloading bleach-6.1.0-py3-none-any.whl.metadata (30 kB)
+#13 1.740 Collecting certifi==2024.8.30 (from -r /src/requirements/base-requirements.txt (line 12))
+#13 1.744   Downloading certifi-2024.8.30-py3-none-any.whl.metadata (2.2 kB)
+#13 1.791 Collecting charset-normalizer==3.4.0 (from -r /src/requirements/base-requirements.txt (line 13))
+#13 1.795   Downloading charset_normalizer-3.4.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (34 kB)
+#13 1.811 Collecting click==8.1.8 (from -r /src/requirements/base-requirements.txt (line 14))
+#13 1.814   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+#13 1.830 Collecting cliff==4.7.0 (from -r /src/requirements/base-requirements.txt (line 15))
+#13 1.833   Downloading cliff-4.7.0-py3-none-any.whl.metadata (2.1 kB)
+#13 1.855 Collecting cmd2==2.4.3 (from -r /src/requirements/base-requirements.txt (line 16))
+#13 1.858   Downloading cmd2-2.4.3-py3-none-any.whl.metadata (12 kB)
+#13 1.873 Collecting comm==0.2.2 (from -r /src/requirements/base-requirements.txt (line 17))
+#13 1.878   Downloading comm-0.2.2-py3-none-any.whl.metadata (3.7 kB)
+#13 1.892 Collecting configparser==7.1.0 (from -r /src/requirements/base-requirements.txt (line 18))
+#13 1.895   Downloading configparser-7.1.0-py3-none-any.whl.metadata (5.4 kB)
+#13 1.934 Collecting contourpy==1.3.0 (from -r /src/requirements/base-requirements.txt (line 19))
+#13 1.939   Downloading contourpy-1.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.4 kB)
+#13 2.137 Collecting coverage==7.6.3 (from -r /src/requirements/base-requirements.txt (line 20))
+#13 2.141   Downloading coverage-7.6.3-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.1 kB)
+#13 2.158 Collecting cycler==0.12.1 (from -r /src/requirements/base-requirements.txt (line 21))
+#13 2.161   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+#13 2.175 Collecting ddt==1.7.2 (from -r /src/requirements/base-requirements.txt (line 22))
+#13 2.182   Downloading ddt-1.7.2-py2.py3-none-any.whl.metadata (832 bytes)
+#13 2.194 Collecting decorator==4.4.2 (from -r /src/requirements/base-requirements.txt (line 23))
+#13 2.199   Downloading decorator-4.4.2-py2.py3-none-any.whl.metadata (4.2 kB)
+#13 2.212 Collecting defusedxml==0.7.1 (from -r /src/requirements/base-requirements.txt (line 24))
+#13 2.215   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+#13 2.230 Collecting dill==0.3.9 (from -r /src/requirements/base-requirements.txt (line 25))
+#13 2.235   Downloading dill-0.3.9-py3-none-any.whl.metadata (10 kB)
+#13 2.266 Collecting discover==0.4.0 (from -r /src/requirements/base-requirements.txt (line 26))
+#13 2.272   Downloading discover-0.4.0.tar.gz (8.6 kB)
+#13 2.277   Installing build dependencies: started
+#13 2.565   Installing build dependencies: finished with status 'done'
+#13 2.566   Getting requirements to build wheel: started
+#13 2.719   Getting requirements to build wheel: finished with status 'done'
+#13 2.720   Preparing metadata (pyproject.toml): started
+#13 2.800   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 2.818 Collecting dlx==1.0.4 (from -r /src/requirements/base-requirements.txt (line 27))
+#13 2.823   Downloading dlx-1.0.4.tar.gz (5.5 kB)
+#13 2.829   Installing build dependencies: started
+#13 3.111   Installing build dependencies: finished with status 'done'
+#13 3.111   Getting requirements to build wheel: started
+#13 3.247   Getting requirements to build wheel: finished with status 'done'
+#13 3.248   Preparing metadata (pyproject.toml): started
+#13 3.326   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 3.338 Collecting docplex==2.28.240 (from -r /src/requirements/base-requirements.txt (line 28))
+#13 3.342   Downloading docplex-2.28.240.tar.gz (643 kB)
+#13 3.354      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 643.4/643.4 kB 45.2 MB/s  0:00:00
+#13 3.382   Installing build dependencies: started
+#13 3.696   Installing build dependencies: finished with status 'done'
+#13 3.697   Getting requirements to build wheel: started
+#13 3.817   Getting requirements to build wheel: finished with status 'done'
+#13 3.818   Installing backend dependencies: started
+#13 4.089   Installing backend dependencies: finished with status 'done'
+#13 4.089   Preparing metadata (pyproject.toml): started
+#13 4.188   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 4.201 Collecting docutils==0.16 (from -r /src/requirements/base-requirements.txt (line 29))
+#13 4.204   Downloading docutils-0.16-py2.py3-none-any.whl.metadata (2.7 kB)
+#13 4.284 Collecting dulwich==0.22.3 (from -r /src/requirements/base-requirements.txt (line 30))
+#13 4.287   Downloading dulwich-0.22.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.4 kB)
+#13 4.300 Collecting extras==1.0.0 (from -r /src/requirements/base-requirements.txt (line 31))
+#13 4.303   Downloading extras-1.0.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#13 4.318 Collecting fastdtw==0.3.4 (from -r /src/requirements/base-requirements.txt (line 32))
+#13 4.323   Downloading fastdtw-0.3.4.tar.gz (133 kB)
+#13 4.334   Installing build dependencies: started
+#13 4.626   Installing build dependencies: finished with status 'done'
+#13 4.626   Getting requirements to build wheel: started
+#13 4.806   Getting requirements to build wheel: finished with status 'done'
+#13 4.807   Preparing metadata (pyproject.toml): started
+#13 4.889   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 4.903 Collecting fastjsonschema==2.20.0 (from -r /src/requirements/base-requirements.txt (line 33))
+#13 4.907   Downloading fastjsonschema-2.20.0-py3-none-any.whl.metadata (2.1 kB)
+#13 4.921 Collecting fixtures==4.1.0 (from -r /src/requirements/base-requirements.txt (line 34))
+#13 4.924   Downloading fixtures-4.1.0-py3-none-any.whl.metadata (21 kB)
+#13 4.942 Collecting flake8==7.1.2 (from -r /src/requirements/base-requirements.txt (line 35))
+#13 4.946   Downloading flake8-7.1.2-py2.py3-none-any.whl.metadata (3.8 kB)
+#13 5.017 Collecting fonttools==4.54.1 (from -r /src/requirements/base-requirements.txt (line 36))
+#13 5.022   Downloading fonttools-4.54.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (163 kB)
+#13 5.058 Collecting frozendict==2.4.6 (from -r /src/requirements/base-requirements.txt (line 37))
+#13 5.064   Downloading frozendict-2.4.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (23 kB)
+#13 5.102 Collecting h5py==3.7.0 (from -r /src/requirements/base-requirements.txt (line 38))
+#13 5.106   Downloading h5py-3.7.0-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (1.8 kB)
+#13 5.122 Collecting html5lib==1.1 (from -r /src/requirements/base-requirements.txt (line 39))
+#13 5.124   Downloading html5lib-1.1-py2.py3-none-any.whl.metadata (16 kB)
+#13 5.138 Collecting idna==3.10 (from -r /src/requirements/base-requirements.txt (line 40))
+#13 5.141   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+#13 5.154 Collecting imagesize==1.4.1 (from -r /src/requirements/base-requirements.txt (line 41))
+#13 5.158   Downloading imagesize-1.4.1-py2.py3-none-any.whl.metadata (1.5 kB)
+#13 5.178 Collecting importlib_metadata==8.5.0 (from -r /src/requirements/base-requirements.txt (line 42))
+#13 5.181   Downloading importlib_metadata-8.5.0-py3-none-any.whl.metadata (4.8 kB)
+#13 5.201 Collecting importlib_resources==6.4.5 (from -r /src/requirements/base-requirements.txt (line 43))
+#13 5.206   Downloading importlib_resources-6.4.5-py3-none-any.whl.metadata (4.0 kB)
+#13 5.222 Collecting inflection==0.5.1 (from -r /src/requirements/base-requirements.txt (line 44))
+#13 5.226   Downloading inflection-0.5.1-py2.py3-none-any.whl.metadata (1.7 kB)
+#13 5.264 Collecting ipykernel==5.5.0 (from -r /src/requirements/base-requirements.txt (line 45))
+#13 5.271   Downloading ipykernel-5.5.0-py3-none-any.whl.metadata (1.1 kB)
+#13 5.300 Collecting ipython==7.21.0 (from -r /src/requirements/base-requirements.txt (line 46))
+#13 5.305   Downloading ipython-7.21.0-py3-none-any.whl.metadata (4.2 kB)
+#13 5.327 Collecting ipywidgets==8.1.5 (from -r /src/requirements/base-requirements.txt (line 47))
+#13 5.331   Downloading ipywidgets-8.1.5-py3-none-any.whl.metadata (2.3 kB)
+#13 5.347 Collecting iso8601==2.1.0 (from -r /src/requirements/base-requirements.txt (line 48))
+#13 5.350   Downloading iso8601-2.1.0-py3-none-any.whl.metadata (3.7 kB)
+#13 5.371 Collecting isort==5.13.2 (from -r /src/requirements/base-requirements.txt (line 49))
+#13 5.375   Downloading isort-5.13.2-py3-none-any.whl.metadata (12 kB)
+#13 5.389 Collecting jedi==0.19.1 (from -r /src/requirements/base-requirements.txt (line 50))
+#13 5.392   Downloading jedi-0.19.1-py2.py3-none-any.whl.metadata (22 kB)
+#13 5.408 Collecting Jinja2==3.1.4 (from -r /src/requirements/base-requirements.txt (line 51))
+#13 5.411   Downloading jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+#13 5.445 Collecting joblib==1.4.2 (from -r /src/requirements/base-requirements.txt (line 52))
+#13 5.449   Downloading joblib-1.4.2-py3-none-any.whl.metadata (5.4 kB)
+#13 5.467 Collecting jsonschema==4.23.0 (from -r /src/requirements/base-requirements.txt (line 53))
+#13 5.470   Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
+#13 5.484 Collecting jsonschema-specifications==2024.10.1 (from -r /src/requirements/base-requirements.txt (line 54))
+#13 5.488   Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl.metadata (3.0 kB)
+#13 5.502 Collecting jupyter-sphinx==0.4.0 (from -r /src/requirements/base-requirements.txt (line 55))
+#13 5.505   Downloading jupyter_sphinx-0.4.0-py3-none-any.whl.metadata (1.4 kB)
+#13 5.522 Collecting jupyter_client==8.6.3 (from -r /src/requirements/base-requirements.txt (line 56))
+#13 5.526   Downloading jupyter_client-8.6.3-py3-none-any.whl.metadata (8.3 kB)
+#13 5.549 Collecting jupyter_core==5.7.2 (from -r /src/requirements/base-requirements.txt (line 57))
+#13 5.553   Downloading jupyter_core-5.7.2-py3-none-any.whl.metadata (3.4 kB)
+#13 5.565 Collecting jupyterlab_pygments==0.3.0 (from -r /src/requirements/base-requirements.txt (line 58))
+#13 5.571   Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl.metadata (4.4 kB)
+#13 5.587 Collecting jupyterlab_widgets==3.0.13 (from -r /src/requirements/base-requirements.txt (line 59))
+#13 5.591   Downloading jupyterlab_widgets-3.0.13-py3-none-any.whl.metadata (4.1 kB)
+#13 5.627 Collecting kiwisolver==1.4.7 (from -r /src/requirements/base-requirements.txt (line 60))
+#13 5.631   Downloading kiwisolver-1.4.7-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (6.3 kB)
+#13 5.728 Collecting lxml==5.3.0 (from -r /src/requirements/base-requirements.txt (line 61))
+#13 5.747   Downloading lxml-5.3.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+#13 5.804 Collecting MarkupSafe==3.0.1 (from -r /src/requirements/base-requirements.txt (line 62))
+#13 5.808   Downloading MarkupSafe-3.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+#13 5.898 Collecting matplotlib==3.9.2 (from -r /src/requirements/base-requirements.txt (line 63))
+#13 5.903   Downloading matplotlib-3.9.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+#13 5.928 Collecting mccabe==0.7.0 (from -r /src/requirements/base-requirements.txt (line 64))
+#13 5.932   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+#13 5.947 Collecting mistune==3.0.2 (from -r /src/requirements/base-requirements.txt (line 65))
+#13 5.951   Downloading mistune-3.0.2-py3-none-any.whl.metadata (1.7 kB)
+#13 5.968 Collecting more-itertools==10.5.0 (from -r /src/requirements/base-requirements.txt (line 66))
+#13 5.973   Downloading more_itertools-10.5.0-py3-none-any.whl.metadata (36 kB)
+#13 5.992 Collecting mpmath==1.3.0 (from -r /src/requirements/base-requirements.txt (line 67))
+#13 5.996   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+#13 6.011 Collecting multitasking==0.0.11 (from -r /src/requirements/base-requirements.txt (line 68))
+#13 6.015   Downloading multitasking-0.0.11-py3-none-any.whl.metadata (5.5 kB)
+#13 6.028 Collecting MutPy==0.6.1 (from -r /src/requirements/base-requirements.txt (line 69))
+#13 6.034   Downloading MutPy-0.6.1-py3-none-any.whl.metadata (10 kB)
+#13 6.089 Collecting mypy==0.910 (from -r /src/requirements/base-requirements.txt (line 70))
+#13 6.093   Downloading mypy-0.910-py3-none-any.whl.metadata (1.6 kB)
+#13 6.108 Collecting mypy-extensions==0.4.4 (from -r /src/requirements/base-requirements.txt (line 71))
+#13 6.112   Downloading mypy_extensions-0.4.4.tar.gz (4.2 kB)
+#13 6.119   Installing build dependencies: started
+#13 6.472   Installing build dependencies: finished with status 'done'
+#13 6.472   Getting requirements to build wheel: started
+#13 6.614   Getting requirements to build wheel: finished with status 'done'
+#13 6.614   Preparing metadata (pyproject.toml): started
+#13 6.694   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 6.709 Collecting nbclient==0.10.0 (from -r /src/requirements/base-requirements.txt (line 72))
+#13 6.713   Downloading nbclient-0.10.0-py3-none-any.whl.metadata (7.8 kB)
+#13 6.731 Collecting nbconvert==7.16.4 (from -r /src/requirements/base-requirements.txt (line 73))
+#13 6.734   Downloading nbconvert-7.16.4-py3-none-any.whl.metadata (8.5 kB)
+#13 6.760 Collecting nbformat==5.10.4 (from -r /src/requirements/base-requirements.txt (line 74))
+#13 6.763   Downloading nbformat-5.10.4-py3-none-any.whl.metadata (3.6 kB)
+#13 6.780 Collecting nbsphinx==0.9.3 (from -r /src/requirements/base-requirements.txt (line 75))
+#13 6.784   Downloading nbsphinx-0.9.3-py3-none-any.whl.metadata (2.1 kB)
+#13 6.800 Collecting networkx==2.5.1 (from -r /src/requirements/base-requirements.txt (line 76))
+#13 6.803   Downloading networkx-2.5.1-py3-none-any.whl.metadata (4.9 kB)
+#13 6.926 Collecting numpy==1.26.4 (from -r /src/requirements/base-requirements.txt (line 77))
+#13 6.931   Downloading numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+#13 6.946 Collecting packaging==24.1 (from -r /src/requirements/base-requirements.txt (line 78))
+#13 6.949   Downloading packaging-24.1-py3-none-any.whl.metadata (3.2 kB)
+#13 7.014 Collecting pandas==2.2.3 (from -r /src/requirements/base-requirements.txt (line 79))
+#13 7.020   Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+#13 7.045 Collecting pandocfilters==1.5.1 (from -r /src/requirements/base-requirements.txt (line 80))
+#13 7.048   Downloading pandocfilters-1.5.1-py2.py3-none-any.whl.metadata (9.0 kB)
+#13 7.062 Collecting parso==0.8.4 (from -r /src/requirements/base-requirements.txt (line 81))
+#13 7.065   Downloading parso-0.8.4-py2.py3-none-any.whl.metadata (7.7 kB)
+#13 7.079 Collecting pathspec==0.12.1 (from -r /src/requirements/base-requirements.txt (line 82))
+#13 7.084   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+#13 7.101 Collecting pbr==6.1.0 (from -r /src/requirements/base-requirements.txt (line 83))
+#13 7.106   Downloading pbr-6.1.0-py2.py3-none-any.whl.metadata (3.4 kB)
+#13 7.128 Collecting peewee==3.17.7 (from -r /src/requirements/base-requirements.txt (line 84))
+#13 7.132   Downloading peewee-3.17.7.tar.gz (939 kB)
+#13 7.147      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 939.5/939.5 kB 57.6 MB/s  0:00:00
+#13 7.179   Installing build dependencies: started
+#13 7.518   Installing build dependencies: finished with status 'done'
+#13 7.519   Getting requirements to build wheel: started
+#13 7.693   Getting requirements to build wheel: finished with status 'done'
+#13 7.694   Preparing metadata (pyproject.toml): started
+#13 7.795   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 7.807 Collecting pexpect==4.9.0 (from -r /src/requirements/base-requirements.txt (line 85))
+#13 7.813   Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+#13 7.827 Collecting pickleshare==0.7.5 (from -r /src/requirements/base-requirements.txt (line 86))
+#13 7.832   Downloading pickleshare-0.7.5-py2.py3-none-any.whl.metadata (1.5 kB)
+#13 7.915 Collecting pillow==11.0.0 (from -r /src/requirements/base-requirements.txt (line 87))
+#13 7.919   Downloading pillow-11.0.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+#13 7.939 Collecting platformdirs==4.3.6 (from -r /src/requirements/base-requirements.txt (line 88))
+#13 7.943   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+#13 7.957 Collecting ply==3.11 (from -r /src/requirements/base-requirements.txt (line 89))
+#13 7.960   Downloading ply-3.11-py2.py3-none-any.whl.metadata (844 bytes)
+#13 7.975 Collecting prettytable==3.11.0 (from -r /src/requirements/base-requirements.txt (line 90))
+#13 7.982   Downloading prettytable-3.11.0-py3-none-any.whl.metadata (30 kB)
+#13 8.002 Collecting prompt_toolkit==3.0.48 (from -r /src/requirements/base-requirements.txt (line 91))
+#13 8.007   Downloading prompt_toolkit-3.0.48-py3-none-any.whl.metadata (6.4 kB)
+#13 8.084 Collecting psutil==6.0.0 (from -r /src/requirements/base-requirements.txt (line 92))
+#13 8.088   Downloading psutil-6.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (21 kB)
+#13 8.102 Collecting ptyprocess==0.7.0 (from -r /src/requirements/base-requirements.txt (line 93))
+#13 8.105   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+#13 8.119 Collecting pycodestyle==2.12.1 (from -r /src/requirements/base-requirements.txt (line 94))
+#13 8.123   Downloading pycodestyle-2.12.1-py2.py3-none-any.whl.metadata (4.5 kB)
+#13 8.136 Collecting pydot==3.0.3 (from -r /src/requirements/base-requirements.txt (line 95))
+#13 8.141   Downloading pydot-3.0.3-py3-none-any.whl.metadata (10 kB)
+#13 8.156 Collecting pyflakes==3.2.0 (from -r /src/requirements/base-requirements.txt (line 96))
+#13 8.160   Downloading pyflakes-3.2.0-py2.py3-none-any.whl.metadata (3.5 kB)
+#13 8.175 Collecting Pygments==2.18.0 (from -r /src/requirements/base-requirements.txt (line 97))
+#13 8.179   Downloading pygments-2.18.0-py3-none-any.whl.metadata (2.5 kB)
+#13 8.195 Collecting pylatexenc==2.10 (from -r /src/requirements/base-requirements.txt (line 98))
+#13 8.200   Downloading pylatexenc-2.10.tar.gz (162 kB)
+#13 8.215   Installing build dependencies: started
+#13 8.489   Installing build dependencies: finished with status 'done'
+#13 8.490   Getting requirements to build wheel: started
+#13 8.628   Getting requirements to build wheel: finished with status 'done'
+#13 8.629   Preparing metadata (pyproject.toml): started
+#13 8.704   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 8.723 Collecting pylint==3.3.1 (from -r /src/requirements/base-requirements.txt (line 99))
+#13 8.729   Downloading pylint-3.3.1-py3-none-any.whl.metadata (12 kB)
+#13 8.743 Collecting pylintfileheader==1.0.0 (from -r /src/requirements/base-requirements.txt (line 100))
+#13 8.747   Downloading pylintfileheader-1.0.0-py3-none-any.whl.metadata (4.9 kB)
+#13 8.765 Collecting pyparsing==3.2.0 (from -r /src/requirements/base-requirements.txt (line 101))
+#13 8.768   Downloading pyparsing-3.2.0-py3-none-any.whl.metadata (5.0 kB)
+#13 8.782 Collecting pyperclip==1.9.0 (from -r /src/requirements/base-requirements.txt (line 102))
+#13 8.786   Downloading pyperclip-1.9.0.tar.gz (20 kB)
+#13 8.795   Installing build dependencies: started
+#13 9.081   Installing build dependencies: finished with status 'done'
+#13 9.081   Getting requirements to build wheel: started
+#13 9.219   Getting requirements to build wheel: finished with status 'done'
+#13 9.220   Preparing metadata (pyproject.toml): started
+#13 9.297   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 9.314 Collecting pyscf==2.7.0 (from -r /src/requirements/base-requirements.txt (line 103))
+#13 9.318   Downloading pyscf-2.7.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.2 kB)
+#13 9.335 Collecting python-constraint==1.4.0 (from -r /src/requirements/base-requirements.txt (line 104))
+#13 9.340   Downloading python-constraint-1.4.0.tar.bz2 (18 kB)
+#13 9.351   Installing build dependencies: started
+#13 9.622   Installing build dependencies: finished with status 'done'
+#13 9.623   Getting requirements to build wheel: started
+#13 9.761   Getting requirements to build wheel: finished with status 'done'
+#13 9.761   Preparing metadata (pyproject.toml): started
+#13 9.839   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 9.851 Collecting python-dateutil==2.9.0.post0 (from -r /src/requirements/base-requirements.txt (line 105))
+#13 9.874   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#13 9.891 Collecting python-subunit==1.4.4 (from -r /src/requirements/base-requirements.txt (line 106))
+#13 9.897   Downloading python_subunit-1.4.4-py3-none-any.whl.metadata (22 kB)
+#13 9.921 Collecting pytz==2024.2 (from -r /src/requirements/base-requirements.txt (line 107))
+#13 9.925   Downloading pytz-2024.2-py2.py3-none-any.whl.metadata (22 kB)
+#13 9.950 Collecting PyYAML==6.0.2 (from -r /src/requirements/base-requirements.txt (line 108))
+#13 9.953   Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+#13 10.07 Collecting pyzmq==26.2.0 (from -r /src/requirements/base-requirements.txt (line 109))
+#13 10.07   Downloading pyzmq-26.2.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (6.2 kB)
+#13 10.09 Collecting Quandl==3.7.0 (from -r /src/requirements/base-requirements.txt (line 110))
+#13 10.09   Downloading Quandl-3.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+#13 10.11 Collecting referencing==0.35.1 (from -r /src/requirements/base-requirements.txt (line 111))
+#13 10.11   Downloading referencing-0.35.1-py3-none-any.whl.metadata (2.8 kB)
+#13 10.13 Collecting reno==4.1.0 (from -r /src/requirements/base-requirements.txt (line 112))
+#13 10.14   Downloading reno-4.1.0-py3-none-any.whl.metadata (4.3 kB)
+#13 10.19 Collecting requests==2.32.4 (from -r /src/requirements/base-requirements.txt (line 113))
+#13 10.20   Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+#13 10.23 Collecting retworkx==0.16.0 (from -r /src/requirements/base-requirements.txt (line 114))
+#13 10.23   Downloading retworkx-0.16.0-py3-none-any.whl.metadata (10 kB)
+#13 10.38 Collecting rpds-py==0.20.0 (from -r /src/requirements/base-requirements.txt (line 115))
+#13 10.39   Downloading rpds_py-0.20.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+#13 10.43 Collecting rustworkx==0.16.0 (from -r /src/requirements/base-requirements.txt (line 116))
+#13 10.44   Downloading rustworkx-0.16.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+#13 10.50 Collecting scikit-learn==1.5.2 (from -r /src/requirements/base-requirements.txt (line 117))
+#13 10.51   Downloading scikit_learn-1.5.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (13 kB)
+#13 10.64 Collecting scipy==1.13.1 (from -r /src/requirements/base-requirements.txt (line 118))
+#13 11.87   Downloading scipy-1.13.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+#13 11.89 Collecting seaborn==0.13.2 (from -r /src/requirements/base-requirements.txt (line 119))
+#13 11.90   Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+#13 11.91 Collecting six==1.16.0 (from -r /src/requirements/base-requirements.txt (line 120))
+#13 11.92   Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+#13 11.93 Collecting snowballstemmer==2.2.0 (from -r /src/requirements/base-requirements.txt (line 121))
+#13 11.93   Downloading snowballstemmer-2.2.0-py2.py3-none-any.whl.metadata (6.5 kB)
+#13 11.95 Collecting soupsieve==2.6 (from -r /src/requirements/base-requirements.txt (line 122))
+#13 11.95   Downloading soupsieve-2.6-py3-none-any.whl.metadata (4.6 kB)
+#13 11.98 Collecting Sphinx==3.5.4 (from -r /src/requirements/base-requirements.txt (line 123))
+#13 11.98   Downloading Sphinx-3.5.4-py3-none-any.whl.metadata (7.9 kB)
+#13 12.00 Collecting sphinx-autodoc-typehints==1.12.0 (from -r /src/requirements/base-requirements.txt (line 124))
+#13 12.01   Downloading sphinx_autodoc_typehints-1.12.0-py3-none-any.whl.metadata (6.5 kB)
+#13 12.04 Collecting sphinx-tabs==3.4.7 (from -r /src/requirements/base-requirements.txt (line 125))
+#13 12.05   Downloading sphinx_tabs-3.4.7-py3-none-any.whl.metadata (6.3 kB)
+#13 12.07 Collecting sphinxcontrib-applehelp==2.0.0 (from -r /src/requirements/base-requirements.txt (line 126))
+#13 12.08   Downloading sphinxcontrib_applehelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+#13 12.09 Collecting sphinxcontrib-devhelp==2.0.0 (from -r /src/requirements/base-requirements.txt (line 127))
+#13 12.09   Downloading sphinxcontrib_devhelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+#13 12.11 Collecting sphinxcontrib-htmlhelp==2.1.0 (from -r /src/requirements/base-requirements.txt (line 128))
+#13 12.11   Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+#13 12.13 Collecting sphinxcontrib-jquery==4.1 (from -r /src/requirements/base-requirements.txt (line 129))
+#13 12.13   Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl.metadata (2.6 kB)
+#13 12.16 Collecting sphinxcontrib-jsmath==1.0.1 (from -r /src/requirements/base-requirements.txt (line 130))
+#13 12.16   Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl.metadata (1.4 kB)
+#13 12.18 Collecting sphinxcontrib-qthelp==2.0.0 (from -r /src/requirements/base-requirements.txt (line 131))
+#13 12.18   Downloading sphinxcontrib_qthelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+#13 12.20 Collecting sphinxcontrib-serializinghtml==2.0.0 (from -r /src/requirements/base-requirements.txt (line 132))
+#13 12.20   Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl.metadata (2.4 kB)
+#13 12.22 Collecting stestr==4.1.0 (from -r /src/requirements/base-requirements.txt (line 133))
+#13 12.22   Downloading stestr-4.1.0-py3-none-any.whl.metadata (8.1 kB)
+#13 12.24 Collecting stevedore==5.3.0 (from -r /src/requirements/base-requirements.txt (line 134))
+#13 12.25   Downloading stevedore-5.3.0-py3-none-any.whl.metadata (2.3 kB)
+#13 12.27 Collecting symengine==0.9.2 (from -r /src/requirements/base-requirements.txt (line 135))
+#13 12.28   Downloading symengine-0.9.2-cp310-cp310-manylinux2010_x86_64.whl.metadata (1.1 kB)
+#13 12.29 Collecting sympy==1.13.3 (from -r /src/requirements/base-requirements.txt (line 136))
+#13 12.36   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
+#13 12.38 Collecting termcolor==2.5.0 (from -r /src/requirements/base-requirements.txt (line 137))
+#13 12.38   Downloading termcolor-2.5.0-py3-none-any.whl.metadata (6.1 kB)
+#13 12.39 Collecting testtools==2.7.2 (from -r /src/requirements/base-requirements.txt (line 138))
+#13 12.40   Downloading testtools-2.7.2-py3-none-any.whl.metadata (5.2 kB)
+#13 12.41 Collecting threadpoolctl==3.5.0 (from -r /src/requirements/base-requirements.txt (line 139))
+#13 12.42   Downloading threadpoolctl-3.5.0-py3-none-any.whl.metadata (13 kB)
+#13 12.43 Collecting tinycss2==1.3.0 (from -r /src/requirements/base-requirements.txt (line 140))
+#13 12.44   Downloading tinycss2-1.3.0-py3-none-any.whl.metadata (3.0 kB)
+#13 12.45 Collecting tomli==2.0.2 (from -r /src/requirements/base-requirements.txt (line 141))
+#13 12.46   Downloading tomli-2.0.2-py3-none-any.whl.metadata (10.0 kB)
+#13 12.47 Collecting tomlkit==0.13.2 (from -r /src/requirements/base-requirements.txt (line 142))
+#13 12.48   Downloading tomlkit-0.13.2-py3-none-any.whl.metadata (2.7 kB)
+#13 12.51 Collecting torch==1.11.0 (from -r /src/requirements/base-requirements.txt (line 143))
+#13 12.51   Downloading torch-1.11.0-cp310-cp310-manylinux1_x86_64.whl.metadata (24 kB)
+#13 12.53 Collecting tornado==6.4.1 (from -r /src/requirements/base-requirements.txt (line 144))
+#13 12.54   Downloading tornado-6.4.1-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
+#13 12.56 Collecting tqdm==4.67.1 (from -r /src/requirements/base-requirements.txt (line 145))
+#13 12.57   Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+#13 12.59 Collecting traitlets==5.14.3 (from -r /src/requirements/base-requirements.txt (line 146))
+#13 12.60   Downloading traitlets-5.14.3-py3-none-any.whl.metadata (10 kB)
+#13 12.62 Collecting tweedledum==1.1.1 (from -r /src/requirements/base-requirements.txt (line 147))
+#13 12.62   Downloading tweedledum-1.1.1-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (10.0 kB)
+#13 12.67 Collecting typed-ast==1.5.0 (from -r /src/requirements/base-requirements.txt (line 148))
+#13 12.68   Downloading typed_ast-1.5.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (1.5 kB)
+#13 12.69 Collecting typing_extensions==4.12.2 (from -r /src/requirements/base-requirements.txt (line 149))
+#13 12.70   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+#13 12.71 Collecting tzdata==2024.2 (from -r /src/requirements/base-requirements.txt (line 150))
+#13 12.72   Downloading tzdata-2024.2-py2.py3-none-any.whl.metadata (1.4 kB)
+#13 12.74 Collecting urllib3==2.4.0 (from -r /src/requirements/base-requirements.txt (line 151))
+#13 12.74   Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
+#13 12.76 Collecting voluptuous==0.15.2 (from -r /src/requirements/base-requirements.txt (line 152))
+#13 12.76   Downloading voluptuous-0.15.2-py3-none-any.whl.metadata (20 kB)
+#13 12.78 Collecting wcwidth==0.2.13 (from -r /src/requirements/base-requirements.txt (line 153))
+#13 12.78   Downloading wcwidth-0.2.13-py2.py3-none-any.whl.metadata (14 kB)
+#13 12.79 Collecting webencodings==0.5.1 (from -r /src/requirements/base-requirements.txt (line 154))
+#13 12.80   Downloading webencodings-0.5.1-py2.py3-none-any.whl.metadata (2.1 kB)
+#13 12.82 Collecting widgetsnbextension==4.0.13 (from -r /src/requirements/base-requirements.txt (line 155))
+#13 12.82   Downloading widgetsnbextension-4.0.13-py3-none-any.whl.metadata (1.6 kB)
+#13 12.84 Collecting yfinance==0.2.44 (from -r /src/requirements/base-requirements.txt (line 156))
+#13 12.85   Downloading yfinance-0.2.44-py2.py3-none-any.whl.metadata (13 kB)
+#13 12.86 Collecting zipp==3.20.2 (from -r /src/requirements/base-requirements.txt (line 157))
+#13 12.87   Downloading zipp-3.20.2-py3-none-any.whl.metadata (3.7 kB)
+#13 12.98 Requirement already satisfied: setuptools>=18.5 in /usr/local/lib/python3.10/site-packages (from ipython==7.21.0->-r /src/requirements/base-requirements.txt (line 46)) (79.0.1)
+#13 13.04 Collecting toml (from mypy==0.910->-r /src/requirements/base-requirements.txt (line 70))
+#13 13.05   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+#13 13.16 Downloading alabaster-0.7.16-py3-none-any.whl (13 kB)
+#13 13.17 Downloading astor-0.8.1-py2.py3-none-any.whl (27 kB)
+#13 13.18 Downloading astroid-3.3.5-py3-none-any.whl (274 kB)
+#13 13.19 Downloading attrs-24.2.0-py3-none-any.whl (63 kB)
+#13 13.20 Downloading autopage-0.5.2-py3-none-any.whl (30 kB)
+#13 13.20 Downloading babel-2.16.0-py3-none-any.whl (9.6 MB)
+#13 13.55    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 27.7 MB/s  0:00:00
+#13 13.58 Downloading backcall-0.2.0-py2.py3-none-any.whl (11 kB)
+#13 13.59 Downloading beautifulsoup4-4.12.3-py3-none-any.whl (147 kB)
+#13 13.60 Downloading black-25.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+#13 13.63    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 54.1 MB/s  0:00:00
+#13 13.64 Downloading bleach-6.1.0-py3-none-any.whl (162 kB)
+#13 13.65 Downloading certifi-2024.8.30-py3-none-any.whl (167 kB)
+#13 13.66 Downloading charset_normalizer-3.4.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (144 kB)
+#13 13.67 Downloading click-8.1.8-py3-none-any.whl (98 kB)
+#13 13.68 Downloading cliff-4.7.0-py3-none-any.whl (81 kB)
+#13 13.68 Downloading cmd2-2.4.3-py3-none-any.whl (147 kB)
+#13 13.70 Downloading comm-0.2.2-py3-none-any.whl (7.2 kB)
+#13 13.70 Downloading configparser-7.1.0-py3-none-any.whl (17 kB)
+#13 13.71 Downloading contourpy-1.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (322 kB)
+#13 13.73 Downloading coverage-7.6.3-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (234 kB)
+#13 13.74 Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+#13 13.74 Downloading ddt-1.7.2-py2.py3-none-any.whl (7.1 kB)
+#13 13.75 Downloading decorator-4.4.2-py2.py3-none-any.whl (9.2 kB)
+#13 13.76 Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+#13 13.77 Downloading dill-0.3.9-py3-none-any.whl (119 kB)
+#13 13.78 Downloading docutils-0.16-py2.py3-none-any.whl (548 kB)
+#13 13.79    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 548.2/548.2 kB 34.1 MB/s  0:00:00
+#13 13.80 Downloading dulwich-0.22.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (968 kB)
+#13 13.82    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 968.1/968.1 kB 45.1 MB/s  0:00:00
+#13 13.82 Downloading extras-1.0.0-py2.py3-none-any.whl (7.3 kB)
+#13 13.83 Downloading fastjsonschema-2.20.0-py3-none-any.whl (23 kB)
+#13 13.84 Downloading fixtures-4.1.0-py3-none-any.whl (64 kB)
+#13 13.85 Downloading flake8-7.1.2-py2.py3-none-any.whl (57 kB)
+#13 13.86 Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+#13 13.87 Downloading pycodestyle-2.12.1-py2.py3-none-any.whl (31 kB)
+#13 13.88 Downloading pyflakes-3.2.0-py2.py3-none-any.whl (62 kB)
+#13 13.89 Downloading fonttools-4.54.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
+#13 13.96    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 66.9 MB/s  0:00:00
+#13 13.97 Downloading frozendict-2.4.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (117 kB)
+#13 13.98 Downloading h5py-3.7.0-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (4.5 MB)
+#13 14.05    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 64.6 MB/s  0:00:00
+#13 14.05 Downloading html5lib-1.1-py2.py3-none-any.whl (112 kB)
+#13 14.06 Downloading idna-3.10-py3-none-any.whl (70 kB)
+#13 14.07 Downloading imagesize-1.4.1-py2.py3-none-any.whl (8.8 kB)
+#13 14.08 Downloading importlib_metadata-8.5.0-py3-none-any.whl (26 kB)
+#13 14.08 Downloading importlib_resources-6.4.5-py3-none-any.whl (36 kB)
+#13 14.09 Downloading inflection-0.5.1-py2.py3-none-any.whl (9.5 kB)
+#13 14.10 Downloading ipykernel-5.5.0-py3-none-any.whl (120 kB)
+#13 14.11 Downloading ipython-7.21.0-py3-none-any.whl (784 kB)
+#13 14.13    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 784.5/784.5 kB 46.3 MB/s  0:00:00
+#13 14.13 Downloading prompt_toolkit-3.0.48-py3-none-any.whl (386 kB)
+#13 14.15 Downloading ipywidgets-8.1.5-py3-none-any.whl (139 kB)
+#13 14.16 Downloading jupyterlab_widgets-3.0.13-py3-none-any.whl (214 kB)
+#13 14.17 Downloading widgetsnbextension-4.0.13-py3-none-any.whl (2.3 MB)
+#13 14.21    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 55.8 MB/s  0:00:00
+#13 14.22 Downloading iso8601-2.1.0-py3-none-any.whl (7.5 kB)
+#13 14.23 Downloading isort-5.13.2-py3-none-any.whl (92 kB)
+#13 14.24 Downloading jedi-0.19.1-py2.py3-none-any.whl (1.6 MB)
+#13 14.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 50.7 MB/s  0:00:00
+#13 14.28 Downloading parso-0.8.4-py2.py3-none-any.whl (103 kB)
+#13 14.29 Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+#13 14.30 Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
+#13 14.32 Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+#13 14.32 Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl (18 kB)
+#13 14.34 Downloading jupyter_sphinx-0.4.0-py3-none-any.whl (21 kB)
+#13 14.34 Downloading jupyter_client-8.6.3-py3-none-any.whl (106 kB)
+#13 14.35 Downloading jupyter_core-5.7.2-py3-none-any.whl (28 kB)
+#13 14.36 Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl (15 kB)
+#13 14.37 Downloading kiwisolver-1.4.7-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+#13 14.40    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 60.2 MB/s  0:00:00
+#13 14.40 Downloading lxml-5.3.0-cp310-cp310-manylinux_2_28_x86_64.whl (5.0 MB)
+#13 14.49    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 58.3 MB/s  0:00:00
+#13 14.49 Downloading MarkupSafe-3.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+#13 14.50 Downloading matplotlib-3.9.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.3 MB)
+#13 14.67    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 49.6 MB/s  0:00:00
+#13 14.68 Downloading mistune-3.0.2-py3-none-any.whl (47 kB)
+#13 14.68 Downloading more_itertools-10.5.0-py3-none-any.whl (60 kB)
+#13 14.69 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#13 14.70    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 33.6 MB/s  0:00:00
+#13 14.71 Downloading multitasking-0.0.11-py3-none-any.whl (8.5 kB)
+#13 14.73 Downloading MutPy-0.6.1-py3-none-any.whl (33 kB)
+#13 14.74 Downloading mypy-0.910-py3-none-any.whl (2.1 MB)
+#13 14.78    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 64.4 MB/s  0:00:00
+#13 14.78 Downloading nbclient-0.10.0-py3-none-any.whl (25 kB)
+#13 14.79 Downloading nbconvert-7.16.4-py3-none-any.whl (257 kB)
+#13 14.84 Downloading nbformat-5.10.4-py3-none-any.whl (78 kB)
+#13 14.86 Downloading nbsphinx-0.9.3-py3-none-any.whl (31 kB)
+#13 14.88 Downloading networkx-2.5.1-py3-none-any.whl (1.6 MB)
+#13 14.91    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 47.9 MB/s  0:00:00
+#13 14.92 Downloading numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+#13 15.26    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.2/18.2 MB 53.2 MB/s  0:00:00
+#13 15.27 Downloading packaging-24.1-py3-none-any.whl (53 kB)
+#13 15.28 Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+#13 15.47    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 69.4 MB/s  0:00:00
+#13 15.47 Downloading pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
+#13 15.49 Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+#13 15.50 Downloading pbr-6.1.0-py2.py3-none-any.whl (108 kB)
+#13 15.51 Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+#13 15.52 Downloading pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
+#13 15.53 Downloading pillow-11.0.0-cp310-cp310-manylinux_2_28_x86_64.whl (4.4 MB)
+#13 15.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 53.7 MB/s  0:00:00
+#13 15.61 Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+#13 15.62 Downloading ply-3.11-py2.py3-none-any.whl (49 kB)
+#13 15.63 Downloading prettytable-3.11.0-py3-none-any.whl (28 kB)
+#13 15.64 Downloading psutil-6.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (290 kB)
+#13 15.65 Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+#13 15.66 Downloading pydot-3.0.3-py3-none-any.whl (35 kB)
+#13 15.67 Downloading pygments-2.18.0-py3-none-any.whl (1.2 MB)
+#13 15.69    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 55.1 MB/s  0:00:00
+#13 15.70 Downloading pylint-3.3.1-py3-none-any.whl (521 kB)
+#13 15.71 Downloading pylintfileheader-1.0.0-py3-none-any.whl (6.8 kB)
+#13 15.72 Downloading pyparsing-3.2.0-py3-none-any.whl (106 kB)
+#13 15.74 Downloading pyscf-2.7.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (48.7 MB)
+#13 16.85    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.7/48.7 MB 43.5 MB/s  0:00:01
+#13 16.86 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#13 16.87 Downloading python_subunit-1.4.4-py3-none-any.whl (104 kB)
+#13 16.89 Downloading pytz-2024.2-py2.py3-none-any.whl (508 kB)
+#13 16.92 Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+#13 16.95    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 751.2/751.2 kB 25.6 MB/s  0:00:00
+#13 16.95 Downloading pyzmq-26.2.0-cp310-cp310-manylinux_2_28_x86_64.whl (868 kB)
+#13 16.98    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 868.8/868.8 kB 30.8 MB/s  0:00:00
+#13 16.99 Downloading Quandl-3.7.0-py2.py3-none-any.whl (26 kB)
+#13 16.99 Downloading referencing-0.35.1-py3-none-any.whl (26 kB)
+#13 17.00 Downloading reno-4.1.0-py3-none-any.whl (72 kB)
+#13 17.01 Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+#13 17.02 Downloading urllib3-2.4.0-py3-none-any.whl (128 kB)
+#13 17.03 Downloading retworkx-0.16.0-py3-none-any.whl (10 kB)
+#13 17.05 Downloading rpds_py-0.20.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (354 kB)
+#13 17.07 Downloading rustworkx-0.16.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#13 17.11    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 45.9 MB/s  0:00:00
+#13 17.12 Downloading scikit_learn-1.5.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.3 MB)
+#13 17.31    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.3/13.3 MB 72.4 MB/s  0:00:00
+#13 17.34 Downloading scipy-1.13.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.6 MB)
+#13 17.91    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 68.1 MB/s  0:00:00
+#13 17.91 Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+#13 17.93 Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#13 17.95 Downloading snowballstemmer-2.2.0-py2.py3-none-any.whl (93 kB)
+#13 17.96 Downloading soupsieve-2.6-py3-none-any.whl (36 kB)
+#13 17.97 Downloading Sphinx-3.5.4-py3-none-any.whl (2.8 MB)
+#13 18.03    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 45.4 MB/s  0:00:00
+#13 18.04 Downloading sphinx_autodoc_typehints-1.12.0-py3-none-any.whl (9.4 kB)
+#13 18.05 Downloading sphinx_tabs-3.4.7-py3-none-any.whl (9.7 kB)
+#13 18.07 Downloading sphinxcontrib_applehelp-2.0.0-py3-none-any.whl (119 kB)
+#13 18.08 Downloading sphinxcontrib_devhelp-2.0.0-py3-none-any.whl (82 kB)
+#13 18.09 Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl (98 kB)
+#13 18.10 Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl (121 kB)
+#13 18.12 Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl (5.1 kB)
+#13 18.13 Downloading sphinxcontrib_qthelp-2.0.0-py3-none-any.whl (88 kB)
+#13 18.15 Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl (92 kB)
+#13 18.16 Downloading stestr-4.1.0-py3-none-any.whl (117 kB)
+#13 18.17 Downloading stevedore-5.3.0-py3-none-any.whl (49 kB)
+#13 18.19 Downloading symengine-0.9.2-cp310-cp310-manylinux2010_x86_64.whl (37.5 MB)
+#13 18.83    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.5/37.5 MB 58.2 MB/s  0:00:00
+#13 18.84 Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+#13 18.94    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 61.6 MB/s  0:00:00
+#13 18.94 Downloading termcolor-2.5.0-py3-none-any.whl (7.8 kB)
+#13 18.96 Downloading testtools-2.7.2-py3-none-any.whl (179 kB)
+#13 18.97 Downloading threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+#13 18.98 Downloading tinycss2-1.3.0-py3-none-any.whl (22 kB)
+#13 18.99 Downloading tomli-2.0.2-py3-none-any.whl (13 kB)
+#13 19.00 Downloading tomlkit-0.13.2-py3-none-any.whl (37 kB)
+#13 19.00 Downloading torch-1.11.0-cp310-cp310-manylinux1_x86_64.whl (750.6 MB)
+#13 30.76    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 750.6/750.6 MB 60.4 MB/s  0:00:11
+#13 30.77 Downloading tornado-6.4.1-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (436 kB)
+#13 30.78 Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+#13 30.79 Downloading traitlets-5.14.3-py3-none-any.whl (85 kB)
+#13 30.80 Downloading tweedledum-1.1.1-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (929 kB)
+#13 30.82    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 929.7/929.7 kB 46.6 MB/s  0:00:00
+#13 30.84 Downloading typed_ast-1.5.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (877 kB)
+#13 30.86    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 877.6/877.6 kB 49.4 MB/s  0:00:00
+#13 30.86 Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+#13 30.87 Downloading tzdata-2024.2-py2.py3-none-any.whl (346 kB)
+#13 30.88 Downloading voluptuous-0.15.2-py3-none-any.whl (31 kB)
+#13 30.89 Downloading wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
+#13 30.90 Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+#13 30.91 Downloading yfinance-0.2.44-py2.py3-none-any.whl (94 kB)
+#13 30.92 Downloading zipp-3.20.2-py3-none-any.whl (9.2 kB)
+#13 30.93 Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+#13 31.52 Building wheels for collected packages: astmonkey, discover, dlx, docplex, fastdtw, mypy-extensions, peewee, pylatexenc, pyperclip, python-constraint
+#13 31.52   Building wheel for astmonkey (pyproject.toml): started
+#13 31.66   Building wheel for astmonkey (pyproject.toml): finished with status 'done'
+#13 31.66   Created wheel for astmonkey: filename=astmonkey-0.3.6-py3-none-any.whl size=10475 sha256=4f8ecfa43a4969a4b2705d574ac0db378a3f4e09027d1488bfdfaaef291f90dd
+#13 31.66   Stored in directory: /root/.cache/pip/wheels/9d/28/5d/6909e12cf18b8b7a039e28b74cae4325c2f9aef5e6c257995b
+#13 31.66   Building wheel for discover (pyproject.toml): started
+#13 31.78   Building wheel for discover (pyproject.toml): finished with status 'done'
+#13 31.78   Created wheel for discover: filename=discover-0.4.0-py3-none-any.whl size=9118 sha256=eb6aefe942f17449234b606cb81fd8cc86afdffef3e5ecd1302540ef35e397ec
+#13 31.78   Stored in directory: /root/.cache/pip/wheels/d8/6d/14/5ec6af6c36a90e1e700b5ef6f3e2a310b0b4ee6a1a6be7addf
+#13 31.79   Building wheel for dlx (pyproject.toml): started
+#13 31.91   Building wheel for dlx (pyproject.toml): finished with status 'done'
+#13 31.91   Created wheel for dlx: filename=dlx-1.0.4-py3-none-any.whl size=5748 sha256=01c3954a88d8d06cae132942bb83fe8d9f533f3d37e64416af1b3eedd2c7d61d
+#13 31.91   Stored in directory: /root/.cache/pip/wheels/fa/90/76/765d41af911e08fba4e0b24e85a5451ded8197fe44b22869a8
+#13 31.91   Building wheel for docplex (pyproject.toml): started
+#13 32.15   Building wheel for docplex (pyproject.toml): finished with status 'done'
+#13 32.15   Created wheel for docplex: filename=docplex-2.28.240-py3-none-any.whl size=682833 sha256=bda3c741461589ffa5ce9ad5eaf11118c710f4721e90a83fc40c3545dc398d24
+#13 32.15   Stored in directory: /root/.cache/pip/wheels/1b/ec/59/cc07dedc67b032a492201f6f26c1f3c9e667ef208c9213ba6d
+#13 32.15   Building wheel for fastdtw (pyproject.toml): started
+#13 32.32   Building wheel for fastdtw (pyproject.toml): finished with status 'done'
+#13 32.32   Created wheel for fastdtw: filename=fastdtw-0.3.4-py3-none-any.whl size=3612 sha256=882b2209c1a75568330325da08922ebae04c42d6842d5769f7bb17267ed95010
+#13 32.32   Stored in directory: /root/.cache/pip/wheels/73/c8/f7/c25448dab74c3acf4848bc25d513c736bb93910277e1528ef4
+#13 32.32   Building wheel for mypy-extensions (pyproject.toml): started
+#13 32.44   Building wheel for mypy-extensions (pyproject.toml): finished with status 'done'
+#13 32.44   Created wheel for mypy-extensions: filename=mypy_extensions-0.4.4-py2.py3-none-any.whl size=4557 sha256=c6426957343024da3f1c5d8e2568b25e99ae6bfaf17c07b81f2b12139bbafc6e
+#13 32.44   Stored in directory: /root/.cache/pip/wheels/50/8f/3c/c013122b272ef710ba4d3e2f8d73743b105b4c4d1555f6b83d
+#13 32.45   Building wheel for peewee (pyproject.toml): started
+#13 38.62   Building wheel for peewee (pyproject.toml): finished with status 'done'
+#13 38.62   Created wheel for peewee: filename=peewee-3.17.7-cp310-cp310-linux_x86_64.whl size=1011435 sha256=a9e78f7a57b0bddcc82c8afc2032ceb544695ba5e79d3cf4c8581dc217ffc04f
+#13 38.62   Stored in directory: /root/.cache/pip/wheels/8d/0e/f8/48eb93a200fca4c502d7590613616fa4d2c9533f7308f9e28a
+#13 38.62   Building wheel for pylatexenc (pyproject.toml): started
+#13 38.78   Building wheel for pylatexenc (pyproject.toml): finished with status 'done'
+#13 38.78   Created wheel for pylatexenc: filename=pylatexenc-2.10-py3-none-any.whl size=136897 sha256=9552745b332efc1ab55332c3cb0157cc879b528bdb08cdda3723ceedab4a2922
+#13 38.78   Stored in directory: /root/.cache/pip/wheels/d3/31/8b/e09b0386afd80cfc556c00408c9aeea5c35c4d484a9c762fd5
+#13 38.78   Building wheel for pyperclip (pyproject.toml): started
+#13 38.93   Building wheel for pyperclip (pyproject.toml): finished with status 'done'
+#13 38.93   Created wheel for pyperclip: filename=pyperclip-1.9.0-py3-none-any.whl size=11102 sha256=6b7b678a9a97010fae5a1fb1ddbf7273555ce70607bbae39d26d116f0d33b77e
+#13 38.93   Stored in directory: /root/.cache/pip/wheels/cc/ae/36/ee17d1de094fcb61e24106cb329b5103861e819f94bef5e10a
+#13 38.93   Building wheel for python-constraint (pyproject.toml): started
+#13 39.10   Building wheel for python-constraint (pyproject.toml): finished with status 'done'
+#13 39.10   Created wheel for python-constraint: filename=python_constraint-1.4.0-py2.py3-none-any.whl size=24109 sha256=4c044bde863e319fb1a19137c33a9495805f22d50229110c5faaa1367b3be495
+#13 39.10   Stored in directory: /root/.cache/pip/wheels/2e/f2/2b/cb08b5fe129e4f69b7033061f256e5c551b0aa1160c2872aee
+#13 39.10 Successfully built astmonkey discover dlx docplex fastdtw mypy-extensions peewee pylatexenc pyperclip python-constraint
+#13 39.32 Installing collected packages: webencodings, wcwidth, snowballstemmer, pytz, python-constraint, pyperclip, pylatexenc, ptyprocess, ply, pickleshare, peewee, multitasking, mpmath, fastjsonschema, extras, dlx, discover, ddt, backcall, zipp, widgetsnbextension, voluptuous, urllib3, tzdata, typing_extensions, typed-ast, tweedledum, traitlets, tqdm, tornado, tomlkit, tomli, toml, tinycss2, threadpoolctl, testtools, termcolor, sympy, symengine, sphinxcontrib-serializinghtml, sphinxcontrib-qthelp, sphinxcontrib-jsmath, sphinxcontrib-htmlhelp, sphinxcontrib-devhelp, sphinxcontrib-applehelp, soupsieve, six, rpds-py, pyzmq, PyYAML, pyparsing, Pygments, pyflakes, pycodestyle, psutil, prompt_toolkit, prettytable, platformdirs, pillow, pexpect, pbr, pathspec, parso, pandocfilters, packaging, numpy, mypy-extensions, more-itertools, mistune, mccabe, MarkupSafe, lxml, kiwisolver, jupyterlab_widgets, jupyterlab_pygments, joblib, isort, iso8601, inflection, importlib_resources, imagesize, idna, frozendict, fonttools, docutils, dill, defusedxml, decorator, cycler, coverage, configparser, click, charset-normalizer, certifi, babel, autopage, attrs, astor, alabaster, torch, stevedore, scipy, rustworkx, requests, referencing, python-subunit, python-dateutil, pydot, networkx, mypy, jupyter_core, Jinja2, jedi, importlib_metadata, html5lib, h5py, flake8, fixtures, fastdtw, dulwich, docplex, contourpy, comm, cmd2, bleach, black, beautifulsoup4, astroid, Sphinx, scikit-learn, retworkx, reno, pyscf, pylint, pandas, matplotlib, jupyter_client, jsonschema-specifications, ipython, cliff, astmonkey, yfinance, stestr, sphinxcontrib-jquery, sphinx-tabs, sphinx-autodoc-typehints, seaborn, Quandl, pylintfileheader, MutPy, jsonschema, ipywidgets, ipykernel, nbformat, nbclient, nbconvert, nbsphinx, jupyter-sphinx
+#13 64.39 
+#13 64.40 Successfully installed Jinja2-3.1.4 MarkupSafe-3.0.1 MutPy-0.6.1 PyYAML-6.0.2 Pygments-2.18.0 Quandl-3.7.0 Sphinx-3.5.4 alabaster-0.7.16 astmonkey-0.3.6 astor-0.8.1 astroid-3.3.5 attrs-24.2.0 autopage-0.5.2 babel-2.16.0 backcall-0.2.0 beautifulsoup4-4.12.3 black-25.1.0 bleach-6.1.0 certifi-2024.8.30 charset-normalizer-3.4.0 click-8.1.8 cliff-4.7.0 cmd2-2.4.3 comm-0.2.2 configparser-7.1.0 contourpy-1.3.0 coverage-7.6.3 cycler-0.12.1 ddt-1.7.2 decorator-4.4.2 defusedxml-0.7.1 dill-0.3.9 discover-0.4.0 dlx-1.0.4 docplex-2.28.240 docutils-0.16 dulwich-0.22.3 extras-1.0.0 fastdtw-0.3.4 fastjsonschema-2.20.0 fixtures-4.1.0 flake8-7.1.2 fonttools-4.54.1 frozendict-2.4.6 h5py-3.7.0 html5lib-1.1 idna-3.10 imagesize-1.4.1 importlib_metadata-8.5.0 importlib_resources-6.4.5 inflection-0.5.1 ipykernel-5.5.0 ipython-7.21.0 ipywidgets-8.1.5 iso8601-2.1.0 isort-5.13.2 jedi-0.19.1 joblib-1.4.2 jsonschema-4.23.0 jsonschema-specifications-2024.10.1 jupyter-sphinx-0.4.0 jupyter_client-8.6.3 jupyter_core-5.7.2 jupyterlab_pygments-0.3.0 jupyterlab_widgets-3.0.13 kiwisolver-1.4.7 lxml-5.3.0 matplotlib-3.9.2 mccabe-0.7.0 mistune-3.0.2 more-itertools-10.5.0 mpmath-1.3.0 multitasking-0.0.11 mypy-0.910 mypy-extensions-0.4.4 nbclient-0.10.0 nbconvert-7.16.4 nbformat-5.10.4 nbsphinx-0.9.3 networkx-2.5.1 numpy-1.26.4 packaging-24.1 pandas-2.2.3 pandocfilters-1.5.1 parso-0.8.4 pathspec-0.12.1 pbr-6.1.0 peewee-3.17.7 pexpect-4.9.0 pickleshare-0.7.5 pillow-11.0.0 platformdirs-4.3.6 ply-3.11 prettytable-3.11.0 prompt_toolkit-3.0.48 psutil-6.0.0 ptyprocess-0.7.0 pycodestyle-2.12.1 pydot-3.0.3 pyflakes-3.2.0 pylatexenc-2.10 pylint-3.3.1 pylintfileheader-1.0.0 pyparsing-3.2.0 pyperclip-1.9.0 pyscf-2.7.0 python-constraint-1.4.0 python-dateutil-2.9.0.post0 python-subunit-1.4.4 pytz-2024.2 pyzmq-26.2.0 referencing-0.35.1 reno-4.1.0 requests-2.32.4 retworkx-0.16.0 rpds-py-0.20.0 rustworkx-0.16.0 scikit-learn-1.5.2 scipy-1.13.1 seaborn-0.13.2 six-1.16.0 snowballstemmer-2.2.0 soupsieve-2.6 sphinx-autodoc-typehints-1.12.0 sphinx-tabs-3.4.7 sphinxcontrib-applehelp-2.0.0 sphinxcontrib-devhelp-2.0.0 sphinxcontrib-htmlhelp-2.1.0 sphinxcontrib-jquery-4.1 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-2.0.0 sphinxcontrib-serializinghtml-2.0.0 stestr-4.1.0 stevedore-5.3.0 symengine-0.9.2 sympy-1.13.3 termcolor-2.5.0 testtools-2.7.2 threadpoolctl-3.5.0 tinycss2-1.3.0 toml-0.10.2 tomli-2.0.2 tomlkit-0.13.2 torch-1.11.0 tornado-6.4.1 tqdm-4.67.1 traitlets-5.14.3 tweedledum-1.1.1 typed-ast-1.5.0 typing_extensions-4.12.2 tzdata-2024.2 urllib3-2.4.0 voluptuous-0.15.2 wcwidth-0.2.13 webencodings-0.5.1 widgetsnbextension-4.0.13 yfinance-0.2.44 zipp-3.20.2
+#13 64.40 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#13 DONE 65.3s
+
+#14 [ 9/10] RUN pip install -r /src/requirements/qiskit2/2.0.2.txt
+#14 0.983 Collecting qiskit==2.0.2 (from -r /src/requirements/qiskit2/2.0.2.txt (line 1))
+#14 1.703   Downloading qiskit-2.0.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+#14 1.754 Collecting qiskit-aer==0.10.4 (from -r /src/requirements/qiskit2/2.0.2.txt (line 2))
+#14 1.758   Downloading qiskit_aer-0.10.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+#14 1.777 Collecting qiskit-machine-learning==0.4.0 (from -r /src/requirements/qiskit2/2.0.2.txt (line 3))
+#14 1.781   Downloading qiskit_machine_learning-0.4.0-py3-none-any.whl.metadata (7.9 kB)
+#14 1.801 Collecting qiskit-experiments==0.3.0 (from -r /src/requirements/qiskit2/2.0.2.txt (line 4))
+#14 1.805   Downloading qiskit_experiments-0.3.0-py3-none-any.whl.metadata (3.0 kB)
+#14 1.824 Collecting qiskit-ibmq-provider==0.19.1 (from -r /src/requirements/qiskit2/2.0.2.txt (line 5))
+#14 1.829   Downloading qiskit_ibmq_provider-0.19.1-py3-none-any.whl.metadata (11 kB)
+#14 1.852 Collecting qiskit-ignis==0.7.0 (from -r /src/requirements/qiskit2/2.0.2.txt (line 6))
+#14 1.855   Downloading qiskit_ignis-0.7.0-py3-none-any.whl.metadata (10 kB)
+#14 1.871 Collecting qiskit-aqua==0.9.5 (from -r /src/requirements/qiskit2/2.0.2.txt (line 7))
+#14 1.875   Downloading qiskit_aqua-0.9.5-py3-none-any.whl.metadata (2.6 kB)
+#14 1.881 Requirement already satisfied: rustworkx>=0.15.0 in /usr/local/lib/python3.10/site-packages (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1)) (0.16.0)
+#14 1.881 Requirement already satisfied: numpy<3,>=1.17 in /usr/local/lib/python3.10/site-packages (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1)) (1.26.4)
+#14 1.881 Requirement already satisfied: scipy>=1.5 in /usr/local/lib/python3.10/site-packages (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1)) (1.13.1)
+#14 1.881 Requirement already satisfied: sympy>=1.3 in /usr/local/lib/python3.10/site-packages (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1)) (1.13.3)
+#14 1.882 Requirement already satisfied: dill>=0.3 in /usr/local/lib/python3.10/site-packages (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1)) (0.3.9)
+#14 1.882 Requirement already satisfied: python-dateutil>=2.8.0 in /usr/local/lib/python3.10/site-packages (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1)) (2.9.0.post0)
+#14 1.882 Requirement already satisfied: stevedore>=3.0.0 in /usr/local/lib/python3.10/site-packages (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1)) (5.3.0)
+#14 1.882 Requirement already satisfied: typing-extensions in /usr/local/lib/python3.10/site-packages (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1)) (4.12.2)
+#14 1.921 Collecting symengine<0.14,>=0.11 (from qiskit==2.0.2->-r /src/requirements/qiskit2/2.0.2.txt (line 1))
+#14 1.925   Downloading symengine-0.13.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.2 kB)
+#14 1.980 Collecting qiskit-terra>=0.19.1 (from qiskit-aer==0.10.4->-r /src/requirements/qiskit2/2.0.2.txt (line 2))
+#14 1.990   Downloading qiskit_terra-0.46.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (13 kB)
+#14 2.000 Requirement already satisfied: psutil>=5 in /usr/local/lib/python3.10/site-packages (from qiskit-machine-learning==0.4.0->-r /src/requirements/qiskit2/2.0.2.txt (line 3)) (6.0.0)
+#14 2.000 Requirement already satisfied: scikit-learn>=0.20.0 in /usr/local/lib/python3.10/site-packages (from qiskit-machine-learning==0.4.0->-r /src/requirements/qiskit2/2.0.2.txt (line 3)) (1.5.2)
+#14 2.000 Requirement already satisfied: fastdtw in /usr/local/lib/python3.10/site-packages (from qiskit-machine-learning==0.4.0->-r /src/requirements/qiskit2/2.0.2.txt (line 3)) (0.3.4)
+#14 2.000 Requirement already satisfied: setuptools>=40.1.0 in /usr/local/lib/python3.10/site-packages (from qiskit-machine-learning==0.4.0->-r /src/requirements/qiskit2/2.0.2.txt (line 3)) (79.0.1)
+#14 2.004 Requirement already satisfied: matplotlib>=3.4 in /usr/local/lib/python3.10/site-packages (from qiskit-experiments==0.3.0->-r /src/requirements/qiskit2/2.0.2.txt (line 4)) (3.9.2)
+#14 2.017 Collecting uncertainties (from qiskit-experiments==0.3.0->-r /src/requirements/qiskit2/2.0.2.txt (line 4))
+#14 2.024   Downloading uncertainties-3.2.3-py3-none-any.whl.metadata (7.0 kB)
+#14 2.032 Requirement already satisfied: requests>=2.19 in /usr/local/lib/python3.10/site-packages (from qiskit-ibmq-provider==0.19.1->-r /src/requirements/qiskit2/2.0.2.txt (line 5)) (2.32.4)
+#14 2.042 Collecting requests-ntlm>=1.1.0 (from qiskit-ibmq-provider==0.19.1->-r /src/requirements/qiskit2/2.0.2.txt (line 5))
+#14 2.048   Downloading requests_ntlm-1.3.0-py3-none-any.whl.metadata (2.4 kB)
+#14 2.053 Requirement already satisfied: urllib3>=1.21.1 in /usr/local/lib/python3.10/site-packages (from qiskit-ibmq-provider==0.19.1->-r /src/requirements/qiskit2/2.0.2.txt (line 5)) (2.4.0)
+#14 2.064 Collecting websocket-client>=1.0.1 (from qiskit-ibmq-provider==0.19.1->-r /src/requirements/qiskit2/2.0.2.txt (line 5))
+#14 2.068   Downloading websocket_client-1.9.0-py3-none-any.whl.metadata (8.3 kB)
+#14 2.118 Collecting websockets>=10.0 (from qiskit-ibmq-provider==0.19.1->-r /src/requirements/qiskit2/2.0.2.txt (line 5))
+#14 2.122   Downloading websockets-16.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.8 kB)
+#14 2.129 Requirement already satisfied: retworkx>=0.8.0 in /usr/local/lib/python3.10/site-packages (from qiskit-ignis==0.7.0->-r /src/requirements/qiskit2/2.0.2.txt (line 6)) (0.16.0)
+#14 2.130 Requirement already satisfied: dlx<=1.0.4 in /usr/local/lib/python3.10/site-packages (from qiskit-aqua==0.9.5->-r /src/requirements/qiskit2/2.0.2.txt (line 7)) (1.0.4)
+#14 2.131 Requirement already satisfied: docplex>=2.21.207 in /usr/local/lib/python3.10/site-packages (from qiskit-aqua==0.9.5->-r /src/requirements/qiskit2/2.0.2.txt (line 7)) (2.28.240)
+#14 2.155 Collecting h5py<3.3.0 (from qiskit-aqua==0.9.5->-r /src/requirements/qiskit2/2.0.2.txt (line 7))
+#14 2.159   Downloading h5py-3.2.1.tar.gz (368 kB)
+#14 2.193   Installing build dependencies: started
+#14 2.718   Installing build dependencies: finished with status 'done'
+#14 2.719   Getting requirements to build wheel: started
+#14 2.866   Getting requirements to build wheel: finished with status 'done'
+#14 2.868   Installing backend dependencies: started
+#14 49.23   Installing backend dependencies: finished with status 'error'
+#14 49.59   error: subprocess-exited-with-error
+#14 49.59   
+#14 49.59   × installing backend dependencies for h5py did not run successfully.
+#14 49.59   │ exit code: 1
+#14 49.59   ╰─> [1229 lines of output]
+#14 49.59       Collecting Cython>=0.29.15
+#14 49.59         Downloading cython-3.2.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+#14 49.59       Collecting pkgconfig
+#14 49.59         Downloading pkgconfig-1.6.0-py3-none-any.whl.metadata (4.9 kB)
+#14 49.59       Collecting numpy==1.19.3
+#14 49.59         Downloading numpy-1.19.3.zip (7.3 MB)
+#14 49.59            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.3/7.3 MB 63.7 MB/s  0:00:00
+#14 49.59         Installing build dependencies: started
+#14 49.59         Installing build dependencies: finished with status 'done'
+#14 49.59         Getting requirements to build wheel: started
+#14 49.59         Getting requirements to build wheel: finished with status 'done'
+#14 49.59         Preparing metadata (pyproject.toml): started
+#14 49.59         Preparing metadata (pyproject.toml): finished with status 'done'
+#14 49.59       Downloading cython-3.2.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.5 MB)
+#14 49.59          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.5/3.5 MB 42.6 MB/s  0:00:00
+#14 49.59       Downloading pkgconfig-1.6.0-py3-none-any.whl (7.1 kB)
+#14 49.59       Building wheels for collected packages: numpy
+#14 49.59         Building wheel for numpy (pyproject.toml): started
+#14 49.59         Building wheel for numpy (pyproject.toml): finished with status 'error'
+#14 49.59         error: subprocess-exited-with-error
+#14 49.59       
+#14 49.59         × Building wheel for numpy (pyproject.toml) did not run successfully.
+#14 49.59         │ exit code: 1
+#14 49.59         ╰─> [1196 lines of output]
+#14 49.59             setup.py:67: RuntimeWarning: NumPy 1.19.3 may not yet support Python 3.10.
+#14 49.59               warnings.warn(
+#14 49.59             Running from numpy source directory.
+#14 49.59             numpy/random/_bounded_integers.pxd.in has not changed
+#14 49.59             numpy/random/mtrand.pyx has not changed
+#14 49.59             numpy/random/bit_generator.pyx has not changed
+#14 49.59             Processing numpy/random/_bounded_integers.pyx
+#14 49.59             numpy/random/_bounded_integers.pyx.in has not changed
+#14 49.59             numpy/random/_pcg64.pyx has not changed
+#14 49.59             numpy/random/_mt19937.pyx has not changed
+#14 49.59             numpy/random/_sfc64.pyx has not changed
+#14 49.59             numpy/random/_common.pyx has not changed
+#14 49.59             numpy/random/_philox.pyx has not changed
+#14 49.59             numpy/random/_generator.pyx has not changed
+#14 49.59             Cythonizing sources
+#14 49.59             blas_opt_info:
+#14 49.59             blas_mkl_info:
+#14 49.59             customize UnixCCompiler
+#14 49.59               libraries mkl_rt not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             blis_info:
+#14 49.59               libraries blis not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             openblas_info:
+#14 49.59               libraries openblas not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             atlas_3_10_blas_threads_info:
+#14 49.59             Setting PTATLAS=ATLAS
+#14 49.59               libraries tatlas not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             atlas_3_10_blas_info:
+#14 49.59               libraries satlas not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             atlas_blas_threads_info:
+#14 49.59             Setting PTATLAS=ATLAS
+#14 49.59               libraries ptf77blas,ptcblas,atlas not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             atlas_blas_info:
+#14 49.59               libraries f77blas,cblas,atlas not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             accelerate_info:
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             /tmp/pip-install-2myddz0k/numpy_1cb02a3eec36428facf2f39f12b1d100/numpy/distutils/system_info.py:1914: UserWarning:
+#14 49.59                 Optimized (vendor) Blas libraries are not found.
+#14 49.59                 Falls back to netlib Blas library which has worse performance.
+#14 49.59                 A better performance should be easily gained by switching
+#14 49.59                 Blas library.
+#14 49.59               if self._calc_info(blas):
+#14 49.59             blas_info:
+#14 49.59               libraries blas not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             /tmp/pip-install-2myddz0k/numpy_1cb02a3eec36428facf2f39f12b1d100/numpy/distutils/system_info.py:1914: UserWarning:
+#14 49.59                 Blas (http://www.netlib.org/blas/) libraries not found.
+#14 49.59                 Directories to search for the libraries can be specified in the
+#14 49.59                 numpy/distutils/site.cfg file (section [blas]) or by setting
+#14 49.59                 the BLAS environment variable.
+#14 49.59               if self._calc_info(blas):
+#14 49.59             blas_src_info:
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             /tmp/pip-install-2myddz0k/numpy_1cb02a3eec36428facf2f39f12b1d100/numpy/distutils/system_info.py:1914: UserWarning:
+#14 49.59                 Blas (http://www.netlib.org/blas/) sources not found.
+#14 49.59                 Directories to search for the sources can be specified in the
+#14 49.59                 numpy/distutils/site.cfg file (section [blas_src]) or by setting
+#14 49.59                 the BLAS_SRC environment variable.
+#14 49.59               if self._calc_info(blas):
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             non-existing path in 'numpy/distutils': 'site.cfg'
+#14 49.59             lapack_opt_info:
+#14 49.59             lapack_mkl_info:
+#14 49.59               libraries mkl_rt not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             openblas_lapack_info:
+#14 49.59               libraries openblas not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             openblas_clapack_info:
+#14 49.59               libraries openblas,lapack not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             flame_info:
+#14 49.59               libraries flame not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             atlas_3_10_threads_info:
+#14 49.59             Setting PTATLAS=ATLAS
+#14 49.59               libraries lapack_atlas not found in /usr/local/lib
+#14 49.59               libraries tatlas,tatlas not found in /usr/local/lib
+#14 49.59               libraries lapack_atlas not found in /usr/lib64
+#14 49.59               libraries tatlas,tatlas not found in /usr/lib64
+#14 49.59               libraries lapack_atlas not found in /usr/lib
+#14 49.59               libraries tatlas,tatlas not found in /usr/lib
+#14 49.59               libraries lapack_atlas not found in /usr/lib/x86_64-linux-gnu
+#14 49.59               libraries tatlas,tatlas not found in /usr/lib/x86_64-linux-gnu
+#14 49.59             <class 'numpy.distutils.system_info.atlas_3_10_threads_info'>
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             atlas_3_10_info:
+#14 49.59               libraries lapack_atlas not found in /usr/local/lib
+#14 49.59               libraries satlas,satlas not found in /usr/local/lib
+#14 49.59               libraries lapack_atlas not found in /usr/lib64
+#14 49.59               libraries satlas,satlas not found in /usr/lib64
+#14 49.59               libraries lapack_atlas not found in /usr/lib
+#14 49.59               libraries satlas,satlas not found in /usr/lib
+#14 49.59               libraries lapack_atlas not found in /usr/lib/x86_64-linux-gnu
+#14 49.59               libraries satlas,satlas not found in /usr/lib/x86_64-linux-gnu
+#14 49.59             <class 'numpy.distutils.system_info.atlas_3_10_info'>
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             atlas_threads_info:
+#14 49.59             Setting PTATLAS=ATLAS
+#14 49.59               libraries lapack_atlas not found in /usr/local/lib
+#14 49.59               libraries ptf77blas,ptcblas,atlas not found in /usr/local/lib
+#14 49.59               libraries lapack_atlas not found in /usr/lib64
+#14 49.59               libraries ptf77blas,ptcblas,atlas not found in /usr/lib64
+#14 49.59               libraries lapack_atlas not found in /usr/lib
+#14 49.59               libraries ptf77blas,ptcblas,atlas not found in /usr/lib
+#14 49.59               libraries lapack_atlas not found in /usr/lib/x86_64-linux-gnu
+#14 49.59               libraries ptf77blas,ptcblas,atlas not found in /usr/lib/x86_64-linux-gnu
+#14 49.59             <class 'numpy.distutils.system_info.atlas_threads_info'>
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             atlas_info:
+#14 49.59               libraries lapack_atlas not found in /usr/local/lib
+#14 49.59               libraries f77blas,cblas,atlas not found in /usr/local/lib
+#14 49.59               libraries lapack_atlas not found in /usr/lib64
+#14 49.59               libraries f77blas,cblas,atlas not found in /usr/lib64
+#14 49.59               libraries lapack_atlas not found in /usr/lib
+#14 49.59               libraries f77blas,cblas,atlas not found in /usr/lib
+#14 49.59               libraries lapack_atlas not found in /usr/lib/x86_64-linux-gnu
+#14 49.59               libraries f77blas,cblas,atlas not found in /usr/lib/x86_64-linux-gnu
+#14 49.59             <class 'numpy.distutils.system_info.atlas_info'>
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             lapack_info:
+#14 49.59               libraries lapack not found in ['/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             /tmp/pip-install-2myddz0k/numpy_1cb02a3eec36428facf2f39f12b1d100/numpy/distutils/system_info.py:1748: UserWarning:
+#14 49.59                 Lapack (http://www.netlib.org/lapack/) libraries not found.
+#14 49.59                 Directories to search for the libraries can be specified in the
+#14 49.59                 numpy/distutils/site.cfg file (section [lapack]) or by setting
+#14 49.59                 the LAPACK environment variable.
+#14 49.59               return getattr(self, '_calc_info_{}'.format(name))()
+#14 49.59             lapack_src_info:
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             /tmp/pip-install-2myddz0k/numpy_1cb02a3eec36428facf2f39f12b1d100/numpy/distutils/system_info.py:1748: UserWarning:
+#14 49.59                 Lapack (http://www.netlib.org/lapack/) sources not found.
+#14 49.59                 Directories to search for the sources can be specified in the
+#14 49.59                 numpy/distutils/site.cfg file (section [lapack_src]) or by setting
+#14 49.59                 the LAPACK_SRC environment variable.
+#14 49.59               return getattr(self, '_calc_info_{}'.format(name))()
+#14 49.59               NOT AVAILABLE
+#14 49.59       
+#14 49.59             numpy_linalg_lapack_lite:
+#14 49.59               FOUND:
+#14 49.59                 language = c
+#14 49.59                 define_macros = [('HAVE_BLAS_ILP64', None), ('BLAS_SYMBOL_SUFFIX', '64_')]
+#14 49.59       
+#14 49.59             /tmp/pip-build-env-rkeceh8v/overlay/lib/python3.10/site-packages/setuptools/_distutils/dist.py:275: UserWarning: Unknown distribution option: 'define_macros'
+#14 49.59               warnings.warn(msg)
+#14 49.59             running bdist_wheel
+#14 49.59             running build
+#14 49.59             running config_cc
+#14 49.59             unifing config_cc, config, build_clib, build_ext, build commands --compiler options
+#14 49.59             running config_fc
+#14 49.59             unifing config_fc, config, build_clib, build_ext, build commands --fcompiler options
+#14 49.59             running build_src
+#14 49.59             build_src
+#14 49.59             building py_modules sources
+#14 49.59             building library "npymath" sources
+#14 49.59             Could not locate executable gfortran
+#14 49.59             Could not locate executable f95
+#14 49.59             Could not locate executable ifort
+#14 49.59             Could not locate executable ifc
+#14 49.59             Could not locate executable lf95
+#14 49.59             Could not locate executable pgfortran
+#14 49.59             Could not locate executable nvfortran
+#14 49.59             Could not locate executable f90
+#14 49.59             Could not locate executable f77
+#14 49.59             Could not locate executable fort
+#14 49.59             Could not locate executable efort
+#14 49.59             Could not locate executable efc
+#14 49.59             Could not locate executable g77
+#14 49.59             Could not locate executable g95
+#14 49.59             Could not locate executable pathf95
+#14 49.59             Could not locate executable nagfor
+#14 49.59             don't know how to compile Fortran code on platform 'posix'
+#14 49.59               adding 'build/src.linux-x86_64-3.10/numpy/core/src/npymath' to include_dirs.
+#14 49.59             None - nothing done with h_files = ['build/src.linux-x86_64-3.10/numpy/core/src/npymath/npy_math_internal.h']
+#14 49.59             building library "npysort" sources
+#14 49.59               adding 'build/src.linux-x86_64-3.10/numpy/core/src/common' to include_dirs.
+#14 49.59             None - nothing done with h_files = ['build/src.linux-x86_64-3.10/numpy/core/src/common/npy_sort.h', 'build/src.linux-x86_64-3.10/numpy/core/src/common/npy_partition.h', 'build/src.linux-x86_64-3.10/numpy/core/src/common/npy_binsearch.h']
+#14 49.59             building library "npyrandom" sources
+#14 49.59             building extension "numpy.core._multiarray_tests" sources
+#14 49.59             building extension "numpy.core._multiarray_umath" sources
+#14 49.59               adding 'build/src.linux-x86_64-3.10/numpy/core/src/umath' to include_dirs.
+#14 49.59               adding 'build/src.linux-x86_64-3.10/numpy/core/src/npymath' to include_dirs.
+#14 49.59               adding 'build/src.linux-x86_64-3.10/numpy/core/src/common' to include_dirs.
+#14 49.59             numpy.core - nothing done with h_files = ['build/src.linux-x86_64-3.10/numpy/core/src/umath/funcs.inc', 'build/src.linux-x86_64-3.10/numpy/core/src/umath/simd.inc', 'build/src.linux-x86_64-3.10/numpy/core/src/umath/loops.h', 'build/src.linux-x86_64-3.10/numpy/core/src/umath/matmul.h', 'build/src.linux-x86_64-3.10/numpy/core/src/umath/clip.h', 'build/src.linux-x86_64-3.10/numpy/core/src/npymath/npy_math_internal.h', 'build/src.linux-x86_64-3.10/numpy/core/src/common/templ_common.h', 'build/src.linux-x86_64-3.10/numpy/core/include/numpy/config.h', 'build/src.linux-x86_64-3.10/numpy/core/include/numpy/_numpyconfig.h', 'build/src.linux-x86_64-3.10/numpy/core/include/numpy/__multiarray_api.h', 'build/src.linux-x86_64-3.10/numpy/core/include/numpy/__ufunc_api.h']
+#14 49.59             building extension "numpy.core._umath_tests" sources
+#14 49.59             building extension "numpy.core._rational_tests" sources
+#14 49.59             building extension "numpy.core._struct_ufunc_tests" sources
+#14 49.59             building extension "numpy.core._operand_flag_tests" sources
+#14 49.59             building extension "numpy.fft._pocketfft_internal" sources
+#14 49.59             building extension "numpy.linalg.lapack_lite" sources
+#14 49.59             ### Warning:  Using unoptimized lapack ###
+#14 49.59             building extension "numpy.linalg._umath_linalg" sources
+#14 49.59             ### Warning:  Using unoptimized lapack ###
+#14 49.59             building extension "numpy.random._mt19937" sources
+#14 49.59             building extension "numpy.random._philox" sources
+#14 49.59             building extension "numpy.random._pcg64" sources
+#14 49.59             building extension "numpy.random._sfc64" sources
+#14 49.59             building extension "numpy.random._common" sources
+#14 49.59             building extension "numpy.random.bit_generator" sources
+#14 49.59             building extension "numpy.random._generator" sources
+#14 49.59             building extension "numpy.random._bounded_integers" sources
+#14 49.59             building extension "numpy.random.mtrand" sources
+#14 49.59             building data_files sources
+#14 49.59             build_src: building npy-pkg config files
+#14 49.59             running build_py
+#14 49.59             creating build/lib.linux-x86_64-3.10
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/dual.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/setup.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/conftest.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/_distributor_init.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/matlib.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/_pytesttester.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/_globals.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/__init__.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/ctypeslib.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying numpy/version.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             copying build/src.linux-x86_64-3.10/numpy/__config__.py -> build/lib.linux-x86_64-3.10/numpy
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/compat
+#14 49.59             copying numpy/compat/setup.py -> build/lib.linux-x86_64-3.10/numpy/compat
+#14 49.59             copying numpy/compat/py3k.py -> build/lib.linux-x86_64-3.10/numpy/compat
+#14 49.59             copying numpy/compat/_inspect.py -> build/lib.linux-x86_64-3.10/numpy/compat
+#14 49.59             copying numpy/compat/__init__.py -> build/lib.linux-x86_64-3.10/numpy/compat
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/compat/tests
+#14 49.59             copying numpy/compat/tests/test_compat.py -> build/lib.linux-x86_64-3.10/numpy/compat/tests
+#14 49.59             copying numpy/compat/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/compat/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/shape_base.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_ufunc_config.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/machar.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_exceptions.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/arrayprint.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/records.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/defchararray.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/einsumfunc.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_type_aliases.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/memmap.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/numeric.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_asarray.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_dtype_ctypes.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_dtype.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_methods.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_internal.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/setup.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/multiarray.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/numerictypes.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_string_helpers.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/function_base.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/umath_tests.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/cversions.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/_add_newdocs.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/fromnumeric.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/getlimits.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/umath.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/__init__.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/overrides.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/setup_common.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             copying numpy/core/code_generators/generate_numpy_api.py -> build/lib.linux-x86_64-3.10/numpy/core
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_scalarmath.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_indexing.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_unicode.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_records.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_item_selection.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_api.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_function_base.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_scalar_ctors.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_deprecations.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_einsum.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_umath.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_umath_accuracy.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_arrayprint.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_memmap.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_overrides.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_shape_base.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_multiarray.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_protocols.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_datetime.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_errstate.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_extint128.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_cpu_features.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_half.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_longdouble.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test__exceptions.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_defchararray.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/_locales.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_numerictypes.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_umath_complex.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_scalar_methods.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_ufunc.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_print.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_nditer.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_dtype.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_scalarinherit.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_conversion_utils.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_machar.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_numeric.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_indexerrors.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_mem_overlap.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_abc.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_scalarprint.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_scalarbuffer.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/test_getlimits.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             copying numpy/core/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/core/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/misc_util.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/system_info.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/pathccompiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/intelccompiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/unixccompiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/ccompiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/exec_command.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/log.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/_shell_utils.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/setup.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/lib2def.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/core.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/numpy_distribution.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/npy_pkg_config.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/extension.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/mingw32ccompiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/from_template.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/conv_template.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/msvc9compiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/msvccompiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/__init__.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/line_endings.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying numpy/distutils/cpuinfo.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             copying build/src.linux-x86_64-3.10/numpy/distutils/__config__.py -> build/lib.linux-x86_64-3.10/numpy/distutils
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/bdist_rpm.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/sdist.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/build_py.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/config_compiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/install_clib.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/install_data.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/build_clib.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/build.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/config.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/autodist.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/egg_info.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/install.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/install_headers.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/build_ext.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/build_src.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/build_scripts.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/__init__.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             copying numpy/distutils/command/develop.py -> build/lib.linux-x86_64-3.10/numpy/distutils/command
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/gnu.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/pg.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/absoft.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/environment.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/nv.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/none.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/hpux.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/compaq.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/pathf95.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/nag.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/ibm.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/sun.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/intel.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/mips.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/vast.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/g95.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/__init__.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             copying numpy/distutils/fcompiler/lahey.py -> build/lib.linux-x86_64-3.10/numpy/distutils/fcompiler
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_shell_utils.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_system_info.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_fcompiler_nagfor.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_from_template.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_misc_util.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_fcompiler_intel.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_npy_pkg_config.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_mingw32ccompiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_fcompiler_gnu.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_exec_command.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/test_fcompiler.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             copying numpy/distutils/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/distutils/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/misc.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/broadcasting.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/structured_arrays.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/glossary.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/internals.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/constants.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/subclassing.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/indexing.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/ufuncs.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/basics.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/byteswapping.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/creation.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/dispatch.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             copying numpy/doc/__init__.py -> build/lib.linux-x86_64-3.10/numpy/doc
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/func2subr.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/crackfortran.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/use_rules.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/cb_rules.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/auxfuncs.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/f2py_testing.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/setup.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/cfuncs.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/f90mod_rules.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/f2py2e.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/rules.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/diagnose.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/__version__.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/common_rules.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/capi_maps.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/__main__.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             copying numpy/f2py/__init__.py -> build/lib.linux-x86_64-3.10/numpy/f2py
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_kind.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_mixed.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_size.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_block_docstring.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_array_from_pyobj.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_assumed_shape.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_semicolon_split.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_return_logical.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_common.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_return_character.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_crackfortran.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_compile_function.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_callback.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/util.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_parameter.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_return_integer.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_return_complex.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_quoted_character.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_string.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             copying numpy/f2py/tests/test_return_real.py -> build/lib.linux-x86_64-3.10/numpy/f2py/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/fft
+#14 49.59             copying numpy/fft/helper.py -> build/lib.linux-x86_64-3.10/numpy/fft
+#14 49.59             copying numpy/fft/_pocketfft.py -> build/lib.linux-x86_64-3.10/numpy/fft
+#14 49.59             copying numpy/fft/setup.py -> build/lib.linux-x86_64-3.10/numpy/fft
+#14 49.59             copying numpy/fft/__init__.py -> build/lib.linux-x86_64-3.10/numpy/fft
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/fft/tests
+#14 49.59             copying numpy/fft/tests/test_pocketfft.py -> build/lib.linux-x86_64-3.10/numpy/fft/tests
+#14 49.59             copying numpy/fft/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/fft/tests
+#14 49.59             copying numpy/fft/tests/test_helper.py -> build/lib.linux-x86_64-3.10/numpy/fft/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/shape_base.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/_version.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/arraypad.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/financial.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/twodim_base.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/histograms.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/_datasource.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/recfunctions.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/setup.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/mixins.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/_iotools.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/index_tricks.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/function_base.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/utils.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/type_check.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/stride_tricks.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/nanfunctions.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/arraysetops.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/user_array.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/polynomial.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/npyio.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/__init__.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/ufunclike.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/scimath.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/arrayterator.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             copying numpy/lib/format.py -> build/lib.linux-x86_64-3.10/numpy/lib
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_histograms.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_function_base.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test__iotools.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_ufunclike.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_arraypad.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_nanfunctions.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test__version.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_packbits.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_mixins.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_arraysetops.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_shape_base.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test__datasource.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_format.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_stride_tricks.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_io.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_twodim_base.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_recfunctions.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_polynomial.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_arrayterator.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_utils.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_index_tricks.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_type_check.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             copying numpy/lib/tests/test_financial.py -> build/lib.linux-x86_64-3.10/numpy/lib/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/linalg
+#14 49.59             copying numpy/linalg/linalg.py -> build/lib.linux-x86_64-3.10/numpy/linalg
+#14 49.59             copying numpy/linalg/setup.py -> build/lib.linux-x86_64-3.10/numpy/linalg
+#14 49.59             copying numpy/linalg/__init__.py -> build/lib.linux-x86_64-3.10/numpy/linalg
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/linalg/tests
+#14 49.59             copying numpy/linalg/tests/test_deprecations.py -> build/lib.linux-x86_64-3.10/numpy/linalg/tests
+#14 49.59             copying numpy/linalg/tests/test_build.py -> build/lib.linux-x86_64-3.10/numpy/linalg/tests
+#14 49.59             copying numpy/linalg/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/linalg/tests
+#14 49.59             copying numpy/linalg/tests/test_linalg.py -> build/lib.linux-x86_64-3.10/numpy/linalg/tests
+#14 49.59             copying numpy/linalg/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/linalg/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             copying numpy/ma/testutils.py -> build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             copying numpy/ma/timer_comparison.py -> build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             copying numpy/ma/setup.py -> build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             copying numpy/ma/core.py -> build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             copying numpy/ma/bench.py -> build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             copying numpy/ma/extras.py -> build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             copying numpy/ma/__init__.py -> build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             copying numpy/ma/mrecords.py -> build/lib.linux-x86_64-3.10/numpy/ma
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             copying numpy/ma/tests/test_core.py -> build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             copying numpy/ma/tests/test_deprecations.py -> build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             copying numpy/ma/tests/test_mrecords.py -> build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             copying numpy/ma/tests/test_extras.py -> build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             copying numpy/ma/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             copying numpy/ma/tests/test_old_ma.py -> build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             copying numpy/ma/tests/test_subclassing.py -> build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             copying numpy/ma/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/ma/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/matrixlib
+#14 49.59             copying numpy/matrixlib/defmatrix.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib
+#14 49.59             copying numpy/matrixlib/setup.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib
+#14 49.59             copying numpy/matrixlib/__init__.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             copying numpy/matrixlib/tests/test_multiarray.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             copying numpy/matrixlib/tests/test_masked_matrix.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             copying numpy/matrixlib/tests/test_interaction.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             copying numpy/matrixlib/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             copying numpy/matrixlib/tests/test_matrix_linalg.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             copying numpy/matrixlib/tests/test_defmatrix.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             copying numpy/matrixlib/tests/test_numeric.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             copying numpy/matrixlib/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/polyutils.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/legendre.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/hermite_e.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/hermite.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/setup.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/laguerre.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/chebyshev.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/_polybase.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/polynomial.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             copying numpy/polynomial/__init__.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_classes.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_chebyshev.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_laguerre.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_hermite_e.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_hermite.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_printing.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_legendre.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_polynomial.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/test_polyutils.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             copying numpy/polynomial/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/random
+#14 49.59             copying numpy/random/setup.py -> build/lib.linux-x86_64-3.10/numpy/random
+#14 49.59             copying numpy/random/_pickle.py -> build/lib.linux-x86_64-3.10/numpy/random
+#14 49.59             copying numpy/random/__init__.py -> build/lib.linux-x86_64-3.10/numpy/random
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_generator_mt19937.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_direct.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_seed_sequence.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_randomstate_regression.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_randomstate.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_extending.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_generator_mt19937_regressions.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_random.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/test_smoke.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             copying numpy/random/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/testing
+#14 49.59             copying numpy/testing/print_coercion_tables.py -> build/lib.linux-x86_64-3.10/numpy/testing
+#14 49.59             copying numpy/testing/setup.py -> build/lib.linux-x86_64-3.10/numpy/testing
+#14 49.59             copying numpy/testing/utils.py -> build/lib.linux-x86_64-3.10/numpy/testing
+#14 49.59             copying numpy/testing/__init__.py -> build/lib.linux-x86_64-3.10/numpy/testing
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/testing/_private
+#14 49.59             copying numpy/testing/_private/parameterized.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+#14 49.59             copying numpy/testing/_private/noseclasses.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+#14 49.59             copying numpy/testing/_private/nosetester.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+#14 49.59             copying numpy/testing/_private/decorators.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+#14 49.59             copying numpy/testing/_private/utils.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+#14 49.59             copying numpy/testing/_private/__init__.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/testing/tests
+#14 49.59             copying numpy/testing/tests/test_decorators.py -> build/lib.linux-x86_64-3.10/numpy/testing/tests
+#14 49.59             copying numpy/testing/tests/test_doctesting.py -> build/lib.linux-x86_64-3.10/numpy/testing/tests
+#14 49.59             copying numpy/testing/tests/test_utils.py -> build/lib.linux-x86_64-3.10/numpy/testing/tests
+#14 49.59             copying numpy/testing/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/testing/tests
+#14 49.59             creating build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             copying numpy/tests/test_warnings.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             copying numpy/tests/test_public_api.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             copying numpy/tests/test_ctypeslib.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             copying numpy/tests/test_numpy_version.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             copying numpy/tests/test_scripts.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             copying numpy/tests/test_matlib.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             copying numpy/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             copying numpy/tests/test_reloading.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#14 49.59             running build_clib
+#14 49.59             customize UnixCCompiler
+#14 49.59             customize UnixCCompiler using new_build_clib
+#14 49.59             building 'npymath' library
+#14 49.59             compiling C sources
+#14 49.59             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC
+#14 49.59       
+#14 49.59             creating build/temp.linux-x86_64-3.10
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/core
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/core/src
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/core/src/npymath
+#14 49.59             creating build/temp.linux-x86_64-3.10/build
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/npymath
+#14 49.59             compile options: '-Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/usr/local/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+#14 49.59             extra options: '-std=c99'
+#14 49.59             gcc: numpy/core/src/npymath/npy_math.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npymath/ieee754.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npymath/npy_math_complex.c
+#14 49.59             gcc: numpy/core/src/npymath/halffloat.c
+#14 49.59             ar: adding 4 object files to build/temp.linux-x86_64-3.10/libnpymath.a
+#14 49.59             building 'npysort' library
+#14 49.59             compiling C sources
+#14 49.59             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC
+#14 49.59       
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/npysort
+#14 49.59             compile options: '-Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/usr/local/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+#14 49.59             extra options: '-std=c99'
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/quicksort.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/mergesort.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/timsort.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/heapsort.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/radixsort.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/selection.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/binsearch.c
+#14 49.59             ar: adding 7 object files to build/temp.linux-x86_64-3.10/libnpysort.a
+#14 49.59             building 'npyrandom' library
+#14 49.59             compiling C sources
+#14 49.59             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC
+#14 49.59       
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/random
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/random/src
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/random/src/distributions
+#14 49.59             compile options: '-Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/usr/local/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+#14 49.59             extra options: '-std=c99'
+#14 49.59             gcc: numpy/random/src/distributions/logfactorial.c
+#14 49.59             gcc: numpy/random/src/distributions/distributions.c
+#14 49.59             gcc: numpy/random/src/distributions/random_hypergeometric.c
+#14 49.59             gcc: numpy/random/src/distributions/random_mvhg_marginals.c
+#14 49.59             gcc: numpy/random/src/distributions/random_mvhg_count.c
+#14 49.59             ar: adding 5 object files to build/temp.linux-x86_64-3.10/libnpyrandom.a
+#14 49.59             running build_ext
+#14 49.59             customize UnixCCompiler
+#14 49.59             customize UnixCCompiler using new_build_ext
+#14 49.59             building 'numpy.core._multiarray_tests' extension
+#14 49.59             compiling C sources
+#14 49.59             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC
+#14 49.59       
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/core/src/common
+#14 49.59             compile options: '-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/usr/local/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+#14 49.59             extra options: '-std=c99'
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/_multiarray_tests.c
+#14 49.59             gcc: numpy/core/src/common/mem_overlap.c
+#14 49.59             gcc -shared build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray/_multiarray_tests.o build/temp.linux-x86_64-3.10/numpy/core/src/common/mem_overlap.o -L/usr/local/lib -Lbuild/temp.linux-x86_64-3.10 -lnpymath -o build/lib.linux-x86_64-3.10/numpy/core/_multiarray_tests.cpython-310-x86_64-linux-gnu.so
+#14 49.59             building 'numpy.core._multiarray_umath' extension
+#14 49.59             compiling C sources
+#14 49.59             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC
+#14 49.59       
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/core/src/multiarray
+#14 49.59             creating build/temp.linux-x86_64-3.10/numpy/core/src/umath
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/umath
+#14 49.59             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/common
+#14 49.59             compile options: '-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/umath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/usr/local/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+#14 49.59             extra options: '-std=c99'
+#14 49.59             gcc: numpy/core/src/multiarray/alloc.c
+#14 49.59             gcc: numpy/core/src/multiarray/array_assign_scalar.c
+#14 49.59             gcc: numpy/core/src/multiarray/buffer.c
+#14 49.59             gcc: numpy/core/src/multiarray/common.c
+#14 49.59             gcc: numpy/core/src/multiarray/conversion_utils.c
+#14 49.59             gcc: numpy/core/src/multiarray/datetime_strings.c
+#14 49.59             gcc: numpy/core/src/multiarray/descriptor.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/einsum.c
+#14 49.59             numpy/core/src/multiarray/alloc.c: In function ‘PyDataMem_FREE’:
+#14 49.59             numpy/core/src/multiarray/alloc.c:299:14: warning: pointer ‘ptr’ may be used after ‘free’ [-Wuse-after-free]
+#14 49.59               299 |             (*_PyDataMem_eventhook)(ptr, NULL, 0,
+#14 49.59                   |             ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59               300 |                                     _PyDataMem_eventhook_user_data);
+#14 49.59                   |                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/alloc.c:294:5: note: call to ‘free’ here
+#14 49.59               294 |     free(ptr);
+#14 49.59                   |     ^~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/alloc.c: In function ‘PyDataMem_RENEW’:
+#14 49.59             numpy/core/src/multiarray/alloc.c:324:14: warning: pointer ‘ptr’ may be used after ‘realloc’ [-Wuse-after-free]
+#14 49.59               324 |             (*_PyDataMem_eventhook)(ptr, result, size,
+#14 49.59                   |             ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59               325 |                                     _PyDataMem_eventhook_user_data);
+#14 49.59                   |                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/alloc.c:315:14: note: call to ‘realloc’ here
+#14 49.59               315 |     result = realloc(ptr, size);
+#14 49.59                   |              ^~~~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/alloc.c:317:9: warning: pointer ‘ptr’ may be used after ‘realloc’ [-Wuse-after-free]
+#14 49.59               317 |         PyTraceMalloc_Untrack(NPY_TRACE_DOMAIN, (npy_uintp)ptr);
+#14 49.59                   |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/alloc.c:315:14: note: call to ‘realloc’ here
+#14 49.59               315 |     result = realloc(ptr, size);
+#14 49.59                   |              ^~~~~~~~~~~~~~~~~~
+#14 49.59             gcc: numpy/core/src/multiarray/arrayobject.c
+#14 49.59             gcc: numpy/core/src/multiarray/array_assign_array.c
+#14 49.59             gcc: numpy/core/src/multiarray/convert.c
+#14 49.59             gcc: numpy/core/src/multiarray/arrayfunction_override.c
+#14 49.59             gcc: numpy/core/src/multiarray/ctors.c
+#14 49.59             gcc: numpy/core/src/multiarray/calculation.c
+#14 49.59             gcc: numpy/core/src/multiarray/datetime_busday.c
+#14 49.59             gcc: numpy/core/src/multiarray/hashdescr.c
+#14 49.59             gcc: numpy/core/src/multiarray/convert_datatype.c
+#14 49.59             gcc: numpy/core/src/multiarray/item_selection.c
+#14 49.59             gcc: numpy/core/src/multiarray/datetime_busdaycal.c
+#14 49.59             gcc: numpy/core/src/multiarray/compiled_base.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/arraytypes.c
+#14 49.59             gcc: numpy/core/src/multiarray/dragon4.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/lowlevel_strided_loops.c
+#14 49.59             gcc: numpy/core/src/multiarray/multiarraymodule.c
+#14 49.59             numpy/core/src/multiarray/ctors.c: In function ‘array_from_text.constprop’:
+#14 49.59             numpy/core/src/multiarray/ctors.c:3660:8: warning: ‘stop_reading_flag’ may be used uninitialized [-Wmaybe-uninitialized]
+#14 49.59              3660 |     if (stop_reading_flag == -2) {
+#14 49.59                   |        ^
+#14 49.59             numpy/core/src/multiarray/ctors.c:3584:9: note: ‘stop_reading_flag’ was declared here
+#14 49.59              3584 |     int stop_reading_flag;  /* -1 indicates end reached; -2 a parsing error */
+#14 49.59                   |         ^~~~~~~~~~~~~~~~~
+#14 49.59             gcc: numpy/core/src/multiarray/datetime.c
+#14 49.59             gcc: numpy/core/src/multiarray/dtype_transfer.c
+#14 49.59             gcc: numpy/core/src/multiarray/nditer_constr.c
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c: In function ‘npyiter_replace_axisdata’:
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:1992:33: warning: writing 8 bytes into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1992 |     NIT_RESETDATAPTR(iter)[iop] = op_dataptr;
+#14 49.59             In file included from numpy/core/src/multiarray/nditer_constr.c:16:
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [32, 4104] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:1993:32: warning: writing 8 bytes into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1993 |     NIT_BASEOFFSETS(iter)[iop] = baseoffset;
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [40, 6152] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c: In function ‘npyiter_reverse_axis_ordering’:
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [17, 241] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [18, 242] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 2 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [19, 243] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 3 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [20, 244] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 4 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [21, 245] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 5 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [22, 246] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 6 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [23, 247] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 7 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [24, 248] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 8 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [25, 249] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 9 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [26, 250] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 10 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [27, 251] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 11 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [28, 252] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 12 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [29, 253] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 13 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:2235:15: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              2235 |         *perm = (npy_int8)i;
+#14 49.59                   |         ~~~~~~^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [30, 254] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 14 into destination object ‘iter_flexdata’ of size 1
+#14 49.59             gcc: numpy/core/src/multiarray/iterators.c
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c: In function ‘NpyIter_AdvancedNew’:
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:283:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               283 |         perm[idim] = (npy_int8)idim;
+#14 49.59                   |         ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:283:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               283 |         perm[idim] = (npy_int8)idim;
+#14 49.59                   |         ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [2, 2147483646] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:283:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               283 |         perm[idim] = (npy_int8)idim;
+#14 49.59                   |         ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [3, 2147483646] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:283:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               283 |         perm[idim] = (npy_int8)idim;
+#14 49.59                   |         ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [4, 2147483646] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:283:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               283 |         perm[idim] = (npy_int8)idim;
+#14 49.59                   |         ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [5, 2147483646] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:283:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               283 |         perm[idim] = (npy_int8)idim;
+#14 49.59                   |         ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [6, 2147483646] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             In function ‘npyiter_replace_axisdata’,
+#14 49.59                 inlined from ‘npyiter_allocate_arrays’ at numpy/core/src/multiarray/nditer_constr.c:2873:13,
+#14 49.59                 inlined from ‘NpyIter_AdvancedNew’ at numpy/core/src/multiarray/nditer_constr.c:403:10:
+#14 49.59             numpy/core/src/multiarray/nditer_constr.c:1993:32: warning: writing 8 bytes into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1993 |     NIT_BASEOFFSETS(iter)[iop] = baseoffset;
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h: In function ‘NpyIter_AdvancedNew’:
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [40, 6152] into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             gcc: numpy/core/src/multiarray/refcount.c
+#14 49.59             gcc: numpy/core/src/multiarray/scalarapi.c
+#14 49.59             gcc: numpy/core/src/multiarray/temp_elide.c
+#14 49.59             gcc: numpy/core/src/multiarray/sequence.c
+#14 49.59             gcc: numpy/core/src/multiarray/nditer_pywrap.c
+#14 49.59             gcc: numpy/core/src/multiarray/shape.c
+#14 49.59             gcc: numpy/core/src/multiarray/typeinfo.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.c
+#14 49.59             gcc: numpy/core/src/multiarray/usertypes.c
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src: In function ‘float_arrtype_hash’:
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2967:27: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+#14 49.59              2967 |     return _Py_HashDouble((double) PyArrayScalar_VAL(obj, @name@));
+#14 49.59             In file included from /usr/local/include/python3.10/Python.h:77,
+#14 49.59                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                                      ^~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2967:12: error: too few arguments to function ‘_Py_HashDouble’
+#14 49.59              2967 |     return _Py_HashDouble((double) PyArrayScalar_VAL(obj, @name@));
+#14 49.59                   |            ^~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:23: note: declared here
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                       ^~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src: In function ‘cfloat_arrtype_hash’:
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2975:31: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+#14 49.59              2975 |     hashreal = _Py_HashDouble((double)
+#14 49.59                   |                               ^~~~~~~~
+#14 49.59                   |                               |
+#14 49.59                   |                               double
+#14 49.59              2976 |             PyArrayScalar_VAL(obj, C@name@).real);
+#14 49.59                   |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                                      ^~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2975:16: error: too few arguments to function ‘_Py_HashDouble’
+#14 49.59              2975 |     hashreal = _Py_HashDouble((double)
+#14 49.59                   |                ^~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:23: note: declared here
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                       ^~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2981:31: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+#14 49.59              2981 |     hashimag = _Py_HashDouble((double)
+#14 49.59                   |                               ^~~~~~~~
+#14 49.59                   |                               |
+#14 49.59                   |                               double
+#14 49.59              2982 |             PyArrayScalar_VAL(obj, C@name@).imag);
+#14 49.59                   |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                                      ^~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2981:16: error: too few arguments to function ‘_Py_HashDouble’
+#14 49.59              2981 |     hashimag = _Py_HashDouble((double)
+#14 49.59                   |                ^~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:23: note: declared here
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                       ^~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src: In function ‘longdouble_arrtype_hash’:
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2967:27: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+#14 49.59              2967 |     return _Py_HashDouble((double) PyArrayScalar_VAL(obj, @name@));
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                                      ^~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2967:12: error: too few arguments to function ‘_Py_HashDouble’
+#14 49.59              2967 |     return _Py_HashDouble((double) PyArrayScalar_VAL(obj, @name@));
+#14 49.59                   |            ^~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:23: note: declared here
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                       ^~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src: In function ‘clongdouble_arrtype_hash’:
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2975:31: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+#14 49.59              2975 |     hashreal = _Py_HashDouble((double)
+#14 49.59                   |                               ^~~~~~~~
+#14 49.59                   |                               |
+#14 49.59                   |                               double
+#14 49.59              2976 |             PyArrayScalar_VAL(obj, C@name@).real);
+#14 49.59                   |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                                      ^~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2975:16: error: too few arguments to function ‘_Py_HashDouble’
+#14 49.59              2975 |     hashreal = _Py_HashDouble((double)
+#14 49.59                   |                ^~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:23: note: declared here
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                       ^~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2981:31: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+#14 49.59              2981 |     hashimag = _Py_HashDouble((double)
+#14 49.59                   |                               ^~~~~~~~
+#14 49.59                   |                               |
+#14 49.59                   |                               double
+#14 49.59              2982 |             PyArrayScalar_VAL(obj, C@name@).imag);
+#14 49.59                   |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                                      ^~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2981:16: error: too few arguments to function ‘_Py_HashDouble’
+#14 49.59              2981 |     hashimag = _Py_HashDouble((double)
+#14 49.59                   |                ^~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:23: note: declared here
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                       ^~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src: In function ‘half_arrtype_hash’:
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2997:27: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+#14 49.59              2997 |     return _Py_HashDouble(npy_half_to_double(PyArrayScalar_VAL(obj, Half)));
+#14 49.59                   |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#14 49.59                   |                           |
+#14 49.59                   |                           double
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                                      ^~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2997:12: error: too few arguments to function ‘_Py_HashDouble’
+#14 49.59              2997 |     return _Py_HashDouble(npy_half_to_double(PyArrayScalar_VAL(obj, Half)));
+#14 49.59                   |            ^~~~~~~~~~~~~~
+#14 49.59             /usr/local/include/python3.10/pyhash.h:10:23: note: declared here
+#14 49.59                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#14 49.59                   |                       ^~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src: In function ‘longdouble_arrtype_hash’:
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2968:1: warning: control reaches end of non-void function [-Wreturn-type]
+#14 49.59              2968 | }
+#14 49.59                   | ^
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src: In function ‘float_arrtype_hash’:
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2968:1: warning: control reaches end of non-void function [-Wreturn-type]
+#14 49.59              2968 | }
+#14 49.59                   | ^
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src: In function ‘half_arrtype_hash’:
+#14 49.59             numpy/core/src/multiarray/scalartypes.c.src:2998:1: warning: control reaches end of non-void function [-Wreturn-type]
+#14 49.59              2998 | }
+#14 49.59                   | ^
+#14 49.59             gcc: numpy/core/src/multiarray/vdot.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/loops.c
+#14 49.59             gcc: numpy/core/src/umath/umathmodule.c
+#14 49.59             gcc: numpy/core/src/umath/reduction.c
+#14 49.59             gcc: numpy/core/src/umath/ufunc_object.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/nditer_templ.c
+#14 49.59             gcc: numpy/core/src/multiarray/number.c
+#14 49.59             gcc: numpy/core/src/umath/ufunc_type_resolution.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npymath/ieee754.c
+#14 49.59             gcc: numpy/core/src/umath/override.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npymath/npy_math_complex.c
+#14 49.59             gcc: numpy/core/src/npymath/npy_math.c
+#14 49.59             gcc: numpy/core/src/multiarray/nditer_api.c
+#14 49.59             gcc: numpy/core/src/npymath/halffloat.c
+#14 49.59             gcc: numpy/core/src/common/array_assign.c
+#14 49.59             gcc: numpy/core/src/common/ucsnarrow.c
+#14 49.59             gcc: numpy/core/src/common/mem_overlap.c
+#14 49.59             gcc: numpy/core/src/common/ufunc_override.c
+#14 49.59             numpy/core/src/multiarray/nditer_api.c: In function ‘npyiter_coalesce_axes’:
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1684 |             perm[idim] = (npy_int8)idim;
+#14 49.59                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1684 |             perm[idim] = (npy_int8)idim;
+#14 49.59                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 2 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1684 |             perm[idim] = (npy_int8)idim;
+#14 49.59                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 3 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1684 |             perm[idim] = (npy_int8)idim;
+#14 49.59                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 4 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1684 |             perm[idim] = (npy_int8)idim;
+#14 49.59                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 5 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59              1684 |             perm[idim] = (npy_int8)idim;
+#14 49.59                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 6 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             gcc: numpy/core/src/common/numpyos.c
+#14 49.59             numpy/core/src/multiarray/nditer_api.c: In function ‘NpyIter_RemoveAxis’:
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 2 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 3 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 4 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 5 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 6 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             numpy/core/src/multiarray/nditer_api.c:123:20: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+#14 49.59               123 |         perm[idim] = p;
+#14 49.59                   |         ~~~~~~~~~~~^~~
+#14 49.59             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset 1 into destination object ‘iter_flexdata’ of size 1
+#14 49.59               148 |     char iter_flexdata;
+#14 49.59                   |          ^~~~~~~~~~~~~
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/common/npy_cpu_features.c
+#14 49.59             gcc: numpy/core/src/umath/extobj.c
+#14 49.59             gcc: numpy/core/src/common/npy_longdouble.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/scalarmath.c
+#14 49.59             gcc: numpy/core/src/multiarray/flagsobject.c
+#14 49.59             gcc: numpy/core/src/multiarray/getset.c
+#14 49.59             gcc: numpy/core/src/multiarray/mapping.c
+#14 49.59             gcc: numpy/core/src/multiarray/methods.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/matmul.c
+#14 49.59             gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/clip.c
+#14 49.59             error: Command "gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC -DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/umath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/usr/local/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.c -o build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.o -MMD -MF build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.o.d -std=c99" failed with exit status 1
+#14 49.59             [end of output]
+#14 49.59       
+#14 49.59         note: This error originates from a subprocess, and is likely not a problem with pip.
+#14 49.59         ERROR: Failed building wheel for numpy
+#14 49.59       Failed to build numpy
+#14 49.59       error: failed-wheel-build-for-install
+#14 49.59       
+#14 49.59       × Failed to build installable wheels for some pyproject.toml based projects
+#14 49.59       ╰─> numpy
+#14 49.59       [end of output]
+#14 49.59   
+#14 49.59   note: This error originates from a subprocess, and is likely not a problem with pip.
+#14 49.59 ERROR: Failed to build 'h5py' when installing backend dependencies for h5py
+#14 ERROR: process "/bin/sh -c pip install -r /src/requirements/qiskit2/${QISKIT_VERSION}.txt" did not complete successfully: exit code: 1
+------
+ > [ 9/10] RUN pip install -r /src/requirements/qiskit2/2.0.2.txt:
+49.59         ERROR: Failed building wheel for numpy
+49.59       Failed to build numpy
+49.59       error: failed-wheel-build-for-install
+49.59       
+49.59       × Failed to build installable wheels for some pyproject.toml based projects
+49.59       ╰─> numpy
+49.59       [end of output]
+49.59   
+49.59   note: This error originates from a subprocess, and is likely not a problem with pip.
+49.59 ERROR: Failed to build 'h5py' when installing backend dependencies for h5py
+------
+Dockerfile.qiskit2:19
+
+--------------------
+
+  17 |     RUN pip install --upgrade pip
+
+  18 |     RUN pip install -r /src/requirements/base-requirements.txt
+
+  19 | >>> RUN pip install -r /src/requirements/qiskit2/${QISKIT_VERSION}.txt
+
+  20 |     
+
+  21 |     ENV HOME=/home/appuser
+
+--------------------
+
+failed to solve: process "/bin/sh -c pip install -r /src/requirements/qiskit2/${QISKIT_VERSION}.txt" did not complete successfully: exit code: 1
+
+make: *** [Makefile:27: bs] Error 1

@@ -1,0 +1,14 @@
+--- STDOUT ---
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/src/bugs4q/39/test_39.py", line 11, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/src/bugs4q/39/buggy_39.py", line 1, in <module>
+    from qiskit import *
+  File "/usr/local/lib/python3.9/site-packages/qiskit/__init__.py", line 36, in <module>
+    raise ImportError(
+ImportError: Qiskit is installed in an invalid environment that has both Qiskit >=1.0 and an earlier version. You should create a new virtual environment, and ensure that you do not mix dependencies between Qiskit <1.0 and >=1.0. Any packages that depend on 'qiskit-terra' are not compatible with Qiskit 1.0 and will need to be updated. Qiskit unfortunately cannot enforce this requirement during environment resolution. See https://qisk.it/packaging-1-0 for more detail.
+
