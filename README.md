@@ -1,4 +1,4 @@
-# Replication Package for "On the Reproducibility of Quantum Bugs"
+# Replication Package for "On the Reproducibility of Quantum Software Defect Datasets: A Case Study of Bugs4Q"
 
 ![Requires Docker](https://img.shields.io/badge/Requires-Docker-blue?logo=docker)
 ![Requires Docker Compose](https://img.shields.io/badge/Requires-Docker--Compose-blue)
