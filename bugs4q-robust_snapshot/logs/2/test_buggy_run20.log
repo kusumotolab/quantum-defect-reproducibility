@@ -1,0 +1,19 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_2 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q-plus/2/test_2.py", line 13, in test_2
+    module.run()
+  File "/src/bugs4q-plus/2/buggy_2.py", line 17, in run
+    datapoints, class_to_label = split_dataset_to_data_and_labels(test_input)
+NameError: name 'split_dataset_to_data_and_labels' is not defined
+
+----------------------------------------------------------------------
+Ran 1 test in 0.262s
+
+FAILED (errors=1)
+

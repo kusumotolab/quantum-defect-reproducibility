@@ -1,0 +1,12 @@
+--- STDOUT ---
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/src/bugs4q-plus/9/test_9.py", line 8, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/src/bugs4q-plus/9/fixed_9.py", line 2, in <module>
+    from qiskit import pulse
+ImportError: cannot import name 'pulse' from 'qiskit' (/usr/local/lib/python3.10/site-packages/qiskit/__init__.py)
+

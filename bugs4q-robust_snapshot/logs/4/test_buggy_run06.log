@@ -1,0 +1,43 @@
+--- STDOUT ---
+
+--- STDERR ---
+/usr/local/lib/python3.10/site-packages/qiskit/circuit/library/arithmetic/adders/cdkm_ripple_carry_adder.py:119: DeprecationWarning: The class ``qiskit.circuit.library.arithmetic.adders.adder.Adder`` is deprecated as of Qiskit 2.1. It will be removed in Qiskit 3.0. ('Use the adder gates provided in qiskit.circuit.library.arithmetic instead. The gate type depends on the adder kind: fixed, half, full are represented by ModularAdderGate, HalfAdderGate, FullAdderGate, respectively. For different adder implementations, see https://quantum.cloud.ibm.com/docs/api/qiskit/synthesis.',)
+  super().__init__(num_state_qubits, name=name)
+/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/statevector_simulator.py:242: PendingDeprecationWarning: The `StatevectorSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend. To obtain legacy functionality initialize with `AerSimulator(method="statevector")` and append run circuits with the `save_state` instruction.
+  warn(
+E
+======================================================================
+ERROR: test_4 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q-plus/4/test_4.py", line 13, in test_4
+    result = module.run()
+  File "/src/bugs4q-plus/4/buggy_4.py", line 19, in run
+    return job.result()
+  File "/usr/local/lib/python3.10/site-packages/qiskit_aer/jobs/utils.py", line 38, in _wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/qiskit_aer/jobs/aerjob.py", line 96, in result
+    return self._future.result(timeout=timeout)
+  File "/usr/local/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/aerbackend.py", line 456, in _execute_circuits_job
+    aer_circuits, idx_maps = assemble_circuits(circuits)
+  File "/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/aer_compiler.py", line 1084, in assemble_circuits
+    aer_circuits, idx_maps = zip(*[assemble_circuit(circuit) for circuit in circuits])
+  File "/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/aer_compiler.py", line 1084, in <listcomp>
+    aer_circuits, idx_maps = zip(*[assemble_circuit(circuit) for circuit in circuits])
+  File "/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/aer_compiler.py", line 750, in assemble_circuit
+    num_of_aer_ops += _assemble_op(
+  File "/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/aer_compiler.py", line 1048, in _assemble_op
+    raise AerError(f"unknown instruction: {name}")
+qiskit_aer.aererror.AerError: 'unknown instruction: circuit-48'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.018s
+
+FAILED (errors=1)
+
