@@ -40,11 +40,11 @@ E
 ERROR: test_3 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-plus/3/test_3.py", line 13, in test_3
+  File "/src/bugs4q-robust/3/test_3.py", line 13, in test_3
     module.run()
-  File "/src/bugs4q-plus/3/buggy_3.py", line 40, in run
+  File "/src/bugs4q-robust/3/buggy_3.py", line 40, in run
     raise_if_analysis_failed(experiment)
-  File "/src/bugs4q-plus/3/buggy_3.py", line 16, in raise_if_analysis_failed
+  File "/src/bugs4q-robust/3/buggy_3.py", line 16, in raise_if_analysis_failed
     raise RuntimeError(f"Qiskit Experiments analysis failed: {status}")
 RuntimeError: Qiskit Experiments analysis failed: AnalysisStatus.ERROR
 

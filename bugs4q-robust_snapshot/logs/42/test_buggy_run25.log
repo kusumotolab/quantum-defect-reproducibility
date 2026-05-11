@@ -19,9 +19,9 @@ KeyError: 'get_data'
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/src/bugs4q-plus/42/test_42.py", line 13, in test_42
+  File "/src/bugs4q-robust/42/test_42.py", line 13, in test_42
     module.run()
-  File "/src/bugs4q-plus/42/buggy_42.py", line 66, in run
+  File "/src/bugs4q-robust/42/buggy_42.py", line 66, in run
     n0 = n0 + result.get_data("solve_linear_sys")['counts']['1000']
   File "/usr/local/lib/python3.10/site-packages/qiskit/result/result.py", line 107, in __getattr__
     raise AttributeError(f"Attribute {name} is not defined") from ex

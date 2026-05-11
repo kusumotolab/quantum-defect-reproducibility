@@ -12,9 +12,9 @@ E
 ERROR: test_38 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-plus/38/test_38.py", line 13, in test_38
+  File "/src/bugs4q-robust/38/test_38.py", line 13, in test_38
     module.run()
-  File "/src/bugs4q-plus/38/buggy_38.py", line 16, in run
+  File "/src/bugs4q-robust/38/buggy_38.py", line 16, in run
     statevectors = job.result().get_statevector()
   File "/usr/local/lib/python3.10/site-packages/qiskit/result/result.py", line 301, in get_statevector
     self.data(experiment)["statevector"], decimals=decimals
