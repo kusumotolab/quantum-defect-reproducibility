@@ -26,7 +26,7 @@ This replication package provides the following artifacts:
 - execution scripts used to run buggy and fixed programs;
 - raw execution logs for each Qiskit version;
 - aggregated CSV files used to obtain the reported results;
-- analysis notes for the research questions, including artifact-level ID lists that are more detailed than the tables in the paper;
+- analysis notes for reproducibility criteria, including artifact-level ID lists that are more detailed than the tables in the paper;
 - a separate snapshot for the Bugs4Q-Robust rerun experiment.
 
 The package is organized as snapshots rather than as a single unified execution directory. This design prioritizes traceability to the actual experiment workspaces.
@@ -133,7 +133,6 @@ bugs4q_snapshots/
 └── pinned-stack/
     ├── bugs4q/
     ├── note/
-    │   ├── breakage.md
     │   └── criteria.md
     ├── requirements/
     ├── test-bugs4q/
@@ -323,17 +322,16 @@ The execution logs are organized by Qiskit version and artifact ID.
 
 ### Analysis Notes
 
-In addition to the CSV files and raw logs., each Bugs4Q snapshot includes a `note/` directory. 
-The `criteria.md` file is included in both `core-only` and `pinned-stack`, while `breakage.md` is included only in `pinned-stack`.
+In addition to the CSV files and raw logs, each Bugs4Q snapshot includes a `note/` directory. 
+The `criteria.md` file is included in both `core-only` and `pinned-stack`.
 
-The files in `note/` record intermediate analysis results for the research questions. They are included to make the artifact-level judgments traceable. Unlike the paper tables, which report aggregated results, these notes may include the IDs of artifacts that satisfy each criterion or fall into each breakage category.
+The files in `note/` record intermediate analysis results for the research questions. They are included to make the artifact-level judgments traceable. Unlike the paper tables, which report aggregated results, these notes may include the IDs of artifacts that satisfy each reproducibility criterion.
 
-The currently included analysis-note files are:
+The currently included analysis-note file is:
 
 | File | Configuration | Purpose |
 |---|---|---|
 | `note/criteria.md` | `core-only`, `pinned-stack` | Records criterion-level analysis results, including artifact IDs for reproducibility judgments. |
-| `note/breakage.md` | `pinned-stack` | Records breakage-analysis results, including artifact IDs used in the root-cause analysis. |
 
 These files are auxiliary analysis records. The authoritative executable evidence remains the preserved CSV files and raw logs under `test-bugs4q/`.
 
