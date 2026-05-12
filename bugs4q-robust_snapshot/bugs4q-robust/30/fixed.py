@@ -1,4 +1,5 @@
-from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit, Aer, execute
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit, transpile
+from qiskit_aer import Aer
 import sys
 
 
@@ -61,7 +62,8 @@ def run():
     # Run the circuit with a given number of shots
     backend_sim = Aer.get_backend('qasm_simulator')
     max_shots = 2**13
-    job_sim = execute(circuit, backend_sim, shots = max_shots)
+    qc = transpile(circuit, backend_sim)
+    job_sim =  backend_sim.run(qc, shots = max_shots)
     result_sim = job_sim.result()
 
     # get_counts returns a dictionary with the bit-strings as keys

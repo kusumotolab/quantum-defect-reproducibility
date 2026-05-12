@@ -33,7 +33,7 @@ F
 FAIL: test_7 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/7/test_7.py", line 15, in test_7
+  File "/src/bugs4q-robust/7/test.py", line 15, in test_7
     self.assertEqual(str(final_circuit),'      ┌──────┐\nqr_0: ┤1     ├\n      │      │\nqr_1: ┤0 ghz ├\n      │      │\nqr_2: ┤2     ├\n      └──────┘\nqr_3: ────────\n              ')
 AssertionError: '    [14 chars]_0: ┤2     ├\n      │      │\nqr_1: ┤0     ├\n[74 chars]───┘' != '    [14 chars]_0: ┤1     ├\n      │      │\nqr_1: ┤0 ghz ├\n[74 chars]    '
         ┌──────┐
@@ -59,7 +59,7 @@ AssertionError: '    [14 chars]_0: ┤2     ├\n      │      │\nqr_1: ┤0 
 +               
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.012s
+Ran 1 test in 0.011s
 
 FAILED (failures=1)
 

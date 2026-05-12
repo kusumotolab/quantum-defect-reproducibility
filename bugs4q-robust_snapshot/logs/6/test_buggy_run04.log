@@ -14,9 +14,9 @@ E
 ERROR: test_6 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/6/test_6.py", line 13, in test_6
+  File "/src/bugs4q-robust/6/test.py", line 13, in test_6
     module.run()
-  File "/src/bugs4q-robust/6/buggy_6.py", line 23, in run
+  File "/src/bugs4q-robust/6/buggy.py", line 23, in run
     counts = result_sim.get_counts(qc)
   File "/usr/local/lib/python3.10/site-packages/qiskit/result/result.py", line 256, in get_counts
     exp = self._get_experiment(key)
@@ -25,7 +25,7 @@ Traceback (most recent call last):
 qiskit.exceptions.QiskitError: 'Data for experiment "circuit-46" could not be found.'
 
 ----------------------------------------------------------------------
-Ran 1 test in 2.188s
+Ran 1 test in 1.357s
 
 FAILED (errors=1)
 

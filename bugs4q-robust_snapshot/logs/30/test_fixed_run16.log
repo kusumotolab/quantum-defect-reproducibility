@@ -1,8 +1,24 @@
 --- STDOUT ---
+{'0000': 653, '1110': 577, '0010': 723, '1010': 145, '1111': 1435, '0001': 317, '1011': 449, '0011': 394, '0111': 596, '1101': 941, '0110': 430, '1000': 211, '1100': 47, '0101': 804, '1001': 124, '0100': 346}
 
 --- STDERR ---
+/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/qasm_simulator.py:433: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn(
+/usr/local/lib/python3.10/site-packages/stevedore/extension.py:242: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
+  obj = plugin(*invoke_args, **invoke_kwds)
+/usr/local/lib/python3.10/site-packages/stevedore/extension.py:242: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
+  obj = plugin(*invoke_args, **invoke_kwds)
+F
+======================================================================
+FAIL: test_30 (__main__.Test)
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/30/test_30.py", line 4, in <module>
-    from qiskit.test import *
-ModuleNotFoundError: No module named 'qiskit.test'
+  File "/src/bugs4q-robust/30/test.py", line 22, in test_30
+    self.assertGreaterEqual(marked_total / shots, lower_confidence_bound(p_theory, shots))
+AssertionError: 0.3685302734375 not greater than or equal to np.float64(0.9443982142927677)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.554s
+
+FAILED (failures=1)
 

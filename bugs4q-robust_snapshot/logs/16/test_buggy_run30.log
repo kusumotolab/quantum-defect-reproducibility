@@ -1,9 +1,9 @@
 --- STDOUT ---
-Statevector([1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j,
+Statevector([0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j,
              0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j,
              0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j,
              0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j,
-             0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
+             0.+0.j, 0.+0.j, 0.+0.j, 1.+0.j],
             dims=(2, 2, 2, 2, 2))
 
 --- STDERR ---
@@ -18,13 +18,13 @@ F
 FAIL: test_16 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/16/test_16.py", line 14, in test_16
+  File "/src/bugs4q-robust/16/test.py", line 14, in test_16
     self.assertEqual(str(statevector),'[0.70710678+0.j 0.        +0.j 0.        +0.j 0.        +0.j\n 0.        +0.j 0.        +0.j 0.        +0.j 0.        +0.j\n 0.        +0.j 0.        +0.j 0.        +0.j 0.        +0.j\n 0.        +0.j 0.        +0.j 0.        +0.j 0.        +0.j\n 0.        +0.j 0.        +0.j 0.        +0.j 0.        +0.j\n 0.        +0.j 0.        +0.j 0.        +0.j 0.        +0.j\n 0.        +0.j 0.        +0.j 0.        +0.j 0.        +0.j\n 0.        +0.j 0.        +0.j 0.        +0.j 0.70710678+0.j]')
-AssertionError: '[1.+0.j 0.+0.j 0.+0.j 0.+0.j 0.+0.j 0.+0.j[185 chars]0.j]' != '[0.70710678+0.j 0.        +0.j 0.        +[449 chars]0.j]'
+AssertionError: '[0.+0.j 0.+0.j 0.+0.j 0.+0.j 0.+0.j 0.+0.j 0[183 chars]0.j]' != '[0.70710678+0.j 0.        +0.j 0.        +0.[447 chars]0.j]'
 Diff is 741 characters long. Set self.maxDiff to None to see it.
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.770s
+Ran 1 test in 0.690s
 
 FAILED (failures=1)
 

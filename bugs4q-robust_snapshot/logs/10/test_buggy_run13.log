@@ -9,7 +9,7 @@ F
 FAIL: test_10 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/10/test_10.py", line 14, in test_10
+  File "/src/bugs4q-robust/10/test.py", line 14, in test_10
     self.assertEqual(str(qc), '   ┌─────────┐\nq: ┤ P(0.24) ├\n   └─────────┘')
 AssertionError: '   ┌─────────────┐\nq: ┤ U(0,0,0.24) ├\n   └─────────────┘' != '   ┌─────────┐\nq: ┤ P(0.24) ├\n   └─────────┘'
 -    ┌─────────────┐
@@ -23,7 +23,7 @@ AssertionError: '   ┌─────────────┐\nq: ┤ U(0,0,
 +    └─────────┘
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.703s
+Ran 1 test in 0.642s
 
 FAILED (failures=1)
 

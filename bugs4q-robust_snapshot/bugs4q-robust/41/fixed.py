@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 
-from qiskit import QuantumCircuit, QuantumRegister, Aer, transpile, assemble
-from qiskit_Aer import Aer
+from qiskit import QuantumCircuit, QuantumRegister, transpile
+from qiskit_aer import Aer
 from qiskit_aer import AerSimulator
 from qiskit_aer.library import save_statevector
 
@@ -14,9 +14,9 @@ def XX(target_time):
     XX_qc = QuantumCircuit(XX_qr, name='XX')
 
     XX_qc.ry(np.pi/2,[0,1])
-    XX_qc.cnot(0,1)
+    XX_qc.cx(0,1)
     XX_qc.rz(2*target_time,1)
-    XX_qc.cnot(0,1)
+    XX_qc.cx(0,1)
     XX_qc.ry(-np.pi/2,[0,1])
     return XX_qc
 
@@ -26,9 +26,9 @@ def YY(target_time):
     YY_qc = QuantumCircuit(YY_qr, name='YY')
 
     YY_qc.rx(np.pi/2,[0,1])
-    YY_qc.cnot(0,1)
+    YY_qc.cx(0,1)
     YY_qc.rz(2*target_time,1)
-    YY_qc.cnot(0,1)
+    YY_qc.cx(0,1)
     YY_qc.rx(-np.pi/2,[0,1])
     return YY_qc
 
@@ -37,9 +37,9 @@ def ZZ(target_time):
     ZZ_qr = QuantumRegister(2)
     ZZ_qc = QuantumCircuit(ZZ_qr, name='ZZ')
 
-    ZZ_qc.cnot(0,1)
+    ZZ_qc.cx(0,1)
     ZZ_qc.rz(2*target_time,1)
-    ZZ_qc.cnot(0,1)
+    ZZ_qc.cx(0,1)
     return ZZ_qc
 
 # create ZZ(t)YY(t)XX(t) circuit and prepare in initial state
@@ -65,8 +65,7 @@ def run():
     print(qc)
 
     backend = Aer.get_backend('statevector_simulator')
-    qobj = transpile(qc,backend)
-    job = assemble(qobj)
+    job = transpile(qc,backend)
     run_job = backend.run(job)    
 
     return run_job.result()

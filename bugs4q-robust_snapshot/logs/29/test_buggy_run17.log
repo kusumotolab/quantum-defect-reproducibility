@@ -1,5 +1,5 @@
 --- STDOUT ---
-{'001': 1, '110': 118, '111': 144, '011': 95, '100': 125, '000': 17, '010': 500}
+{'001': 3, '011': 84, '111': 139, '100': 135, '110': 124, '000': 16, '010': 499}
 
 --- STDERR ---
 /usr/local/lib/python3.10/site-packages/qiskit_aer/backends/qasm_simulator.py:433: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
@@ -13,7 +13,7 @@ F
 FAIL: test_27 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/29/test_29.py", line 15, in test_27
+  File "/src/bugs4q-robust/29/test.py", line 15, in test_27
     self.assertEqual(max_key, '011')
 AssertionError: '010' != '011'
 - 010
@@ -23,7 +23,7 @@ AssertionError: '010' != '011'
 
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.688s
+Ran 1 test in 0.706s
 
 FAILED (failures=1)
 

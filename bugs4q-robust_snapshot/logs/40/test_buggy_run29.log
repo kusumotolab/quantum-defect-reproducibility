@@ -3,19 +3,27 @@
 --- STDERR ---
 /usr/local/lib/python3.10/site-packages/qiskit_aer/backends/unitary_simulator.py:228: PendingDeprecationWarning: The `UnitarySimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend. To obtain legacy functionality initialize with `AerSimulator(method="unitary")` and append run circuits with the `save_state` instruction.
   warn(
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] Circuit circuit-46 contains invalid instructions {"instructions": {save_unitary}} for "statevector" method.Circuit circuit-46 contains invalid parameters  for "statevector" method.
 E
 ======================================================================
 ERROR: test_40 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/40/test_40.py", line 13, in test_40
+  File "/src/bugs4q-robust/40/test.py", line 13, in test_40
     module.run()
-  File "/src/bugs4q-robust/40/buggy_40.py", line 32, in run
-    qobj = assemble(qc)
-NameError: name 'assemble' is not defined
+  File "/src/bugs4q-robust/40/buggy.py", line 32, in run
+    unitary = usim.run(qc).result().get_unitary()
+  File "/usr/local/lib/python3.10/site-packages/qiskit/result/result.py", line 323, in get_unitary
+    return postprocess.format_unitary(self.data(experiment)["unitary"], decimals=decimals)
+  File "/usr/local/lib/python3.10/site-packages/qiskit/result/result.py", line 174, in data
+    return self._get_experiment(experiment).data.to_dict()
+  File "/usr/local/lib/python3.10/site-packages/qiskit/result/result.py", line 385, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] Circuit circuit-46 contains invalid instructions {"instructions": {save_unitary}} for "statevector" method.Circuit circuit-46 contains invalid parameters  for "statevector" method. ,  ERROR: Circuit circuit-46 contains invalid instructions {"instructions": {save_unitary}} for "statevector" method.Circuit circuit-46 contains invalid parameters  for "statevector" method.'
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.646s
 
 FAILED (errors=1)
 

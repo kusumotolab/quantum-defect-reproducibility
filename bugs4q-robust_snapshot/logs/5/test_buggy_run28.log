@@ -8,7 +8,7 @@ F
 FAIL: test_5 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/5/test_5.py", line 14, in test_5
+  File "/src/bugs4q-robust/5/test.py", line 14, in test_5
     self.assertEqual(str(qasm), 'OPENQASM 2.0;\ninclude "qelib1.inc";\nqreg q[1];\ncreg c[1];\nmeasure q[0] -> c[0];')
 AssertionError: 'OPEN[17 chars]e "qelib1.inc";' != 'OPEN[17 chars]e "qelib1.inc";\nqreg q[1];\ncreg c[1];\nmeasure q[0] -> c[0];'
   OPENQASM 2.0;
@@ -19,7 +19,7 @@ AssertionError: 'OPEN[17 chars]e "qelib1.inc";' != 'OPEN[17 chars]e "qelib1.inc"
 + measure q[0] -> c[0];
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.002s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 

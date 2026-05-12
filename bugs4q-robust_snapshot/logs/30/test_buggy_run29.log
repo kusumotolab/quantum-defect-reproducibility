@@ -1,8 +1,24 @@
 --- STDOUT ---
+{'0001': 377, '1110': 272, '1011': 797, '0111': 903, '0011': 773, '1100': 261, '0101': 276, '1001': 444, '1101': 307, '1000': 393, '0110': 262, '1010': 742, '0010': 786, '0000': 412, '0100': 298, '1111': 889}
 
 --- STDERR ---
+/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/qasm_simulator.py:433: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn(
+/usr/local/lib/python3.10/site-packages/stevedore/extension.py:242: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
+  obj = plugin(*invoke_args, **invoke_kwds)
+/usr/local/lib/python3.10/site-packages/stevedore/extension.py:242: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
+  obj = plugin(*invoke_args, **invoke_kwds)
+F
+======================================================================
+FAIL: test_30 (__main__.Test)
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/30/test_30.py", line 4, in <module>
-    from qiskit.test import *
-ModuleNotFoundError: No module named 'qiskit.test'
+  File "/src/bugs4q-robust/30/test.py", line 22, in test_30
+    self.assertGreaterEqual(marked_total / shots, lower_confidence_bound(p_theory, shots))
+AssertionError: 0.5009765625 not greater than or equal to np.float64(0.9443982142927677)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.743s
+
+FAILED (failures=1)
 

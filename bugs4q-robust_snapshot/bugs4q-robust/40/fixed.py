@@ -18,8 +18,7 @@ def run():
     usim = Aer.get_backend('unitary_simulator')
     transpiled = transpile(qc, backend=usim)
     transpiled.draw('mpl')
-    qobj = assemble(transpiled)
-    unitary = usim.run(qobj).result().get_unitary()
+    unitary = usim.run(transpiled).result().get_unitary()
     from qiskit.visualization import array_to_latex
     array_to_latex(unitary, prefix="\\text{Circuit = }\n")
 

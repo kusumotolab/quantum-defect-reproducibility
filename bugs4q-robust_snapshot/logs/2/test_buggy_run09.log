@@ -1,19 +1,12 @@
 --- STDOUT ---
 
 --- STDERR ---
-E
-======================================================================
-ERROR: test_2 (__main__.Test)
-----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/2/test_2.py", line 13, in test_2
-    module.run()
-  File "/src/bugs4q-robust/2/buggy_2.py", line 17, in run
-    datapoints, class_to_label = split_dataset_to_data_and_labels(test_input)
-NameError: name 'split_dataset_to_data_and_labels' is not defined
-
-----------------------------------------------------------------------
-Ran 1 test in 0.270s
-
-FAILED (errors=1)
+  File "/src/bugs4q-robust/2/test.py", line 8, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/src/bugs4q-robust/2/buggy.py", line 2, in <module>
+    from qiskit.aqua.utils import split_dataset_to_data_and_labels
+ModuleNotFoundError: No module named 'qiskit.aqua'
 

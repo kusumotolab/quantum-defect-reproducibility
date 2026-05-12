@@ -6,7 +6,7 @@ There are 9 circuits to run
   obj = plugin(*invoke_args, **invoke_kwds)
 /usr/local/lib/python3.10/site-packages/stevedore/extension.py:242: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
   obj = plugin(*invoke_args, **invoke_kwds)
-Analysis callback failed [Experiment ID: 94a4f94e-2ade-4b8e-94f4-85db60bac353][Analysis Callback ID: ec1d56efb4aa4537bcb240ab920db362]:
+Analysis callback failed [Experiment ID: 8ce0a783-428d-4ea1-88d3-84e832bc0c81][Analysis Callback ID: 817bf914e2d44046a8e75c07194e8a43]:
 Traceback (most recent call last):
   File "/usr/local/lib/python3.10/site-packages/qiskit_experiments/library/tomography/basis/local_basis.py", line 378, in matrix
     return qubit_povm[outcome].data
@@ -40,16 +40,16 @@ E
 ERROR: test_3 (__main__.Test)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/3/test_3.py", line 13, in test_3
+  File "/src/bugs4q-robust/3/test.py", line 13, in test_3
     module.run()
-  File "/src/bugs4q-robust/3/buggy_3.py", line 40, in run
+  File "/src/bugs4q-robust/3/buggy.py", line 40, in run
     raise_if_analysis_failed(experiment)
-  File "/src/bugs4q-robust/3/buggy_3.py", line 16, in raise_if_analysis_failed
+  File "/src/bugs4q-robust/3/buggy.py", line 16, in raise_if_analysis_failed
     raise RuntimeError(f"Qiskit Experiments analysis failed: {status}")
 RuntimeError: Qiskit Experiments analysis failed: AnalysisStatus.ERROR
 
 ----------------------------------------------------------------------
-Ran 1 test in 1.864s
+Ran 1 test in 2.678s
 
 FAILED (errors=1)
 

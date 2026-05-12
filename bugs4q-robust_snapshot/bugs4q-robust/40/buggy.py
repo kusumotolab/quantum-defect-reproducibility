@@ -29,8 +29,7 @@ def run():
 
     #display(qc.draw()) 
     usim = Aer.get_backend('unitary_simulator')
-    qobj = assemble(qc)
-    unitary = usim.run(qobj).result().get_unitary()
+    unitary = usim.run(qc).result().get_unitary()
     array_to_latex(unitary, pretext="\\text{Circuit = }\n")
 
 

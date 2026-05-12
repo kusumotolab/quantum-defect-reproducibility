@@ -1,5 +1,5 @@
 from qiskit_machine_learning.datasets import ad_hoc_data
-
+from qiskit.aqua.utils import split_dataset_to_data_and_labels
 
 def run():
     feature_dim=2

@@ -1,12 +1,19 @@
 --- STDOUT ---
 
 --- STDERR ---
+E
+======================================================================
+ERROR: test_24 (__main__.Test)
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/src/bugs4q-robust/24/test_24.py", line 8, in <module>
-    spec.loader.exec_module(module)
-  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/src/bugs4q-robust/24/buggy_24.py", line 3, in <module>
-    from qiskit import IBMQ
-ImportError: cannot import name 'IBMQ' from 'qiskit' (/usr/local/lib/python3.10/site-packages/qiskit/__init__.py)
+  File "/src/bugs4q-robust/24/test.py", line 13, in test_24
+    module.run()
+  File "/src/bugs4q-robust/24/buggy.py", line 11, in run
+    circuit.h(qr(0))
+TypeError: 'qiskit.circuit.QuantumRegister' object is not callable
+
+----------------------------------------------------------------------
+Ran 1 test in 0.137s
+
+FAILED (errors=1)
 

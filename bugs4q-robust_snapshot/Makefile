@@ -1,5 +1,5 @@
-IMAGE := bugs4q-plus
-CONTAINER := bugs4q-plus
+IMAGE := bugs4q-robust
+CONTAINER := bugs4q-robust
 WORKDIR := /src
 
 b: ## build image

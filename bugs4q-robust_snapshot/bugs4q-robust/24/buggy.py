@@ -1,6 +1,5 @@
 import qiskit
 from qiskit import *
-from qiskit import IBMQ
 
 
 def run():
