@@ -1,0 +1,24 @@
+--- STDOUT ---
+{'0000': 366, '1101': 314, '1110': 310, '0010': 783, '1111': 883, '0001': 426, '1011': 743, '0011': 731, '0111': 852, '1100': 265, '0101': 282, '1001': 421, '0110': 283, '1000': 401, '1010': 836, '0100': 296}
+
+--- STDERR ---
+/usr/local/lib/python3.10/site-packages/qiskit_aer/backends/qasm_simulator.py:433: PendingDeprecationWarning: The `QasmSimulator` backend will be deprecated in the future. It has been superseded by the `AerSimulator` backend.
+  warn(
+/usr/local/lib/python3.10/site-packages/stevedore/extension.py:242: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
+  obj = plugin(*invoke_args, **invoke_kwds)
+/usr/local/lib/python3.10/site-packages/stevedore/extension.py:242: DeprecationWarning: Since backends now support running jobs that contain both fractional gates and dynamic circuit, IBMFractionalTranslationPlugin is deprecated as of qiskit-ibm-runtime 0.42.0 and will be removed no sooner than 3 months after the release date. Use IBMDynamicFractionalTranslationPlugin instead.
+  obj = plugin(*invoke_args, **invoke_kwds)
+F
+======================================================================
+FAIL: test_30 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q-robust/30/test.py", line 22, in test_30
+    self.assertGreaterEqual(marked_total / shots, lower_confidence_bound(p_theory, shots))
+AssertionError: 0.4937744140625 not greater than or equal to np.float64(0.9443982142927677)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.758s
+
+FAILED (failures=1)
+

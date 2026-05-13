@@ -1,0 +1,15 @@
+--- STDOUT ---
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/src/bugs4q-robust/33/test.py", line 8, in <module>
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/src/bugs4q-robust/33/buggy.py", line 13
+    qc.x(q[0]).c[0]_if(c[0], 0)
+                   ^^^
+SyntaxError: invalid syntax
+

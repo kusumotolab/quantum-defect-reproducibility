@@ -1,0 +1,19 @@
+--- STDOUT ---
+
+--- STDERR ---
+E
+======================================================================
+ERROR: test_24 (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/bugs4q-robust/24/test.py", line 13, in test_24
+    module.run()
+  File "/src/bugs4q-robust/24/buggy.py", line 11, in run
+    circuit.h(qr(0))
+TypeError: 'qiskit.circuit.QuantumRegister' object is not callable
+
+----------------------------------------------------------------------
+Ran 1 test in 0.134s
+
+FAILED (errors=1)
+

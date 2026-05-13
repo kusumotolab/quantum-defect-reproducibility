@@ -13,7 +13,7 @@ The package contains two groups of experiment snapshots.
    - `core-only`
    - `pinned-stack`
 
-2. `bugs4q-plus_snapshot/`: a snapshot for the additional rerun experiment using the edited dataset, referred to as Bugs4Q+ in the paper.
+2. `bugs4q-robust_snapshot/`: a snapshot for the additional rerun experiment using the edited dataset, referred to as Bugs4Q-Robust in the paper.
 
 Each snapshot preserves the original workspace layout used in the experiments. The directory layout is intentionally kept unchanged because the Docker files, Makefile targets, requirements files, and Python scripts rely on relative paths.
 
@@ -26,8 +26,8 @@ This replication package provides the following artifacts:
 - execution scripts used to run buggy and fixed programs;
 - raw execution logs for each Qiskit version;
 - aggregated CSV files used to obtain the reported results;
-- analysis notes for the research questions, including artifact-level ID lists that are more detailed than the tables in the paper;
-- a separate snapshot for the Bugs4Q+ rerun experiment.
+- analysis notes for reproducibility criteria, including artifact-level ID lists that are more detailed than the tables in the paper;
+- a separate snapshot for the Bugs4Q-Robust rerun experiment.
 
 The package is organized as snapshots rather than as a single unified execution directory. This design prioritizes traceability to the actual experiment workspaces.
 
@@ -39,14 +39,14 @@ The package is organized as snapshots rather than as a single unified execution 
 ├── bugs4q_snapshots/        # Main Bugs4Q reproducibility experiments
 │   ├── core-only/
 │   └── pinned-stack/
-└── bugs4q-plus_snapshot/    # Bugs4Q+ rerun experiment
+└── bugs4q-robust_snapshot/    # Bugs4Q-Robust rerun experiment
 ```
 
 ## Snapshot Design
 
 This package uses snapshot-based organization rather than a single unified execution directory.
 Each snapshot preserves the exact directory layout used during the corresponding experiment. The main reason is that the Docker build files, Makefile targets, requirements files, and execution scripts depend on relative paths. Moving files into a cleaner shared structure could make the package harder to rerun and could introduce inconsistencies between the released package and the actual experiment workspace.
-The two snapshots under `bugs4q_snapshots/` correspond to the main Bugs4Q reproducibility experiments. The snapshot under `bugs4q-plus_snapshot/` corresponds to the additional experiment after applying code edits to the subject programs.
+The two snapshots under `bugs4q_snapshots/` correspond to the main Bugs4Q reproducibility experiments. The snapshot under `bugs4q-robust_snapshot/` corresponds to the additional experiment after applying code edits to the subject programs.
 
 ## Quick Start for Reviewers
 
@@ -72,12 +72,12 @@ bugs4q_snapshots/pinned-stack/test-bugs4q/count_execution_results_qiskit-2.3.1.c
 bugs4q_snapshots/pinned-stack/test-bugs4q/logs/logs_qiskit-2.3.1/
 ```
 
-The Bugs4Q+ rerun results are located at:
+The Bugs4Q-Robust rerun results are located at:
 
 ```text
-bugs4q-plus_snapshot/execution_results.csv
-bugs4q-plus_snapshot/count_results.csv
-bugs4q-plus_snapshot/logs/
+bugs4q-robust_snapshot/execution_results.csv
+bugs4q-robust_snapshot/count_results.csv
+bugs4q-robust_snapshot/logs/
 ```
 
 Building all Docker environments can take substantial time and disk space. Reviewers who only want to check the reported results can inspect the preserved CSV files and logs first.
@@ -133,7 +133,6 @@ bugs4q_snapshots/
 └── pinned-stack/
     ├── bugs4q/
     ├── note/
-    │   ├── breakage.md
     │   └── criteria.md
     ├── requirements/
     ├── test-bugs4q/
@@ -323,17 +322,16 @@ The execution logs are organized by Qiskit version and artifact ID.
 
 ### Analysis Notes
 
-In addition to the CSV files and raw logs., each Bugs4Q snapshot includes a `note/` directory. 
-The `criteria.md` file is included in both `core-only` and `pinned-stack`, while `breakage.md` is included only in `pinned-stack`.
+In addition to the CSV files and raw logs, each Bugs4Q snapshot includes a `note/` directory. 
+The `criteria.md` file is included in both `core-only` and `pinned-stack`.
 
-The files in `note/` record intermediate analysis results for the research questions. They are included to make the artifact-level judgments traceable. Unlike the paper tables, which report aggregated results, these notes may include the IDs of artifacts that satisfy each criterion or fall into each breakage category.
+The files in `note/` record intermediate analysis results for the research questions. They are included to make the artifact-level judgments traceable. Unlike the paper tables, which report aggregated results, these notes may include the IDs of artifacts that satisfy each reproducibility criterion.
 
-The currently included analysis-note files are:
+The currently included analysis-note file is:
 
 | File | Configuration | Purpose |
 |---|---|---|
 | `note/criteria.md` | `core-only`, `pinned-stack` | Records criterion-level analysis results, including artifact IDs for reproducibility judgments. |
-| `note/breakage.md` | `pinned-stack` | Records breakage-analysis results, including artifact IDs used in the root-cause analysis. |
 
 These files are auxiliary analysis records. The authoritative executable evidence remains the preserved CSV files and raw logs under `test-bugs4q/`.
 
@@ -426,16 +424,16 @@ In the main experiment scripts, the buggy and fixed versions are repeatedly exec
 
 ---
 
-## Part II: Bugs4Q+ Rerun Experiment
+## Part II: Bugs4Q-Robust Rerun Experiment
 
-This part corresponds to the additional rerun experiment using the edited subject dataset stored in `bugs4q-plus_snapshot/`.
-Bugs4Q+ is an edited study snapshot derived from the Bugs4Q artifacts. The edits are intended to make the artifacts executable under the target modern Qiskit environment while preserving the original bug-revealing intent where possible. Typical edits include adapting deprecated or removed Qiskit APIs, updating import paths, revising test oracles when output formats changed, and adjusting probabilistic execution settings for quantum-sampling behavior. The detailed repair rationale and classification are described in the submitted paper.
+This part corresponds to the additional rerun experiment using the edited subject dataset stored in `bugs4q-robust_snapshot/`.
+Bugs4Q-Robust is an edited study snapshot derived from the Bugs4Q artifacts. The edits are intended to make the artifacts executable under the target modern Qiskit environment while preserving the original bug-revealing intent where possible. Typical edits include adapting deprecated or removed Qiskit APIs, updating import paths, revising test oracles when output formats changed, and adjusting probabilistic execution settings for quantum-sampling behavior. The detailed repair rationale and classification are described in the submitted paper.
 
 ### Directory Layout
 
 ```text
-bugs4q-plus_snapshot/
-├── bugs4q-plus/
+bugs4q-robust_snapshot/
+├── bugs4q-robust/
 ├── logs/
 ├── bash_setting
 ├── count_results.csv
@@ -449,11 +447,11 @@ bugs4q-plus_snapshot/
 
 ### Makefile Targets
 
-The Bugs4Q+ rerun snapshot has a separate Makefile.
-Move to the Bugs4Q+ snapshot:
+The Bugs4Q-Robust rerun snapshot has a separate Makefile.
+Move to the Bugs4Q-Robust snapshot:
 
 ```bash
-cd bugs4q-plus_snapshot
+cd bugs4q-robust_snapshot
 ```
 
 The available Makefile targets are:
@@ -478,10 +476,10 @@ make uc
 
 ### Reproduction Steps
 
-Move to the Bugs4Q+ snapshot.
+Move to the Bugs4Q-Robust snapshot.
 
 ```bash
-cd bugs4q-plus_snapshot
+cd bugs4q-robust_snapshot
 ```
 
 Build and enter the Docker environment.
@@ -491,13 +489,13 @@ make b
 make uc
 ```
 
-Inside the container, run the Bugs4Q+ experiment.
+Inside the container, run the Bugs4Q-Robust experiment.
 
 ```bash
 python run.py
 ```
 
-This script executes each artifact in `bugs4q-plus/` and stores the execution results in:
+This script executes each artifact in `bugs4q-robust/` and stores the execution results in:
 
 ```text
 execution_results.csv
@@ -529,37 +527,37 @@ make d
 
 ### Script-to-Output Mapping
 
-The Bugs4Q+ rerun experiment uses the following scripts.
+The Bugs4Q-Robust rerun experiment uses the following scripts.
 
 | Script | Purpose | Main outputs |
 |---|---|---|
-| `run.py` | Executes each buggy/fixed pair in `bugs4q-plus/` 30 times and stores per-run outcomes. | `execution_results.csv`; `logs/<artifact-id>/test_buggy_runXX.log`; `logs/<artifact-id>/test_fixed_runXX.log` |
+| `run.py` | Executes each buggy/fixed pair in `bugs4q-robust/` 30 times and stores per-run outcomes. | `execution_results.csv`; `logs/<artifact-id>/test_buggy_runXX.log`; `logs/<artifact-id>/test_fixed_runXX.log` |
 | `count.py` | Aggregates the per-run outcomes by bug category and result class. | `count_results.csv` |
 
 ### Expected Outputs
 
-The Bugs4Q+ snapshot produces:
+The Bugs4Q-Robust snapshot produces:
 
 ```text
-bugs4q-plus_snapshot/execution_results.csv
-bugs4q-plus_snapshot/count_results.csv
-bugs4q-plus_snapshot/logs/
+bugs4q-robust_snapshot/execution_results.csv
+bugs4q-robust_snapshot/count_results.csv
+bugs4q-robust_snapshot/logs/
 ```
 
 ### Result File Semantics
 
-For Bugs4Q+, `execution_results.csv` contains the per-run outcomes, `count_results.csv` contains aggregated counts, and `logs/` contains the corresponding raw execution logs.
-The counts in `bugs4q-plus_snapshot/count_results.csv` are run-level counts, not artifact-level counts.
-The Bugs4Q+ execution-result CSV uses the following columns.
+For Bugs4Q-Robust, `execution_results.csv` contains the per-run outcomes, `count_results.csv` contains aggregated counts, and `logs/` contains the corresponding raw execution logs.
+The counts in `bugs4q-robust_snapshot/count_results.csv` are run-level counts, not artifact-level counts.
+The Bugs4Q-Robust execution-result CSV uses the following columns.
 
 | Column | Meaning | Possible values |
 |---|---|---|
-| `id` | Bugs4Q+ artifact ID. | Integer artifact ID. |
+| `id` | Bugs4Q-Robust artifact ID. | Integer artifact ID. |
 | `run` | Repetition index. | Integer from `1` to `30`. |
 | `test_buggy` | Execution outcome of the test against the buggy program. | `Pass`, `Fail` |
 | `test_fixed` | Execution outcome of the test against the fixed program. | `Pass`, `Fail` |
 
-The Bugs4Q+ count CSV uses the following columns.
+The Bugs4Q-Robust count CSV uses the following columns.
 
 | Column | Meaning | Possible values |
 |---|---|---|
@@ -576,7 +574,7 @@ The result classes are defined as follows.
 | `Partial Success` | `test_buggy = Fail` and `test_fixed = Fail`. |
 | `Failure` | Any other combination. |
 
-The Bugs4Q+ log directory has the following nested structure.
+The Bugs4Q-Robust log directory has the following nested structure.
 
 ```text
 logs/
@@ -595,7 +593,7 @@ For each artifact ID, the directory contains 60 logs in total: 30 logs for the b
 
 ### Notes on Non-Determinism
 
-For Bugs4Q+, `run.py` executes each artifact 30 times and stores both CSV summaries and per-run logs.
+For Bugs4Q-Robust, `run.py` executes each artifact 30 times and stores both CSV summaries and per-run logs.
 
 ---
 
@@ -603,7 +601,7 @@ For Bugs4Q+, `run.py` executes each artifact 30 times and stores both CSV summar
 
 The `bugs4q/` directories under `bugs4q_snapshots/` contain the subject programs used in the main reproducibility experiments.
 These subject programs are derived from the original Bugs4Q dataset. Some artifacts were excluded or updated for the experimental protocol. Therefore, these directories should be interpreted as the study snapshot used in this paper, not as the unmodified original Bugs4Q dataset. Their reuse and redistribution should follow the licensing terms, if any, of the original Bugs4Q distribution. We do not claim a new license for those Bugs4Q-derived subject programs in this package.
-The `bugs4q-plus/` directory under `bugs4q-plus_snapshot/` contains the edited subject programs used in the Bugs4Q+ rerun experiment. The Bugs4Q+ snapshot is included as part of the replication package so that the additional experiment reported in the paper can be traced to the exact edited programs and logs. It should not be confused with a standalone dataset release.
+The `bugs4q-robust/` directory under `bugs4q-robust_snapshot/` contains the edited subject programs used in the Bugs4Q-Robust rerun experiment. The Bugs4Q-Robust snapshot is included as part of the replication package so that the additional experiment reported in the paper can be traced to the exact edited programs and logs. It should not be confused with a standalone dataset release.
 This replication package contains materials with different origins. The experiment scripts, Docker files, requirements files, execution logs, and aggregated result CSV files created by the authors will be licensed before public release. Until the licensing status is finalized, this package is provided for artifact review and reproducibility inspection only. Redistribution or reuse beyond artifact review should follow the licensing terms of the respective original sources.
 
 ## Citation
