@@ -613,10 +613,40 @@ If you use this package, please cite both our paper and the original Bugs4Q pape
 
 ## Citation
 
-During double-blind review, citation, author, and contact information are intentionally redacted. They will be added before public release.
-A `CITATION.cff` file will be added before public release. For artifact review, please refer to the submitted paper together with this replication package.
+If you use this replication package, please cite our paper.
+Citation metadata is provided in [CITATION.cff](CITATION.cff), and GitHub's "Cite this repository" button generates BibTeX/APA from it.
+
+This work is currently available as a preprint; the paper will appear in the Proceedings of the 42nd IEEE International Conference on Software Maintenance and Evolution (ICSME), Replication and Negative Results (RENE) Track, 2026.
+
+```bibtex
+@misc{ohto2026arxiv,
+      title = {On the Reproducibility of Quantum Software Defect Datasets: A Case Study of {Bugs4Q}}, 
+      author = {Ohto, Haruto and Ishimoto, Yuta and Matsumoto, Shinsuke and Kusumoto, Shinji},
+      year = {2026},
+      eprint = {2606.27124},
+      archivePrefix = {arXiv},
+      primaryClass = {cs.SE},
+      url = {https://arxiv.org/abs/2606.27124}, 
+}
+```
+
+Please also cite the original Bugs4Q paper.
+
+```bibtex
+@article{zhao2023jss,
+  title = {{Bugs4Q}: A benchmark of existing bugs to enable controlled testing and debugging studies for quantum programs},
+  author = {Zhao, Pengzhan and Miao, Zhongtao and Lan, Shuhan and Zhao, Jianjun},
+  journal = {Journal of Systems and Software},
+  volume = {205},
+  pages = {111805},
+  year = {2023},
+  publisher = {Elsevier}
+}
+```
 
 ## Contact
 
-During double-blind review, direct author contact information is intentionally redacted.
-For artifact review, please contact the authors through the submission system. A public contact address will be added before release.
+Haruto Ohto, The University of Osaka, Japan
+
+For questions or bug reports, please open an issue on the GitHub repository.
+This is the preferred way to reach us.
