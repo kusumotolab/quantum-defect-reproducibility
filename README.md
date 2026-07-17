@@ -597,12 +597,19 @@ For Bugs4Q-Robust, `run.py` executes each artifact 30 times and stores both CSV 
 
 ---
 
-## Subject Programs and Licensing
+## License and Subject Programs
 
-The `bugs4q/` directories under `bugs4q_snapshots/` contain the subject programs used in the main reproducibility experiments.
-These subject programs are derived from the original Bugs4Q dataset. Some artifacts were excluded or updated for the experimental protocol. Therefore, these directories should be interpreted as the study snapshot used in this paper, not as the unmodified original Bugs4Q dataset. Their reuse and redistribution should follow the licensing terms, if any, of the original Bugs4Q distribution. We do not claim a new license for those Bugs4Q-derived subject programs in this package.
-The `bugs4q-robust/` directory under `bugs4q-robust_snapshot/` contains the edited subject programs used in the Bugs4Q-Robust rerun experiment. The Bugs4Q-Robust snapshot is included as part of the replication package so that the additional experiment reported in the paper can be traced to the exact edited programs and logs. It should not be confused with a standalone dataset release.
-This replication package contains materials with different origins. The experiment scripts, Docker files, requirements files, execution logs, and aggregated result CSV files created by the authors will be licensed before public release. Until the licensing status is finalized, this package is provided for artifact review and reproducibility inspection only. Redistribution or reuse beyond artifact review should follow the licensing terms of the respective original sources.
+Different terms apply to different parts of this package.
+
+Materials authored by us — experiment scripts, Dockerfiles, requirements files, Makefiles, execution logs, and aggregated result CSV files — are released as:
+  - Source code and configuration: MIT License (see LICENSE).
+  - Generated data (execution logs and result CSVs): CC BY 4.0.
+
+The subject programs under bugs4q_snapshots/<configuration>/bugs4q/ and under bugs4q-robust_snapshot/bugs4q-robust/ are third-party material derived from and modified from Bugs4Q.
+They are NOT covered by the licenses above; copyright remains with their original authors, and we apply no license of our own to them.
+See THIRD_PARTY-NOTICES.md for origin, the nature of our modifications, and reuse conditions.
+
+If you use this package, please cite both our paper and the original Bugs4Q paper.
 
 ## Citation
 
